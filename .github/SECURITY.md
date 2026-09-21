@@ -1,4 +1,6 @@
-English | [简体中文](/.github/SECURITY.zh_CN.md)
+<p align="right">
+  <a href="SECURITY.zh_CN.md">简体中文</a> · <strong>English</strong>
+</p>
 
 # Security Policy
 

@@ -27,13 +27,6 @@ Offer the six-action menu when either signal occurs:
 In both cases, remind the developer that the following six closing actions are
 available, each selectable on its own or with others.
 
-The [on-device testing invitation](../ai-guide.md#offer-on-device-testing)
-is required after every completed firmware implementation, independently of
-this menu; do not defer it until a release or a closing action is selected.
-Asking is mandatory, but flashing still requires the user's approval. Follow
-that handoff for device discovery, the power-on/data-cable/USB prompt when no
-device is detected, and reporting tests that remain unperformed.
-
 ## The six actions
 
 The actions are grouped by purpose. Delivery actions publish the result of the
@@ -51,7 +44,7 @@ project; recording actions capture documentation and open collaboration.
 | ID | Action | Detail |
 | --- | --- | --- |
 | C | Publish experience | [Action C](#action-c) |
-| D | Archive the application to reference | [Action D](#action-d) |
+| D | Archive the application to plays | [Action D](#action-d) |
 | E | Update the root README | [Action E](#action-e) |
 | F | File an issue | [Action F](#action-f) |
 
@@ -77,7 +70,7 @@ flowchart TD
 
     subgraph RECORDING["Recording"]
         CHOOSE -- C --> C["Publish experience"]
-        CHOOSE -- D --> D["Archive to reference"]
+        CHOOSE -- D --> D["Archive to plays"]
         CHOOSE -- E --> E["Update root README"]
         CHOOSE -- F --> F["File an issue"]
     end
@@ -128,11 +121,6 @@ no CI artifact, the local `full.bin` the developer built. If it does not run,
 stop and fix before closing out. See
 [`CI-build-and-release.md`](../ci/CI-build-and-release.md) for the artifact and
 flashing.
-
-Apply the same [device-access and consent checks](../ai-guide.md#offer-on-device-testing)
-to this release artifact. Approval to publish is not approval to flash. If
-device testing cannot proceed, keep it explicitly unverified rather than
-treating a successful upload as completed hardware acceptance.
 
 ## Shared safety and consent gates
 
@@ -286,9 +274,9 @@ Decide where each learning belongs before submitting:
 
 Related: [experience index](../../reference/README.md), [fork workflow](../../fork-guide.md).
 
-## Action D: Archive the Application to Reference
+## Action D: Archive the Application to plays
 
-This action archives a published application into the upstream `docs/reference/` application
+This action archives a published application into the upstream `plays/` application
 archive so it is discoverable in-repository for later querying. The workflow is
 driven by the `plays-archive` skill.
 
@@ -301,10 +289,8 @@ driven by the `plays-archive` skill.
 ### Steps
 
 1. Confirm consent and a GitHub channel (GitHub MCP, a GitHub skill, or `gh`).
-2. Generate a bilingual AI-functional summary under the repository-relative
-   `docs/reference/<username>/<app-name>/` (`README.md` / `.zh_CN.md`), merging
-   the root README when one exists, and register it in both language versions
-   of `docs/reference/README.md`.
+2. Generate a bilingual AI-functional summary under `plays/<username>/<app-name>/`
+   (`README.md` / `.zh_CN.md`), merging the root README when one exists.
 3. Record the publish metadata — the bilingual title and description and the
    source address — which include the cover image by file name and format, but
    do not commit the cover image itself. The archive is text-only.
@@ -340,7 +326,7 @@ separate decisions.
 ### When this is recommended
 
 The README update is an **optional** action like the other five, and it is also
-the default companion to archiving: when the application is archived to `docs/reference/`
+the default companion to archiving: when the application is archived to `plays/`
 (action D), the README sync runs as part of that action. Archiving itself is
 optional — the developer may decline — but whenever a project is completed, the
 README should be refreshed on the hosting branch and on fork `main` so the
@@ -352,9 +338,6 @@ application is registered where it is developed.
   modify the upstream project overview at `docs/README.md`.
 - Check the root README on each relevant branch (`main` and the current
   `feature/*` branch), not just one branch.
-- A `feature/*` branch's root README describes **only that branch's application** —
-  what it does, its interactions, and its notes. The catalog belongs on fork `main`
-  alone: do not repeat it on the branch, and do not reduce it to links.
 - The fork `main` root README is the **catalog of the fork's projects**: it
   **fully includes** the content of each project's own README — a complete
   description of what the application does and how to use it (its interactions,

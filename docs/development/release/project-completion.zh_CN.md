@@ -19,11 +19,6 @@
 
 两种情况下都提醒开发者：下面六项收尾动作可用，每项都可单独选择或组合选择。
 
-[主动邀请真机测试](../ai-guide.zh_CN.md#主动询问真机测试)独立于该菜单，
-每次完整实现固件需求后都必须执行，不能推迟到发布或选择收尾动作时才询问。
-询问是必需的，但实际刷写仍须用户同意。设备检测、未检测到设备时的开机／
-数据线／电脑 USB 提示，以及未执行测试的报告方式，都遵循该交接流程。
-
 ## 六项动作
 
 动作用途分组。交付类动作发布项目结果；沉淀类动作捕获文档与开放协作。
@@ -40,7 +35,7 @@
 | 编号 | 动作 | 详情 |
 | --- | --- | --- |
 | C | 发布经验 | [动作 C](#action-c) |
-| D | 归档应用到参考区 | [动作 D](#action-d) |
+| D | 归档应用到 plays | [动作 D](#action-d) |
 | E | 更新根 README | [动作 E](#action-e) |
 | F | 提交 issue | [动作 F](#action-f) |
 
@@ -65,7 +60,7 @@ flowchart TD
 
     subgraph RECORDING["沉淀"]
         CHOOSE -- C --> C["发布经验"]
-        CHOOSE -- D --> D["归档到参考区"]
+        CHOOSE -- D --> D["归档到 plays"]
         CHOOSE -- E --> E["更新根 README"]
         CHOOSE -- F --> F["提交 issue"]
     end
@@ -93,10 +88,6 @@ flowchart TD
 ## 发布后的真机验证
 
 当交付动作（A 或 B）产出了合并完整构建时，在把项目视为完成前先到真机验证。下载该 release 的合并完整固件（`FoloToy-AI-Passport-full.bin`，从 `0x0` 烧录的完整构建），烧录到设备并确认正常运行。不要把一次成功的构建或上传当作硬件验证：这一步证明 release 实际指向的产物能在真实硬件上启动并工作。产物来自 release 资产（CI/CD 的 `full.bin`），或对无 CI 产物的 Git release，来自开发者本地构建的 `full.bin`。若不能运行，先停下修复，再继续收口。产物与烧录见 [`CI-build-and-release.md`](../ci/CI-build-and-release.zh_CN.md)。
-
-对发布产物同样执行[设备访问与同意检查](../ai-guide.zh_CN.md#主动询问真机测试)。
-同意发布不等于同意烧录。无法开展真机测试时，应明确保留未验证状态，不能把
-上传成功当作已经完成硬件验收。
 
 ## 共同的安全与同意门槛
 
@@ -203,9 +194,9 @@ flowchart TD
 
 相关：[经验索引](../../reference/README.zh_CN.md)、[fork 工作流](../../fork-guide.zh_CN.md)。
 
-## 动作 D：归档应用到参考区
+## 动作 D：归档应用到 plays
 
-本动作把已发布应用归档到上游 `docs/reference/` 应用归档，使其在仓库内可被发现、供后续查询。工作流由 `plays-archive` skill 驱动。
+本动作把已发布应用归档到上游 `plays/` 应用归档，使其在仓库内可被发现、供后续查询。工作流由 `plays-archive` skill 驱动。
 
 ### 输入
 
@@ -215,7 +206,7 @@ flowchart TD
 ### 步骤
 
 1. 确认同意与可用 GitHub 通道（GitHub MCP、GitHub skill 或 `gh`）。
-2. 在相对仓库根目录的 `docs/reference/<username>/<app-name>/` 下生成双语 AI 功能摘要（`README.md` / `.zh_CN.md`），存在根 README 时合并它，并在 `docs/reference/README.md` 的中英文索引中登记。
+2. 在 `plays/<username>/<app-name>/` 下生成双语 AI 功能摘要（`README.md` / `.zh_CN.md`），存在根 README 时合并它。
 3. 记录发布元数据——双语标题与简介、源码地址——其中以文件名和格式记录封面图，但**不提交封面图本身**。归档仅文本。
 4. 独立处理每个分支的根 README（必需 README 同步见 [动作 E](#action-e)）。
 5. 只在独立分支提交摘要；不存储固件 `.bin` 或封面图。
@@ -238,13 +229,12 @@ fork 让 `main` 与上游同步、把产品工作放在 `feature/*` 分支上，
 
 ### 何时推荐
 
-README 更新与其他五项一样是**可选**动作，也是归档的默认伴随动作：当应用归档到 `docs/reference/`（动作 D）时，README 同步随该动作运行。归档本身可选——开发者可拒绝——但每当项目完成，都应在承载分支与 fork `main` 上刷新 README，让应用在它被开发的地方被登记。
+README 更新与其他五项一样是**可选**动作，也是归档的默认伴随动作：当应用归档到 `plays/`（动作 D）时，README 同步随该动作运行。归档本身可选——开发者可拒绝——但每当项目完成，都应在承载分支与 fork `main` 上刷新 README，让应用在它被开发的地方被登记。
 
 ### 规则
 
 - 只碰 fork 拥有的根 README（`README.md` / `README.zh_CN.md`）；不改 `docs/README.md` 的上游项目概览。
 - 检查每个相关分支（`main` 与当前 `feature/*` 分支）的根 README，而不只是分支其一。
-- `feature/*` 分支的根 README **只介绍本分支自己的应用**——做什么、怎么用、相关说明；全项目目录只放在 fork `main`，不要在分支上重复它，也不要把目录简化成链接。
 - fork `main` 的根 README 是 **fork 项目的目录**：它**完整包含**各项目自身 README 的内容——应用做什么、怎么用的完整描述（交互、模式、按键、持久化与说明）——而不是一行简介加分支链接。内容取自承载分支的 README。
 - fork 根 README 与承载分支的根 README 都是 fork 拥有内容，直接提交（merge）而非开 PR；只有意图送上游时才开 PR。
 - 遵守仓库语言规则：默认 `.md` 用英文、配对的 `.zh_CN.md` 用简体中文，同一变更里对齐。

@@ -1,6 +1,7 @@
 // components/bsp/src/bsp_audio.c
 // 移植自 trae_card/components/platform/platform_esp32/src/audio_es8311.c
 #include "bsp_audio.h"
+#include <stdatomic.h>
 #include "bsp_es8311_sleep_check.h"
 #include "bsp_i2c.h"
 #include "bsp_pins.h"
@@ -25,11 +26,12 @@ static const audio_codec_gpio_if_t *s_gpio;
 static uint32_t s_hz;
 static uint8_t  s_bits, s_ch;
 static bool     s_opened;
-static bool     s_sleeping;
-static bool     s_initialized;
-static esp_err_t s_sleep_result;
-static bool     s_codec_release_failed;
-static uint8_t  s_volume;
+static atomic_bool s_sleeping;
+static atomic_bool s_initialized;
+static atomic_bool s_resources_live;
+static atomic_int s_sleep_result;
+static atomic_bool s_codec_release_failed;
+static uint8_t  s_volume = 40;
 static int      s_io_error;
 
 // esp_codec_dev 1.6.2 discards some control/data interface errors. Remember the
@@ -293,7 +295,8 @@ static void audio_cleanup(void) {
     s_sleeping = false;
     s_initialized = false;
     s_sleep_result = ESP_OK;
-    s_volume = 0;
+    /* Preserve the application volume across recovery. */
+    s_resources_live = s_tx || s_rx || s_ctrl || s_data || s_gpio || s_codec || s_dev;
     s_hz = 0;
     s_bits = 0;
     s_ch = 0;
@@ -386,7 +389,7 @@ static esp_err_t audio_create_codec(void) {
 
 esp_err_t bsp_audio_init(void) {
     if (s_codec_release_failed) return ESP_ERR_INVALID_STATE;
-    if (s_initialized) return ESP_OK;
+    if (s_initialized) return bsp_audio_wake();
     if (s_tx || s_rx || s_ctrl || s_data || s_codec || s_gpio) {
         ESP_LOGE(TAG, "上次音频初始化回滚不完整，拒绝覆盖仍存活的资源句柄");
         return ESP_ERR_INVALID_STATE;
@@ -395,12 +398,14 @@ esp_err_t bsp_audio_init(void) {
     esp_err_t e = bsp_i2c_init();
     if (e != ESP_OK) return e;
 
+    s_resources_live = true;
     s_ctrl = audio_codec_new_i2c_ctrl(&(audio_codec_i2c_cfg_t){
         .port = BSP_I2C_PORT,
         .addr = BSP_I2C_ES8311_ADDR << 1,   // 该接口要 8 位地址形式
         .bus_handle = bsp_i2c_bus(),
     });
     if (!s_ctrl) {
+        s_resources_live = false;
         ESP_LOGE(TAG, "ES8311 控制口创建失败 —— 用 bsp_i2c_scan() 确认 0x%02X 是否应答;"
                       "检查 SDA=GPIO%d / SCL=GPIO%d 接线与 codec 供电",
                  BSP_I2C_ES8311_ADDR, BSP_I2C_SDA, BSP_I2C_SCL);
@@ -486,9 +491,9 @@ fail:
 
 esp_err_t bsp_audio_sleep(void) {
     if (!s_initialized) return ESP_OK;
-    if (s_sleeping) return s_sleep_result;
+    if (s_sleeping && s_sleep_result == ESP_OK) return ESP_OK;
 
-    esp_err_t first_error = ESP_OK;
+    esp_err_t first_error = s_codec_release_failed ? ESP_ERR_INVALID_STATE : ESP_OK;
     // Drop stale enabled/opened state, even if suspend fails. Deletion may write
     // the dependency's weaker suspend sequence, so force-sleep MUST run last.
     // Only codec objects are released: I2C bus and I2S channels remain owned.
@@ -534,7 +539,7 @@ esp_err_t bsp_audio_prepare_deep_sleep(void) {
 }
 
 esp_err_t bsp_audio_wake(void) {
-    if (!s_initialized || !s_sleeping) return ESP_OK;
+    if (!s_initialized || (!s_sleeping && s_opened)) return ESP_OK;
 
     // 允许内部格式设置重新 open codec；失败时再次 close，避免留下半唤醒状态。
     s_sleeping = false;
@@ -568,3 +573,13 @@ void bsp_audio_set_volume(uint8_t percent) {
     s_volume = percent > 100 ? 100 : percent;
     if (s_dev && s_opened && !s_sleeping) esp_codec_dev_set_out_vol(s_dev, s_volume);
 }
+
+/* Sleep success and the need to reopen are different after a failed suspend. */
+bool bsp_audio_is_sleeping(void) {
+    return !s_codec_release_failed && ((!s_initialized && !s_resources_live) ||
+           (s_sleeping && s_sleep_result == ESP_OK));
+}
+bool bsp_audio_needs_wake(void) {
+    return s_initialized && (s_sleeping || !s_opened);
+}
+uint8_t bsp_audio_get_volume(void) { return s_volume; }

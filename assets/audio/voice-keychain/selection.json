@@ -1,0 +1,2035 @@
+{
+  "version": "1.9.1",
+  "before_count": 818,
+  "after_count": 726,
+  "before_bytes": 4904252,
+  "after_bytes": 4270480,
+  "saved_bytes": 633772,
+  "selection_rule": "Prefer unnumbered base title, otherwise lowest numeric suffix. Semantic groups use the representative recorded below. No re-encoding or acoustic equivalence claim.",
+  "groups": [
+    {
+      "pack": "科比",
+      "root": "曼巴变音",
+      "items": [
+        {
+          "name": "曼巴变音1",
+          "src": "曼巴变音1.mp3",
+          "path": "dir19/clip06.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14972,
+          "pack": "科比",
+          "sha": "f37c13bd7dda2432b65a99e116e14de1f5dfe05c90287adba3d9edaee3b3927b"
+        },
+        {
+          "name": "曼巴变音10",
+          "src": "曼巴变音10.mp3",
+          "path": "dir19/clip07.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 15013,
+          "pack": "科比",
+          "sha": "0a38a903e4211aae1c495fa6ffa8da9cb65c9904b0b36e10054cbef7df0c8aab"
+        },
+        {
+          "name": "曼巴变音11",
+          "src": "曼巴变音11.mp3",
+          "path": "dir19/clip08.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14849,
+          "pack": "科比",
+          "sha": "c07e0eed0a6622de0281df2e74169e190124eb78824e9e2b39fba6cb1cefd2e8"
+        },
+        {
+          "name": "曼巴变音12",
+          "src": "曼巴变音12.mp3",
+          "path": "dir19/clip09.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 15053,
+          "pack": "科比",
+          "sha": "b76a8c047594000ad4680bf94eef57444e377d62a098e73bab61f0bf00c90e5c"
+        },
+        {
+          "name": "曼巴变音13",
+          "src": "曼巴变音13.mp3",
+          "path": "dir19/clip10.opus",
+          "samples": 89920,
+          "duration": 5.62,
+          "compressed_bytes": 8708,
+          "pack": "科比",
+          "sha": "1e4aaef6e8ee70dee79bce9d2127ea1c544a0d9ffb2aa63baf4fadebe704a09b"
+        },
+        {
+          "name": "曼巴变音14",
+          "src": "曼巴变音14.mp3",
+          "path": "dir19/clip11.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14867,
+          "pack": "科比",
+          "sha": "7b5c556208270c6273cc54a6c95c5228bdf20435ef10d1af7e7992b2671bd778"
+        },
+        {
+          "name": "曼巴变音15",
+          "src": "曼巴变音15.mp3",
+          "path": "dir19/clip12.opus",
+          "samples": 130720,
+          "duration": 8.17,
+          "compressed_bytes": 12810,
+          "pack": "科比",
+          "sha": "64f7c6da7b8925ef52cd4624e0f7c5200d51e4ee64b5a94d495f8cd519717563"
+        },
+        {
+          "name": "曼巴变音16",
+          "src": "曼巴变音16.mp3",
+          "path": "dir19/clip13.opus",
+          "samples": 164160,
+          "duration": 10.26,
+          "compressed_bytes": 15952,
+          "pack": "科比",
+          "sha": "c35cdecec99b9133ae5cfec53560d47fe1eb9ee9a8747638621a1055dc424e41"
+        },
+        {
+          "name": "曼巴变音17",
+          "src": "曼巴变音17.mp3",
+          "path": "dir19/clip14.opus",
+          "samples": 256320,
+          "duration": 16.02,
+          "compressed_bytes": 24652,
+          "pack": "科比",
+          "sha": "8baa8ed73d6e0477494e835f4985122fe593c6230f28225bf978ef947490b4e3"
+        },
+        {
+          "name": "曼巴变音18",
+          "src": "曼巴变音18.mp3",
+          "path": "dir19/clip15.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14951,
+          "pack": "科比",
+          "sha": "c679e900c1b96d27882d811cfd989224697a255feeda4cf23f9b5db7439ba242"
+        },
+        {
+          "name": "曼巴变音19",
+          "src": "曼巴变音19.mp3",
+          "path": "dir19/clip16.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14910,
+          "pack": "科比",
+          "sha": "497767498851c98b84bb06fdac5ee761c6c701a1b7ba5a3f7d5d2be49ad038bf"
+        },
+        {
+          "name": "曼巴变音2",
+          "src": "曼巴变音2.mp3",
+          "path": "dir19/clip17.opus",
+          "samples": 78400,
+          "duration": 4.9,
+          "compressed_bytes": 7572,
+          "pack": "科比",
+          "sha": "813a6bf8999b7c3a0407923c0d0242cf40d72918f25fad79d533bb9ffc1b7243"
+        },
+        {
+          "name": "曼巴变音20",
+          "src": "曼巴变音20.mp3",
+          "path": "dir19/clip18.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14760,
+          "pack": "科比",
+          "sha": "5117d31bfefc41944d448bbd8ff337c9aadba9ebbc58d25d5098ad63538a07b7"
+        },
+        {
+          "name": "曼巴变音21",
+          "src": "曼巴变音21.mp3",
+          "path": "dir19/clip19.opus",
+          "samples": 171680,
+          "duration": 10.73,
+          "compressed_bytes": 16757,
+          "pack": "科比",
+          "sha": "af43a977d785752d50e425b57ef3fd725bb108931bf4aff38d346cc18514ab22"
+        },
+        {
+          "name": "曼巴变音22",
+          "src": "曼巴变音22.mp3",
+          "path": "dir19/clip20.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14902,
+          "pack": "科比",
+          "sha": "fb964f9f122648f885d7ae866919dae389b0eefb20253a032b20f450b73057c2"
+        },
+        {
+          "name": "曼巴变音3",
+          "src": "曼巴变音3.mp3",
+          "path": "dir19/clip21.opus",
+          "samples": 263840,
+          "duration": 16.49,
+          "compressed_bytes": 25530,
+          "pack": "科比",
+          "sha": "c26d3cba015826da0256dec4a1aaeab47c9bac882cc33ff08162d97d73547f8e"
+        },
+        {
+          "name": "曼巴变音4",
+          "src": "曼巴变音4.mp3",
+          "path": "dir19/clip22.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14878,
+          "pack": "科比",
+          "sha": "1e9493f82fa474300e928cca3940d8c567ba807c17d9c96babf65f49ce8331e9"
+        },
+        {
+          "name": "曼巴变音5",
+          "src": "曼巴变音5.mp3",
+          "path": "dir19/clip23.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14773,
+          "pack": "科比",
+          "sha": "ec1286410c81958b101cd7942ae211f30a95002ede81d5cac1fd99a786b1282d"
+        },
+        {
+          "name": "曼巴变音6",
+          "src": "曼巴变音6.mp3",
+          "path": "dir19/clip24.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14907,
+          "pack": "科比",
+          "sha": "ab47cac511d9addce8cfb11e0617ccdbe50d2cc2fff3ca3eb67986d02de8abdd"
+        },
+        {
+          "name": "曼巴变音7",
+          "src": "曼巴变音7.mp3",
+          "path": "dir19/clip25.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14862,
+          "pack": "科比",
+          "sha": "ed5de922b98ecde673b8616395c94a19ca2da47a2249e520c4df4e4a5ec19d8a"
+        },
+        {
+          "name": "曼巴变音8",
+          "src": "曼巴变音8.mp3",
+          "path": "dir19/clip26.opus",
+          "samples": 153280,
+          "duration": 9.58,
+          "compressed_bytes": 14847,
+          "pack": "科比",
+          "sha": "536c69a6c6129be4b48fc36dc6441524cea99893f69ede03671a2360bd16c5bb"
+        },
+        {
+          "name": "曼巴变音9",
+          "src": "曼巴变音9.mp3",
+          "path": "dir19/clip27.opus",
+          "samples": 171680,
+          "duration": 10.73,
+          "compressed_bytes": 16735,
+          "pack": "科比",
+          "sha": "f03ee0975c224fa82228776c5e8a2895abad245be2bb7ac7432720b535ef66ee"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 22,
+      "total": 337260,
+      "save_min": 311730,
+      "save_max": 329688,
+      "id": "G01",
+      "keep": "dir19/clip06.opus",
+      "keep_name": "曼巴变音1"
+    },
+    {
+      "pack": "高松灯",
+      "root": "咕咕嘎嘎合集",
+      "items": [
+        {
+          "name": "咕咕嘎嘎合集",
+          "src": "咕咕嘎嘎合集.mp3",
+          "path": "dir22/clip04.opus",
+          "samples": 232640,
+          "duration": 14.54,
+          "compressed_bytes": 22726,
+          "pack": "高松灯",
+          "sha": "3e6a4afca79638d801a859a7dd20c3cd3b0966c2d0a84db09d4f3235ddccddb2"
+        },
+        {
+          "name": "咕咕嘎嘎！！！（超绝尾音）",
+          "src": "咕咕嘎嘎！！！（超绝尾音）.mp3",
+          "path": "dir22/clip05.opus",
+          "samples": 64000,
+          "duration": 4.0,
+          "compressed_bytes": 6424,
+          "pack": "高松灯",
+          "sha": "e0ca6e326ae747437692d452d6dbf90839e278a9f9bd61615fc42c5c8519175f"
+        },
+        {
+          "name": "咕咕嘎嘎！（喷怒）",
+          "src": "咕咕嘎嘎！（喷怒）.mp3",
+          "path": "dir22/clip06.opus",
+          "samples": 32320,
+          "duration": 2.02,
+          "compressed_bytes": 4100,
+          "pack": "高松灯",
+          "sha": "4de5cd559ca00b3a9284f9c3853d8ce922fb9de6b9677f75e614cb1e0e1b530f"
+        },
+        {
+          "name": "咕咕嘎嘎（沉重）",
+          "src": "咕咕嘎嘎（沉重）.mp3",
+          "path": "dir22/clip07.opus",
+          "samples": 31040,
+          "duration": 1.94,
+          "compressed_bytes": 4054,
+          "pack": "高松灯",
+          "sha": "dfb73e0d58c7192c2546281d54b22dadfac2c7a43ec4610349cddc96644325a0"
+        },
+        {
+          "name": "咕！咕！嘎嘎！（忍无可忍）",
+          "src": "咕！咕！嘎嘎！（忍无可忍）.mp3",
+          "path": "dir22/clip08.opus",
+          "samples": 37440,
+          "duration": 2.34,
+          "compressed_bytes": 5079,
+          "pack": "高松灯",
+          "sha": "b727e5c39692415113211eea7667b53039d5bfb3301074a74fa9057a07e797e4"
+        },
+        {
+          "name": "（怒吼）额啊 咕咕嘎嘎",
+          "src": "（怒吼）额啊 咕咕嘎嘎.mp3",
+          "path": "dir22/clip31.opus",
+          "samples": 49600,
+          "duration": 3.1,
+          "compressed_bytes": 6517,
+          "pack": "高松灯",
+          "sha": "97c723678a589c5235dcf72a670e3346cc9378d6d5a75ad28028a57a422c3e7f"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 6,
+      "total": 48900,
+      "save_min": 26174,
+      "save_max": 44846,
+      "id": "G02",
+      "keep": "dir22/clip07.opus",
+      "keep_name": "咕咕嘎嘎（沉重）"
+    },
+    {
+      "pack": "鸡乐",
+      "root": "连招",
+      "items": [
+        {
+          "name": "连招",
+          "src": "连招.mp3",
+          "path": "dir23/clip34.opus",
+          "samples": 247680,
+          "duration": 15.48,
+          "compressed_bytes": 24272,
+          "pack": "鸡乐",
+          "sha": "b88ca52e25e3719e60554fa7c111afb670045bb9d6d0a971adf7a0f4189e96f5"
+        },
+        {
+          "name": "连招4",
+          "src": "连招4.mp3",
+          "path": "dir23/clip35.opus",
+          "samples": 257440,
+          "duration": 16.09,
+          "compressed_bytes": 25240,
+          "pack": "鸡乐",
+          "sha": "7205a8a887e5e948b9734e1de45713530f877a909412e433a7f01a436a8660f3"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 49512,
+      "save_min": 24272,
+      "save_max": 25240,
+      "id": "G03",
+      "keep": "dir23/clip34.opus",
+      "keep_name": "连招"
+    },
+    {
+      "pack": "印度阿三",
+      "root": "阿三清唱两句",
+      "items": [
+        {
+          "name": "阿三清唱两句1",
+          "src": "阿三清唱两句1.mp3",
+          "path": "dir07/clip15.opus",
+          "samples": 125600,
+          "duration": 7.85,
+          "compressed_bytes": 12164,
+          "pack": "印度阿三",
+          "sha": "c1d2f9b8ad2a479a1b00fd5a31c7e81e2270115864f42f832909deaa39c77527"
+        },
+        {
+          "name": "阿三清唱两句2",
+          "src": "阿三清唱两句2.mp3",
+          "path": "dir07/clip16.opus",
+          "samples": 252320,
+          "duration": 15.77,
+          "compressed_bytes": 23528,
+          "pack": "印度阿三",
+          "sha": "14d85457be1d4c8b454d2354999b69d51db7c0b15404190323620b3f68ea29b6"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 35692,
+      "save_min": 12164,
+      "save_max": 23528,
+      "id": "G04",
+      "keep": "dir07/clip15.opus",
+      "keep_name": "阿三清唱两句1"
+    },
+    {
+      "pack": "宝宝肚肚打雷",
+      "root": "宝宝肚肚又打雷",
+      "items": [
+        {
+          "name": "宝宝肚肚又打雷",
+          "src": "宝宝肚肚又打雷.mp3",
+          "path": "dir11/clip06.opus",
+          "samples": 38560,
+          "duration": 2.41,
+          "compressed_bytes": 4926,
+          "pack": "宝宝肚肚打雷",
+          "sha": "93ea4bc427e3f1669688e65fae2d8f1340ab5d18710dbb376364ad07cf7269fb"
+        },
+        {
+          "name": "宝宝肚肚打雷了",
+          "src": "宝宝肚肚打雷了.mp3",
+          "path": "dir11/clip07.opus",
+          "samples": 31040,
+          "duration": 1.94,
+          "compressed_bytes": 3925,
+          "pack": "宝宝肚肚打雷",
+          "sha": "42960bf76a7b29ca055d0dee0b8f52843b02ba78af50bddf2d9bcd49c1ce5d97"
+        },
+        {
+          "name": "宝宝肚肚打雷啦",
+          "src": "宝宝肚肚打雷啦.mp3",
+          "path": "dir11/clip08.opus",
+          "samples": 31680,
+          "duration": 1.98,
+          "compressed_bytes": 4030,
+          "pack": "宝宝肚肚打雷",
+          "sha": "95d3b17e1e3c159b3353bff18ce25fe56ad664578c7e11d4a73d7c6d742bc10e"
+        },
+        {
+          "name": "肚肚宝宝打雷了",
+          "src": "肚肚宝宝打雷了.mp3",
+          "path": "dir11/clip22.opus",
+          "samples": 31040,
+          "duration": 1.94,
+          "compressed_bytes": 3968,
+          "pack": "宝宝肚肚打雷",
+          "sha": "b79b9ff0075a12556d4c147089d88c6c55a4868f406b41955359c31309db67bb"
+        },
+        {
+          "name": "肚肚宝宝打雷啦",
+          "src": "肚肚宝宝打雷啦.mp3",
+          "path": "dir11/clip23.opus",
+          "samples": 29920,
+          "duration": 1.87,
+          "compressed_bytes": 3820,
+          "pack": "宝宝肚肚打雷",
+          "sha": "53a3326ca2ebcab444914f7952adb3fc9330df9d10deee206b568b584725767c"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 5,
+      "total": 20669,
+      "save_min": 15743,
+      "save_max": 16849,
+      "id": "G05",
+      "keep": "dir11/clip07.opus",
+      "keep_name": "宝宝肚肚打雷了"
+    },
+    {
+      "pack": "吉伊卡哇",
+      "root": "喵",
+      "items": [
+        {
+          "name": "喵1",
+          "src": "喵1.mp3",
+          "path": "dir08/clip24.opus",
+          "samples": 17280,
+          "duration": 1.08,
+          "compressed_bytes": 2132,
+          "pack": "吉伊卡哇",
+          "sha": "994e83ac1ae01b5d14748e8929a25cb96317eac41d7828d58de04fe8883e64aa"
+        },
+        {
+          "name": "喵10",
+          "src": "喵10.mp3",
+          "path": "dir08/clip25.opus",
+          "samples": 11520,
+          "duration": 0.72,
+          "compressed_bytes": 1135,
+          "pack": "吉伊卡哇",
+          "sha": "f95ab4f814cf841da862158d0667a5b01f1d0407aab71f1c6654f57c4187b209"
+        },
+        {
+          "name": "喵2",
+          "src": "喵2.mp3",
+          "path": "dir08/clip26.opus",
+          "samples": 15040,
+          "duration": 0.94,
+          "compressed_bytes": 1683,
+          "pack": "吉伊卡哇",
+          "sha": "cf169532cc0528bbe7c01b88a58d622fabcba1fcbad6c88217ff95f92d69cfea"
+        },
+        {
+          "name": "喵3",
+          "src": "喵3.mp3",
+          "path": "dir08/clip27.opus",
+          "samples": 16160,
+          "duration": 1.01,
+          "compressed_bytes": 1858,
+          "pack": "吉伊卡哇",
+          "sha": "9bf6b5720885b2960e3da57589994e71d279b25235a8192a6594a3905102ed16"
+        },
+        {
+          "name": "喵4",
+          "src": "喵4.mp3",
+          "path": "dir08/clip28.opus",
+          "samples": 12160,
+          "duration": 0.76,
+          "compressed_bytes": 979,
+          "pack": "吉伊卡哇",
+          "sha": "d5331c5d2285bd73c1104b44d3d3919d5faaa43434fdcbc744195c5fc56b1158"
+        },
+        {
+          "name": "喵5",
+          "src": "喵5.mp3",
+          "path": "dir08/clip29.opus",
+          "samples": 18400,
+          "duration": 1.15,
+          "compressed_bytes": 2221,
+          "pack": "吉伊卡哇",
+          "sha": "d6ec0c481743e9f0356baafb15f54b1dee45e96c21949a763b969780f1736fbf"
+        },
+        {
+          "name": "喵6",
+          "src": "喵6.mp3",
+          "path": "dir08/clip30.opus",
+          "samples": 16160,
+          "duration": 1.01,
+          "compressed_bytes": 1863,
+          "pack": "吉伊卡哇",
+          "sha": "6b3359f9adc3f1624330ec20900ac4c1296cc3b81002805bfb3fba479f94318c"
+        },
+        {
+          "name": "喵7",
+          "src": "喵7.mp3",
+          "path": "dir08/clip31.opus",
+          "samples": 18400,
+          "duration": 1.15,
+          "compressed_bytes": 1660,
+          "pack": "吉伊卡哇",
+          "sha": "55961c13c8c7d27b8c90579dcb17fbb7abf564a9a4421ee474330a3b67c9f116"
+        },
+        {
+          "name": "喵8",
+          "src": "喵8.mp3",
+          "path": "dir08/clip32.opus",
+          "samples": 6880,
+          "duration": 0.43,
+          "compressed_bytes": 752,
+          "pack": "吉伊卡哇",
+          "sha": "afc38cca6c8ea742aa32e695e9d4dd92e96d0cc755eba94f26937fde0fa4a4db"
+        },
+        {
+          "name": "喵9",
+          "src": "喵9.mp3",
+          "path": "dir08/clip33.opus",
+          "samples": 16160,
+          "duration": 1.01,
+          "compressed_bytes": 2101,
+          "pack": "吉伊卡哇",
+          "sha": "36c2d800bc34c958e55ce54229a528772772dea5feee05c7cbd7c885962ccc50"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 10,
+      "total": 16384,
+      "save_min": 14163,
+      "save_max": 15632,
+      "id": "G06",
+      "keep": "dir08/clip24.opus",
+      "keep_name": "喵1"
+    },
+    {
+      "pack": "库里",
+      "root": "啦啦啦啦",
+      "items": [
+        {
+          "name": "啦啦啦啦",
+          "src": "啦啦啦啦.mp3",
+          "path": "dir14/clip12.opus",
+          "samples": 38080,
+          "duration": 2.38,
+          "compressed_bytes": 4743,
+          "pack": "库里",
+          "sha": "bda5ab015420821c8d85e4ac1c62b0b10e0e48b354942c17d15c4218dd3a9fe2"
+        },
+        {
+          "name": "啦啦啦啦1",
+          "src": "啦啦啦啦1.mp3",
+          "path": "dir14/clip13.opus",
+          "samples": 40960,
+          "duration": 2.56,
+          "compressed_bytes": 5348,
+          "pack": "库里",
+          "sha": "74dd99a5a4ea00c5a7efd906651b36d00d45aee0d25c6521a62ac7a249948d7e"
+        },
+        {
+          "name": "啦啦啦啦2",
+          "src": "啦啦啦啦2.mp3",
+          "path": "dir14/clip14.opus",
+          "samples": 39680,
+          "duration": 2.48,
+          "compressed_bytes": 4956,
+          "pack": "库里",
+          "sha": "87e4bbb5b1696478d387672988e410993a2791ee88cd3db9548e6bf33bf66192"
+        },
+        {
+          "name": "啦啦啦啦3",
+          "src": "啦啦啦啦3.mp3",
+          "path": "dir14/clip15.opus",
+          "samples": 39200,
+          "duration": 2.45,
+          "compressed_bytes": 5129,
+          "pack": "库里",
+          "sha": "def562450b43285ddd6e6d142375b0457097c0ba75e5d80d6b5ce0755228a844"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 4,
+      "total": 20176,
+      "save_min": 14828,
+      "save_max": 15433,
+      "id": "G07",
+      "keep": "dir14/clip12.opus",
+      "keep_name": "啦啦啦啦"
+    },
+    {
+      "pack": "黄色袋鼠",
+      "root": "你的胆子才是肥嘟嘟的",
+      "items": [
+        {
+          "name": "你的胆子才是肥嘟嘟的",
+          "src": "你的胆子才是肥嘟嘟的.mp3",
+          "path": "dir00/clip12.opus",
+          "samples": 31840,
+          "duration": 1.99,
+          "compressed_bytes": 4103,
+          "pack": "黄色袋鼠",
+          "sha": "5105167ddb7fd744ceeeb5cd9723ee9b95192ce0dce8b803bd38b65dd601aa34"
+        },
+        {
+          "name": "你的胆子真是肥嘟嘟的",
+          "src": "你的胆子真是肥嘟嘟的.mp3",
+          "path": "dir00/clip13.opus",
+          "samples": 36800,
+          "duration": 2.3,
+          "compressed_bytes": 4732,
+          "pack": "黄色袋鼠",
+          "sha": "1d40efad532ae85585d403e7ab2f618feaad96a23fe2694fd28bf6ece3a6ff2b"
+        },
+        {
+          "name": "我看你胆子真是肥嘟嘟的",
+          "src": "我看你胆子真是肥嘟嘟的.mp3",
+          "path": "dir00/clip22.opus",
+          "samples": 34560,
+          "duration": 2.16,
+          "compressed_bytes": 4519,
+          "pack": "黄色袋鼠",
+          "sha": "a9d2874f335181547847945f3b97a1f984252ec05d5cd60f20f356c31d41ff98"
+        },
+        {
+          "name": "胆子真是肥嘟嘟的",
+          "src": "胆子真是肥嘟嘟的.mp3",
+          "path": "dir00/clip32.opus",
+          "samples": 29280,
+          "duration": 1.83,
+          "compressed_bytes": 3790,
+          "pack": "黄色袋鼠",
+          "sha": "5fb1a8a475a2359f454ce4773c214313bec196d63e1e757ef0ae04973eef4ff2"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 4,
+      "total": 17144,
+      "save_min": 12412,
+      "save_max": 13354,
+      "id": "G08",
+      "keep": "dir00/clip13.opus",
+      "keep_name": "你的胆子真是肥嘟嘟的"
+    },
+    {
+      "pack": "meme猫",
+      "root": "吐舌羊",
+      "items": [
+        {
+          "name": "吐舌羊_1_1",
+          "src": "吐舌羊_1_1.mp3",
+          "path": "dir02/clip05.opus",
+          "samples": 29440,
+          "duration": 1.84,
+          "compressed_bytes": 3764,
+          "pack": "meme猫",
+          "sha": "ace8d13490cad32a2901774a8a24feb0824a9a2cabf2433e83317fa4cb6521f5"
+        },
+        {
+          "name": "吐舌羊_1_2",
+          "src": "吐舌羊_1_2.mp3",
+          "path": "dir02/clip06.opus",
+          "samples": 112960,
+          "duration": 7.06,
+          "compressed_bytes": 11017,
+          "pack": "meme猫",
+          "sha": "f17f454903b1b25da295491cc4d4e45ffdf57a524ae9a1269982acf376f6ffda"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 14781,
+      "save_min": 3764,
+      "save_max": 11017,
+      "id": "G09",
+      "keep": "dir02/clip05.opus",
+      "keep_name": "吐舌羊_1_1"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "哎呀气死我了",
+      "items": [
+        {
+          "name": "哎呀气死我了",
+          "src": "哎呀气死我了.mp3",
+          "path": "dir20/clip20.opus",
+          "samples": 29440,
+          "duration": 1.84,
+          "compressed_bytes": 3978,
+          "pack": "纸片人捷风",
+          "sha": "b9c77e9057b29fe1a731494b30e5037fa71296e705558c58de58835047888697"
+        },
+        {
+          "name": "气死我了",
+          "src": "气死我了.mp3",
+          "path": "dir20/clip35.opus",
+          "samples": 11520,
+          "duration": 0.72,
+          "compressed_bytes": 1458,
+          "pack": "纸片人捷风",
+          "sha": "8fa098717fa8c23767b1e03fb6779f1774c7acc2332320308d9473ce6496fe99"
+        },
+        {
+          "name": "诶呀气死我了",
+          "src": "诶呀气死我了.mp3",
+          "path": "dir20/clip40.opus",
+          "samples": 39200,
+          "duration": 2.45,
+          "compressed_bytes": 5153,
+          "pack": "纸片人捷风",
+          "sha": "afe6a725d7003de5df75da5d33c1f4f0926227c5a7d7855ad8cafd90a1ad1a65"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 3,
+      "total": 10589,
+      "save_min": 5436,
+      "save_max": 9131,
+      "id": "G10",
+      "keep": "dir20/clip35.opus",
+      "keep_name": "气死我了"
+    },
+    {
+      "pack": "金坷垃",
+      "root": "肥料参了金坷垃",
+      "items": [
+        {
+          "name": "肥料参了金坷垃",
+          "src": "肥料参了金坷垃.mp3",
+          "path": "dir21/clip30.opus",
+          "samples": 35680,
+          "duration": 2.23,
+          "compressed_bytes": 4548,
+          "pack": "金坷垃",
+          "sha": "c59d4bc6bdcd6b073713e19217c9937ba519cb261e6b35f02f41fa48631a7951"
+        },
+        {
+          "name": "肥料参了金坷垃2",
+          "src": "肥料参了金坷垃2.mp3",
+          "path": "dir21/clip31.opus",
+          "samples": 29920,
+          "duration": 1.87,
+          "compressed_bytes": 3764,
+          "pack": "金坷垃",
+          "sha": "e44b0bd860354493f9ea2fc1f8d5f10eb7828ee62b33a4672a5dfdb4ec3af4d3"
+        },
+        {
+          "name": "肥料参了金坷垃3",
+          "src": "肥料参了金坷垃3.mp3",
+          "path": "dir21/clip32.opus",
+          "samples": 31040,
+          "duration": 1.94,
+          "compressed_bytes": 3951,
+          "pack": "金坷垃",
+          "sha": "768bcfced18176b97afb222a72338299d09e96dea81de7a3343362fbe91682d8"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 3,
+      "total": 12263,
+      "save_min": 7715,
+      "save_max": 8499,
+      "id": "G11",
+      "keep": "dir21/clip30.opus",
+      "keep_name": "肥料参了金坷垃"
+    },
+    {
+      "pack": "小明剑魔",
+      "root": "MVP MVP",
+      "items": [
+        {
+          "name": "MVP MVP",
+          "src": "MVP MVP.mp3",
+          "path": "dir13/clip03.opus",
+          "samples": 78400,
+          "duration": 4.9,
+          "compressed_bytes": 7719,
+          "pack": "小明剑魔",
+          "sha": "4178d50bc2f36dcf3d3ed1cadd15cf4a6679102292f8f7604d5397300dd6a4cc"
+        },
+        {
+          "name": "MVP",
+          "src": "MVP.mp3",
+          "path": "dir13/clip04.opus",
+          "samples": 21280,
+          "duration": 1.33,
+          "compressed_bytes": 2619,
+          "pack": "小明剑魔",
+          "sha": "97083092dd9fee19e7fb8d6a70454103b54a5f017c8dbf9b1d7e28058cdf5d49"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 10338,
+      "save_min": 2619,
+      "save_max": 7719,
+      "id": "G12",
+      "keep": "dir13/clip04.opus",
+      "keep_name": "MVP"
+    },
+    {
+      "pack": "小明剑魔",
+      "root": "躺赢",
+      "items": [
+        {
+          "name": "躺赢",
+          "src": "躺赢🐶.mp3",
+          "path": "dir13/clip40.opus",
+          "samples": 21920,
+          "duration": 1.37,
+          "compressed_bytes": 2735,
+          "pack": "小明剑魔",
+          "sha": "21efca2c1ac5fb0f62ef83339ad51753248b684cbb4b8b289e3223a30c1a2d37"
+        },
+        {
+          "name": "躺赢躺赢",
+          "src": "躺赢🐶躺赢🐶.mp3",
+          "path": "dir13/clip41.opus",
+          "samples": 77120,
+          "duration": 4.82,
+          "compressed_bytes": 7545,
+          "pack": "小明剑魔",
+          "sha": "657be30e6b970c740cf7a286658b4c65991171907ca94f4303b273a394bf7f49"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 10280,
+      "save_min": 2735,
+      "save_max": 7545,
+      "id": "G13",
+      "keep": "dir13/clip40.opus",
+      "keep_name": "躺赢"
+    },
+    {
+      "pack": "金坷垃",
+      "root": "金坷垃",
+      "items": [
+        {
+          "name": "金坷垃",
+          "src": "金坷垃.mp3",
+          "path": "dir21/clip35.opus",
+          "samples": 14400,
+          "duration": 0.9,
+          "compressed_bytes": 1843,
+          "pack": "金坷垃",
+          "sha": "9f2191794cc3f928b150bd0cedc196accb24bbd2dc7e7da8ee3db0b327d52f9f"
+        },
+        {
+          "name": "金坷垃2",
+          "src": "金坷垃2.mp3",
+          "path": "dir21/clip36.opus",
+          "samples": 16160,
+          "duration": 1.01,
+          "compressed_bytes": 2028,
+          "pack": "金坷垃",
+          "sha": "defabf958b3480f5b7624db84cf96539c8f0eba83f0aa77c18cfe18b18e2f061"
+        },
+        {
+          "name": "金坷垃…",
+          "src": "金坷垃….mp3",
+          "path": "dir21/clip37.opus",
+          "samples": 25280,
+          "duration": 1.58,
+          "compressed_bytes": 3175,
+          "pack": "金坷垃",
+          "sha": "6a7b877d560ad41a7eb938a977e5e80c7c8b60a26a3d057993c465ea50070681"
+        },
+        {
+          "name": "金坷垃……",
+          "src": "金坷垃…….mp3",
+          "path": "dir21/clip38.opus",
+          "samples": 17280,
+          "duration": 1.08,
+          "compressed_bytes": 2120,
+          "pack": "金坷垃",
+          "sha": "e4f39908808fe4a1e69426b3e73fa5ee5d86e1d3dcb467a2aa685d1ead4d36a2"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 4,
+      "total": 9166,
+      "save_min": 5991,
+      "save_max": 7323,
+      "id": "G14",
+      "keep": "dir21/clip35.opus",
+      "keep_name": "金坷垃"
+    },
+    {
+      "pack": "印度阿三",
+      "root": "嘟噜噜",
+      "items": [
+        {
+          "name": "嘟噜噜",
+          "src": "嘟噜噜.mp3",
+          "path": "dir07/clip03.opus",
+          "samples": 51200,
+          "duration": 3.2,
+          "compressed_bytes": 6546,
+          "pack": "印度阿三",
+          "sha": "94b6a2cad5d4aaa3abaa215b5e44a99295b5452272139eb81934490d4bf2feca"
+        },
+        {
+          "name": "嘟噜噜2",
+          "src": "嘟噜噜2.mp3",
+          "path": "dir07/clip04.opus",
+          "samples": 54720,
+          "duration": 3.42,
+          "compressed_bytes": 7040,
+          "pack": "印度阿三",
+          "sha": "c4fc80ec6cc6a92da107e67cf38c3d8518d3127822155a0afffaed0cd72b4659"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 13586,
+      "save_min": 6546,
+      "save_max": 7040,
+      "id": "G15",
+      "keep": "dir07/clip03.opus",
+      "keep_name": "嘟噜噜"
+    },
+    {
+      "pack": "meme猫",
+      "root": "魔性笑",
+      "items": [
+        {
+          "name": "魔性笑1",
+          "src": "魔性笑1.mp3",
+          "path": "dir02/clip38.opus",
+          "samples": 27520,
+          "duration": 1.72,
+          "compressed_bytes": 3502,
+          "pack": "meme猫",
+          "sha": "6e679fb17ed4cf699c4d564fb4b9f945e6dcce43d97fb3dc916eca1fe5530294"
+        },
+        {
+          "name": "魔性笑2",
+          "src": "魔性笑2.mp3",
+          "path": "dir02/clip39.opus",
+          "samples": 27200,
+          "duration": 1.7,
+          "compressed_bytes": 3418,
+          "pack": "meme猫",
+          "sha": "cf93e65c78cc86cb50a67dfc4eb5a8822bae9fdd65b25cbaace255b991e7d5a3"
+        },
+        {
+          "name": "魔性笑3",
+          "src": "魔性笑3.mp3",
+          "path": "dir02/clip40.opus",
+          "samples": 25120,
+          "duration": 1.57,
+          "compressed_bytes": 3090,
+          "pack": "meme猫",
+          "sha": "ae6bd69fe174eb3a26c2cc8e75e981c8e7b30c35e49931a3eaa9b2de639c5404"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 3,
+      "total": 10010,
+      "save_min": 6508,
+      "save_max": 6920,
+      "id": "G16",
+      "keep": "dir02/clip38.opus",
+      "keep_name": "魔性笑1"
+    },
+    {
+      "pack": "刘海柱",
+      "root": "我艹nm",
+      "items": [
+        {
+          "name": "我艹nm",
+          "src": "我艹nm.mp3",
+          "path": "dir04/clip10.opus",
+          "samples": 63360,
+          "duration": 3.96,
+          "compressed_bytes": 6142,
+          "pack": "刘海柱",
+          "sha": "2adfe09288727cab59b3b6248fa10500126cf2d82ad6f5c939f16f6a96b682d2"
+        },
+        {
+          "name": "我艹nm1",
+          "src": "我艹nm1.mp3",
+          "path": "dir04/clip11.opus",
+          "samples": 47840,
+          "duration": 2.99,
+          "compressed_bytes": 5962,
+          "pack": "刘海柱",
+          "sha": "a9f0c31e552d9c34564a410142797cd249080d721499ab55864083b2ce9cba03"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 12104,
+      "save_min": 5962,
+      "save_max": 6142,
+      "id": "G17",
+      "keep": "dir04/clip10.opus",
+      "keep_name": "我艹nm"
+    },
+    {
+      "pack": "库里",
+      "root": "库里库里库里",
+      "items": [
+        {
+          "name": "库里库里库里",
+          "src": "库里库里库里.mp3",
+          "path": "dir14/clip17.opus",
+          "samples": 38080,
+          "duration": 2.38,
+          "compressed_bytes": 4978,
+          "pack": "库里",
+          "sha": "516282e3370d2787160a5329c0c6161a7f196c9f9c9ef1028fd27dfa6d538660"
+        },
+        {
+          "name": "库里库里库里2",
+          "src": "库里库里库里2.mp3",
+          "path": "dir14/clip18.opus",
+          "samples": 39680,
+          "duration": 2.48,
+          "compressed_bytes": 5180,
+          "pack": "库里",
+          "sha": "7330525ea3009fe764cb64158940582cb563030d241221c7008c535940e65b3e"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 10158,
+      "save_min": 4978,
+      "save_max": 5180,
+      "id": "G18",
+      "keep": "dir14/clip17.opus",
+      "keep_name": "库里库里库里"
+    },
+    {
+      "pack": "卡丘米雪儿",
+      "root": "啊哈哈哈",
+      "items": [
+        {
+          "name": "啊哈哈哈",
+          "src": "啊哈哈哈.mp3",
+          "path": "dir05/clip09.opus",
+          "samples": 23040,
+          "duration": 1.44,
+          "compressed_bytes": 2849,
+          "pack": "卡丘米雪儿",
+          "sha": "e51bd3a6da4f3fb0be3b139cb0dd4617c59de987be0732c2f4fa1fc27796d38a"
+        },
+        {
+          "name": "啊哈哈哈2",
+          "src": "啊哈哈哈2.mp3",
+          "path": "dir05/clip10.opus",
+          "samples": 39200,
+          "duration": 2.45,
+          "compressed_bytes": 5119,
+          "pack": "卡丘米雪儿",
+          "sha": "491f184835048a40959363b31b11134d91ac9735ffef5acf0c09d9db58480702"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 7968,
+      "save_min": 2849,
+      "save_max": 5119,
+      "id": "G19",
+      "keep": "dir05/clip09.opus",
+      "keep_name": "啊哈哈哈"
+    },
+    {
+      "pack": "库里",
+      "root": "一起呐喊苍天大地",
+      "items": [
+        {
+          "name": "一起呐喊苍天大地",
+          "src": "一起呐喊苍天大地.mp3",
+          "path": "dir14/clip02.opus",
+          "samples": 38080,
+          "duration": 2.38,
+          "compressed_bytes": 4946,
+          "pack": "库里",
+          "sha": "0fea46e95a8e650591022a6ed7c70347d0c7d562db1274348cb84de01d72c88e"
+        },
+        {
+          "name": "一起呐喊苍天大地2",
+          "src": "一起呐喊苍天大地2.mp3",
+          "path": "dir14/clip03.opus",
+          "samples": 37440,
+          "duration": 2.34,
+          "compressed_bytes": 4860,
+          "pack": "库里",
+          "sha": "98077a486904da11b95d706d3d55dc28e3d243694bdabe45a7ac79d7f5845f99"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 9806,
+      "save_min": 4860,
+      "save_max": 4946,
+      "id": "G20",
+      "keep": "dir14/clip02.opus",
+      "keep_name": "一起呐喊苍天大地"
+    },
+    {
+      "pack": "鸡乐",
+      "root": "哇什么情况",
+      "items": [
+        {
+          "name": "哇 什么情况",
+          "src": "哇 什么情况.mp3",
+          "path": "dir23/clip08.opus",
+          "samples": 26560,
+          "duration": 1.66,
+          "compressed_bytes": 3377,
+          "pack": "鸡乐",
+          "sha": "561ba8ca4de5893b20c347ae480bb982c34be12e5ff0ba5d8ad13b63c363aa6e"
+        },
+        {
+          "name": "哇 什么情况1",
+          "src": "哇 什么情况1.mp3",
+          "path": "dir23/clip09.opus",
+          "samples": 36320,
+          "duration": 2.27,
+          "compressed_bytes": 4605,
+          "pack": "鸡乐",
+          "sha": "cabc424161b8e641038d49a4e6f525b59be7397e34b5f90c7d133b219c30197d"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 7982,
+      "save_min": 3377,
+      "save_max": 4605,
+      "id": "G21",
+      "keep": "dir23/clip08.opus",
+      "keep_name": "哇 什么情况"
+    },
+    {
+      "pack": "鸡乐",
+      "root": "嗷回手掏",
+      "items": [
+        {
+          "name": "嗷 回手掏",
+          "src": "嗷 回手掏.mp3",
+          "path": "dir23/clip19.opus",
+          "samples": 27040,
+          "duration": 1.69,
+          "compressed_bytes": 3583,
+          "pack": "鸡乐",
+          "sha": "af3ef451cfed203e7d2a22ea68e7060130832776b1d859b0b7047c1270dcb0f9"
+        },
+        {
+          "name": "嗷 回手掏1",
+          "src": "嗷 回手掏1.mp3",
+          "path": "dir23/clip20.opus",
+          "samples": 35680,
+          "duration": 2.23,
+          "compressed_bytes": 4560,
+          "pack": "鸡乐",
+          "sha": "c9618c021f63922e3017cd7f28e151908065e04cfacc3893ee939477679931e4"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 8143,
+      "save_min": 3583,
+      "save_max": 4560,
+      "id": "G22",
+      "keep": "dir23/clip19.opus",
+      "keep_name": "嗷 回手掏"
+    },
+    {
+      "pack": "金坷垃",
+      "root": "必须要有金坷垃",
+      "items": [
+        {
+          "name": "必须要有金坷垃",
+          "src": "必须要有金坷垃.mp3",
+          "path": "dir21/clip13.opus",
+          "samples": 35680,
+          "duration": 2.23,
+          "compressed_bytes": 4513,
+          "pack": "金坷垃",
+          "sha": "82a464b807d5833f0d3af602e9a82fdf8f4fbab4527963ba8f02063c6230bf5c"
+        },
+        {
+          "name": "必须要有金坷垃2",
+          "src": "必须要有金坷垃2.mp3",
+          "path": "dir21/clip14.opus",
+          "samples": 29920,
+          "duration": 1.87,
+          "compressed_bytes": 3773,
+          "pack": "金坷垃",
+          "sha": "6f993e1446f01c4c8afc3fa6fdba8e70b08a61b8e54811c5d9d3573551a06763"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 8286,
+      "save_min": 3773,
+      "save_max": 4513,
+      "id": "G23",
+      "keep": "dir21/clip13.opus",
+      "keep_name": "必须要有金坷垃"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "哎刀马刀马",
+      "items": [
+        {
+          "name": "哎刀马刀马",
+          "src": "哎刀马刀马.mp3",
+          "path": "dir20/clip16.opus",
+          "samples": 32800,
+          "duration": 2.05,
+          "compressed_bytes": 4230,
+          "pack": "纸片人捷风",
+          "sha": "efac9618da0f04e8e5174647548af4f9ba7fdbd41d81b5922c3735874bd163d7"
+        },
+        {
+          "name": "哎刀马刀马2",
+          "src": "哎刀马刀马2.mp3",
+          "path": "dir20/clip17.opus",
+          "samples": 32320,
+          "duration": 2.02,
+          "compressed_bytes": 4190,
+          "pack": "纸片人捷风",
+          "sha": "4688f823dc79e12356f8aa10c6752c9690c69c8531827b4ab65956fde51fed2d"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 8420,
+      "save_min": 4190,
+      "save_max": 4230,
+      "id": "G24",
+      "keep": "dir20/clip16.opus",
+      "keep_name": "哎刀马刀马"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "棒棒棒棒",
+      "items": [
+        {
+          "name": "棒棒棒棒",
+          "src": "棒棒棒棒.mp3",
+          "path": "dir20/clip32.opus",
+          "samples": 21280,
+          "duration": 1.33,
+          "compressed_bytes": 2784,
+          "pack": "纸片人捷风",
+          "sha": "1846254ae719e25f7d7e59b769d4ff4c3142f513ee1a0c0f2cfad7d1109004c4"
+        },
+        {
+          "name": "棒棒棒棒！",
+          "src": "棒棒棒棒！.mp3",
+          "path": "dir20/clip33.opus",
+          "samples": 32800,
+          "duration": 2.05,
+          "compressed_bytes": 4106,
+          "pack": "纸片人捷风",
+          "sha": "0620b1a386f6ee767e8ad2b26a1a6e2d89b5e6aaf9f67f65fb5258fe5d391f36"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 6890,
+      "save_min": 2784,
+      "save_max": 4106,
+      "id": "G25",
+      "keep": "dir20/clip32.opus",
+      "keep_name": "棒棒棒棒"
+    },
+    {
+      "pack": "宝宝肚肚打雷",
+      "root": "雷雷宝宝打肚肚",
+      "items": [
+        {
+          "name": "雷雷宝宝打肚肚",
+          "src": "雷雷宝宝打肚肚.mp3",
+          "path": "dir11/clip29.opus",
+          "samples": 30560,
+          "duration": 1.91,
+          "compressed_bytes": 3886,
+          "pack": "宝宝肚肚打雷",
+          "sha": "8ecdcdf050c68c1813e064fca45889356aeb7921a199abb786e31a60b6d73812"
+        },
+        {
+          "name": "雷雷宝宝打肚肚2",
+          "src": "雷雷宝宝打肚肚2.mp3",
+          "path": "dir11/clip30.opus",
+          "samples": 31680,
+          "duration": 1.98,
+          "compressed_bytes": 3989,
+          "pack": "宝宝肚肚打雷",
+          "sha": "327364d9a0165bb9156f68b06bb3c7d7bf30f6dca15989903d378d03a4b701c9"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 7875,
+      "save_min": 3886,
+      "save_max": 3989,
+      "id": "G26",
+      "keep": "dir11/clip29.opus",
+      "keep_name": "雷雷宝宝打肚肚"
+    },
+    {
+      "pack": "宝宝肚肚打雷",
+      "root": "打打宝宝雷雷啦",
+      "items": [
+        {
+          "name": "打打宝宝雷雷啦",
+          "src": "打打宝宝雷雷啦.mp3",
+          "path": "dir11/clip14.opus",
+          "samples": 29920,
+          "duration": 1.87,
+          "compressed_bytes": 3813,
+          "pack": "宝宝肚肚打雷",
+          "sha": "1e8ea674e5ae261195fc4675663de9242a1ad8e9388361a05500b6e2ed5a04e3"
+        },
+        {
+          "name": "打打宝宝雷雷啦2",
+          "src": "打打宝宝雷雷啦2.mp3",
+          "path": "dir11/clip15.opus",
+          "samples": 29920,
+          "duration": 1.87,
+          "compressed_bytes": 3751,
+          "pack": "宝宝肚肚打雷",
+          "sha": "f43c6fa5728bee57016ad28279d2c5a156bd3dd2711a100ccf2f47f1cfb77eeb"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 7564,
+      "save_min": 3751,
+      "save_max": 3813,
+      "id": "G27",
+      "keep": "dir11/clip14.opus",
+      "keep_name": "打打宝宝雷雷啦"
+    },
+    {
+      "pack": "印度阿三",
+      "root": "猴打黑",
+      "items": [
+        {
+          "name": "猴打黑",
+          "src": "猴打黑.mp3",
+          "path": "dir07/clip09.opus",
+          "samples": 30560,
+          "duration": 1.91,
+          "compressed_bytes": 3407,
+          "pack": "印度阿三",
+          "sha": "e39e39bb3937f546c276398cf8def96ea42aab8ff67fc0e08d302bd1f0c45568"
+        },
+        {
+          "name": "猴打黑~",
+          "src": "猴打黑~.mp3",
+          "path": "dir07/clip10.opus",
+          "samples": 29440,
+          "duration": 1.84,
+          "compressed_bytes": 3235,
+          "pack": "印度阿三",
+          "sha": "a613443e4153b0cb5a0908381783598e0907a7e3ec5ff7f7061d164afd1c3ad7"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 6642,
+      "save_min": 3235,
+      "save_max": 3407,
+      "id": "G28",
+      "keep": "dir07/clip09.opus",
+      "keep_name": "猴打黑"
+    },
+    {
+      "pack": "金坷垃",
+      "root": "不能打架",
+      "items": [
+        {
+          "name": "不能打架",
+          "src": "不能打架.mp3",
+          "path": "dir21/clip02.opus",
+          "samples": 19040,
+          "duration": 1.19,
+          "compressed_bytes": 2321,
+          "pack": "金坷垃",
+          "sha": "2a0a566f6d5fea04f659c671974177843461d8c27d343dc3326a36f94f5a36a7"
+        },
+        {
+          "name": "不能打架2",
+          "src": "不能打架2.mp3",
+          "path": "dir21/clip03.opus",
+          "samples": 28160,
+          "duration": 1.76,
+          "compressed_bytes": 3345,
+          "pack": "金坷垃",
+          "sha": "20b6040221ccd7db2d96b4f33b18c8243bd7bd897e10b4a3e9ed3d67f15fd817"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 5666,
+      "save_min": 2321,
+      "save_max": 3345,
+      "id": "G29",
+      "keep": "dir21/clip02.opus",
+      "keep_name": "不能打架"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "嘿嘿嘿",
+      "items": [
+        {
+          "name": "嘿嘿嘿",
+          "src": "嘿嘿嘿.mp3",
+          "path": "dir20/clip26.opus",
+          "samples": 18400,
+          "duration": 1.15,
+          "compressed_bytes": 2315,
+          "pack": "纸片人捷风",
+          "sha": "4cd4457ae6ae1fbc8c8ea4a4308614a13e9f3420c4345b053f2011c7024a5d6a"
+        },
+        {
+          "name": "嘿嘿嘿_1",
+          "src": "嘿嘿嘿_1.mp3",
+          "path": "dir20/clip27.opus",
+          "samples": 24800,
+          "duration": 1.55,
+          "compressed_bytes": 3297,
+          "pack": "纸片人捷风",
+          "sha": "7652d128ce8c41c0f48d9cefcd457da67c2faf8fc9ae8650b6b51e51f0c3d031"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 5612,
+      "save_min": 2315,
+      "save_max": 3297,
+      "id": "G30",
+      "keep": "dir20/clip26.opus",
+      "keep_name": "嘿嘿嘿"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "颗秒",
+      "items": [
+        {
+          "name": "颗秒",
+          "src": "颗秒.mp3",
+          "path": "dir20/clip47.opus",
+          "samples": 24160,
+          "duration": 1.51,
+          "compressed_bytes": 3194,
+          "pack": "纸片人捷风",
+          "sha": "803491a3f7072c7b7db44500aaf2f456e578157983808473af0cb26288388128"
+        },
+        {
+          "name": "颗秒2",
+          "src": "颗秒2.mp3",
+          "path": "dir20/clip48.opus",
+          "samples": 20160,
+          "duration": 1.26,
+          "compressed_bytes": 2685,
+          "pack": "纸片人捷风",
+          "sha": "4a0b2e0617d3229cd91241c6dda404ee2882c263cf28a30bbe1162f3c02a7730"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 5879,
+      "save_min": 2685,
+      "save_max": 3194,
+      "id": "G31",
+      "keep": "dir20/clip47.opus",
+      "keep_name": "颗秒"
+    },
+    {
+      "pack": "金坷垃",
+      "root": "我要金坷垃",
+      "items": [
+        {
+          "name": "我要金坷垃",
+          "src": "我要金坷垃.mp3",
+          "path": "dir21/clip18.opus",
+          "samples": 21920,
+          "duration": 1.37,
+          "compressed_bytes": 2720,
+          "pack": "金坷垃",
+          "sha": "dcc895b0c257cbaa6195793c59b583c0ca45a37bfdb422d8f04ae4c1e9a82024"
+        },
+        {
+          "name": "我要金坷垃2",
+          "src": "我要金坷垃2.mp3",
+          "path": "dir21/clip19.opus",
+          "samples": 24160,
+          "duration": 1.51,
+          "compressed_bytes": 3058,
+          "pack": "金坷垃",
+          "sha": "5cbfae44bf2e2a4496008b9caf04262669f9c0b2185d18b310bcd8a9c525bf59"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 5778,
+      "save_min": 2720,
+      "save_max": 3058,
+      "id": "G32",
+      "keep": "dir21/clip18.opus",
+      "keep_name": "我要金坷垃"
+    },
+    {
+      "pack": "吉伊卡哇",
+      "root": "嘿咻",
+      "items": [
+        {
+          "name": "嘿咻1",
+          "src": "嘿咻1.mp3",
+          "path": "dir08/clip37.opus",
+          "samples": 19520,
+          "duration": 1.22,
+          "compressed_bytes": 2084,
+          "pack": "吉伊卡哇",
+          "sha": "7b2ad54bce0eb685554a3a71620fa9943313cdeb8f7ebf3ca9c576c17a4cffc9"
+        },
+        {
+          "name": "嘿咻2",
+          "src": "嘿咻2.mp3",
+          "path": "dir08/clip38.opus",
+          "samples": 27040,
+          "duration": 1.69,
+          "compressed_bytes": 2884,
+          "pack": "吉伊卡哇",
+          "sha": "09ee94a34b8813c5371b75ea0b2f0b7578347b67e3f4b320fc9690270b6845fd"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 4968,
+      "save_min": 2084,
+      "save_max": 2884,
+      "id": "G33",
+      "keep": "dir08/clip37.opus",
+      "keep_name": "嘿咻1"
+    },
+    {
+      "pack": "我要验牌法国赌神",
+      "root": "我要烟牌",
+      "items": [
+        {
+          "name": "我要烟牌",
+          "src": "我要烟牌.mp3",
+          "path": "dir15/clip06.opus",
+          "samples": 21920,
+          "duration": 1.37,
+          "compressed_bytes": 2732,
+          "pack": "我要验牌法国赌神",
+          "sha": "44e095c3de154ddeaf5b3d653e19a55cc1e991c4e2b49b081fff5b3da133fe92"
+        },
+        {
+          "name": "我要验牌",
+          "src": "我要验牌.mp3",
+          "path": "dir15/clip07.opus",
+          "samples": 19040,
+          "duration": 1.19,
+          "compressed_bytes": 2327,
+          "pack": "我要验牌法国赌神",
+          "sha": "32e88f67cdc00400257756db5e03550bb8e4e5ce90cff68e9c0427a8021a33a9"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 5059,
+      "save_min": 2327,
+      "save_max": 2732,
+      "id": "G34",
+      "keep": "dir15/clip07.opus",
+      "keep_name": "我要验牌"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "哈哈哈",
+      "items": [
+        {
+          "name": "哈哈哈2",
+          "src": "哈哈哈2.mp3",
+          "path": "dir20/clip13.opus",
+          "samples": 18400,
+          "duration": 1.15,
+          "compressed_bytes": 2353,
+          "pack": "纸片人捷风",
+          "sha": "ecadfb05e433b6ceba189a784a450a9a05ec03299f409858626e86a3b633b974"
+        },
+        {
+          "name": "哈哈哈_1",
+          "src": "哈哈哈_1.mp3",
+          "path": "dir20/clip14.opus",
+          "samples": 20800,
+          "duration": 1.3,
+          "compressed_bytes": 2719,
+          "pack": "纸片人捷风",
+          "sha": "4582d6add58014600aa5e7b279cd56df4916f7dc9f686edb62c4a051072481c0"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 5072,
+      "save_min": 2353,
+      "save_max": 2719,
+      "id": "G35",
+      "keep": "dir20/clip14.opus",
+      "keep_name": "哈哈哈_1"
+    },
+    {
+      "pack": "鸡乐",
+      "root": "哈哈",
+      "items": [
+        {
+          "name": "哈哈",
+          "src": "哈哈.mp3",
+          "path": "dir23/clip12.opus",
+          "samples": 19040,
+          "duration": 1.19,
+          "compressed_bytes": 2017,
+          "pack": "鸡乐",
+          "sha": "999b7c502f7b3c23ea239b8205ecf7b4aca7749bd0cfe3c49ed8b1964a6acf08"
+        },
+        {
+          "name": "哈哈_1",
+          "src": "哈哈_1.mp3",
+          "path": "dir23/clip13.opus",
+          "samples": 21280,
+          "duration": 1.33,
+          "compressed_bytes": 2599,
+          "pack": "鸡乐",
+          "sha": "1d634e2e1fd020e2c13b2fc201745984536ee8bacc89c971ef9b1077d2a1a1a0"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 4616,
+      "save_min": 2017,
+      "save_max": 2599,
+      "id": "G36",
+      "keep": "dir23/clip12.opus",
+      "keep_name": "哈哈"
+    },
+    {
+      "pack": "黄色袋鼠",
+      "root": "你个老牧师的",
+      "items": [
+        {
+          "name": "你个老牧师的",
+          "src": "你个老牧师的.mp3",
+          "path": "dir00/clip06.opus",
+          "samples": 16320,
+          "duration": 1.02,
+          "compressed_bytes": 2111,
+          "pack": "黄色袋鼠",
+          "sha": "2274c6741be0692373e5e80746fbbf654ae9318b6676fcd3463bdf232ed9af8d"
+        },
+        {
+          "name": "你个老牧师的！",
+          "src": "你个老牧师的！.mp3",
+          "path": "dir00/clip07.opus",
+          "samples": 20320,
+          "duration": 1.27,
+          "compressed_bytes": 2587,
+          "pack": "黄色袋鼠",
+          "sha": "9093728e69d6dbcd3006a0eebd114ca824bbe0cc417f5c752a5b4c77bc90d90f"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 4698,
+      "save_min": 2111,
+      "save_max": 2587,
+      "id": "G37",
+      "keep": "dir00/clip06.opus",
+      "keep_name": "你个老牧师的"
+    },
+    {
+      "pack": "金坷垃",
+      "root": "狡猾",
+      "items": [
+        {
+          "name": "狡猾",
+          "src": "狡猾.mp3",
+          "path": "dir21/clip25.opus",
+          "samples": 20800,
+          "duration": 1.3,
+          "compressed_bytes": 2541,
+          "pack": "金坷垃",
+          "sha": "0dddf30c4ab9fc1097e432866f7febff1b7653e80c510d5840a83c3b49a116ce"
+        },
+        {
+          "name": "狡猾2",
+          "src": "狡猾2.mp3",
+          "path": "dir21/clip26.opus",
+          "samples": 17920,
+          "duration": 1.12,
+          "compressed_bytes": 2199,
+          "pack": "金坷垃",
+          "sha": "8aed82e758893ba2b3ea7006a520992f6842e4a6e7261d5eb607674c548e5e89"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 4740,
+      "save_min": 2199,
+      "save_max": 2541,
+      "id": "G38",
+      "keep": "dir21/clip25.opus",
+      "keep_name": "狡猾"
+    },
+    {
+      "pack": "卢音",
+      "root": "嘿嘿",
+      "items": [
+        {
+          "name": "嘿嘿",
+          "src": "嘿嘿.mp3",
+          "path": "dir06/clip10.opus",
+          "samples": 19040,
+          "duration": 1.19,
+          "compressed_bytes": 2459,
+          "pack": "卢音",
+          "sha": "eaeaa4ce292303fcf0af16eccc5cf6c3e720927859a5309b26e1c19d36bdafa2"
+        },
+        {
+          "name": "嘿嘿2",
+          "src": "嘿嘿2.mp3",
+          "path": "dir06/clip11.opus",
+          "samples": 15040,
+          "duration": 0.94,
+          "compressed_bytes": 1802,
+          "pack": "卢音",
+          "sha": "c4dc4c594ce6a558752ba92e45644d78aaea03d9dfeaa287af65784c5dee4bb9"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 4261,
+      "save_min": 1802,
+      "save_max": 2459,
+      "id": "G39",
+      "keep": "dir06/clip10.opus",
+      "keep_name": "嘿嘿"
+    },
+    {
+      "pack": "MC",
+      "root": "打击",
+      "items": [
+        {
+          "name": "(打击1)",
+          "src": "(打击1).mp3",
+          "path": "dir01/clip00.opus",
+          "samples": 8640,
+          "duration": 0.54,
+          "compressed_bytes": 742,
+          "pack": "MC",
+          "sha": "512c9de193c2a3477aaeefd54fe1ac263679b62ad48582d3deb3a5e9513c0a09"
+        },
+        {
+          "name": "(打击2)",
+          "src": "(打击2).mp3",
+          "path": "dir01/clip01.opus",
+          "samples": 8640,
+          "duration": 0.54,
+          "compressed_bytes": 832,
+          "pack": "MC",
+          "sha": "89f7186f4079d74d5127f5598e84610ecac374478781a8d3e518491f8f84d962"
+        },
+        {
+          "name": "(打击3)",
+          "src": "(打击3).mp3",
+          "path": "dir01/clip02.opus",
+          "samples": 8640,
+          "duration": 0.54,
+          "compressed_bytes": 724,
+          "pack": "MC",
+          "sha": "d2b4b076f523c587db1bae40b8939a006455183bf525896ca317bd120afa5a74"
+        },
+        {
+          "name": "（打击4)",
+          "src": "（打击4).mp3",
+          "path": "dir01/clip13.opus",
+          "samples": 8640,
+          "duration": 0.54,
+          "compressed_bytes": 771,
+          "pack": "MC",
+          "sha": "56ae7bcd68ba962b3aa42a8fdff504b41b8d20f1cb6ef01a014a0d79c34409cd"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 4,
+      "total": 3069,
+      "save_min": 2237,
+      "save_max": 2345,
+      "id": "G40",
+      "keep": "dir01/clip00.opus",
+      "keep_name": "(打击1)"
+    },
+    {
+      "pack": "刘华强",
+      "root": "这瓜保熟吗",
+      "items": [
+        {
+          "name": "这瓜保熟吗",
+          "src": "这瓜保熟吗.mp3",
+          "path": "dir03/clip12.opus",
+          "samples": 16640,
+          "duration": 1.04,
+          "compressed_bytes": 1020,
+          "pack": "刘华强",
+          "sha": "e40b9cf196a9285347d2a047bc65562b180c09d115ddd2e7b4bf45c6d8ba7d06"
+        },
+        {
+          "name": "我问你这瓜保熟吗？",
+          "src": "我问你这瓜保熟吗？.mp3",
+          "path": "dir03/clip14.opus",
+          "samples": 32800,
+          "duration": 2.05,
+          "compressed_bytes": 2105,
+          "pack": "刘华强",
+          "sha": "fd4baa815ed30fe4789bc79fadb34949cef3b0a5f3bbd2d0366d0ffd1a5d1e45"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 3125,
+      "save_min": 1020,
+      "save_max": 2105,
+      "id": "G41",
+      "keep": "dir03/clip12.opus",
+      "keep_name": "这瓜保熟吗"
+    },
+    {
+      "pack": "刘华强",
+      "root": "你故意找茬是不是？",
+      "items": [
+        {
+          "name": "你故意找茬是不是？",
+          "src": "你故意找茬是不是？.mp3",
+          "path": "dir03/clip16.opus",
+          "samples": 28160,
+          "duration": 1.76,
+          "compressed_bytes": 1825,
+          "pack": "刘华强",
+          "sha": "5f3adfa0e6659f194c3081e9bd72bd32710a6615e8d34c8433fe48bcaa77a472"
+        },
+        {
+          "name": "你TM故意找茬是不是？",
+          "src": "你TM故意找茬是不是？.mp3",
+          "path": "dir03/clip22.opus",
+          "samples": 28160,
+          "duration": 1.76,
+          "compressed_bytes": 1784,
+          "pack": "刘华强",
+          "sha": "3ac27d58cdc23e0815aeae104f5be90770890838f7ab737376a0ab94febef93e"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 3609,
+      "save_min": 1784,
+      "save_max": 1825,
+      "id": "G42",
+      "keep": "dir03/clip16.opus",
+      "keep_name": "你故意找茬是不是？"
+    },
+    {
+      "pack": "纸片人捷风",
+      "root": "啊",
+      "items": [
+        {
+          "name": "啊？！",
+          "src": "啊？！.mp3",
+          "path": "dir20/clip24.opus",
+          "samples": 9760,
+          "duration": 0.61,
+          "compressed_bytes": 1297,
+          "pack": "纸片人捷风",
+          "sha": "15a95391efacc1ce1a2fc5f5e89e04d2d5a14b50f79332ba3668ca4300d167e0"
+        },
+        {
+          "name": "啊？！！",
+          "src": "啊？！！.mp3",
+          "path": "dir20/clip25.opus",
+          "samples": 12640,
+          "duration": 0.79,
+          "compressed_bytes": 1658,
+          "pack": "纸片人捷风",
+          "sha": "821e99a99604069ae2b621c4394ad1d6b3acc207eab157c66b009154f5ef8610"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 2955,
+      "save_min": 1297,
+      "save_max": 1658,
+      "id": "G43",
+      "keep": "dir20/clip24.opus",
+      "keep_name": "啊？！"
+    },
+    {
+      "pack": "吉伊卡哇",
+      "root": "哦哈呦(短)",
+      "items": [
+        {
+          "name": "哦哈呦(短)",
+          "src": "哦哈呦(短).mp3",
+          "path": "dir08/clip17.opus",
+          "samples": 10400,
+          "duration": 0.65,
+          "compressed_bytes": 1231,
+          "pack": "吉伊卡哇",
+          "sha": "e6d289cac9e2517f4930e16afd3c311517219ca36acf3d13444bb4be522bcfe0"
+        },
+        {
+          "name": "哦哈呦(长)",
+          "src": "哦哈呦(长).mp3",
+          "path": "dir08/clip18.opus",
+          "samples": 15040,
+          "duration": 0.94,
+          "compressed_bytes": 1658,
+          "pack": "吉伊卡哇",
+          "sha": "dc666dc95eb1a6fde4383ff853a4edf4f7d1f5539a625949bb10f908bc55352c"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 2889,
+      "save_min": 1231,
+      "save_max": 1658,
+      "id": "G44",
+      "keep": "dir08/clip17.opus",
+      "keep_name": "哦哈呦(短)"
+    },
+    {
+      "pack": "我要验牌法国赌神",
+      "root": "开牌",
+      "items": [
+        {
+          "name": "开牌",
+          "src": "开牌.mp3",
+          "path": "dir15/clip04.opus",
+          "samples": 9760,
+          "duration": 0.61,
+          "compressed_bytes": 1171,
+          "pack": "我要验牌法国赌神",
+          "sha": "b73e5531451c25161148976770306fdc8ca75408c61496535e8ce03c5556cd77"
+        },
+        {
+          "name": "开牌啊",
+          "src": "开牌啊.mp3",
+          "path": "dir15/clip05.opus",
+          "samples": 13280,
+          "duration": 0.83,
+          "compressed_bytes": 1588,
+          "pack": "我要验牌法国赌神",
+          "sha": "29d1387be9f093a63221a80450b5abc11d3575c6caf67dc95cd9fb7aaff5d912"
+        }
+      ],
+      "kind": "近义/同梗系列（需试听）",
+      "count": 2,
+      "total": 2759,
+      "save_min": 1171,
+      "save_max": 1588,
+      "id": "G45",
+      "keep": "dir15/clip04.opus",
+      "keep_name": "开牌"
+    },
+    {
+      "pack": "刘华强",
+      "root": "你要不要吧",
+      "items": [
+        {
+          "name": "你要不要吧？",
+          "src": "你要不要吧？.mp3",
+          "path": "dir03/clip17.opus",
+          "samples": 20160,
+          "duration": 1.26,
+          "compressed_bytes": 1260,
+          "pack": "刘华强",
+          "sha": "fc3c79a2d505c5fb5d32ab871b59084e202b1776640db567bdbd39aefeae7361"
+        },
+        {
+          "name": "你要不要吧！",
+          "src": "你要不要吧！.mp3",
+          "path": "dir03/clip23.opus",
+          "samples": 16160,
+          "duration": 1.01,
+          "compressed_bytes": 1040,
+          "pack": "刘华强",
+          "sha": "6d51624667f04ae2819fa4d903b6e48137f5bf3443a2ddf972047f6c6400c05c"
+        }
+      ],
+      "kind": "编号/标点变体",
+      "count": 2,
+      "total": 2300,
+      "save_min": 1040,
+      "save_max": 1260,
+      "id": "G46",
+      "keep": "dir03/clip17.opus",
+      "keep_name": "你要不要吧？"
+    }
+  ]
+}

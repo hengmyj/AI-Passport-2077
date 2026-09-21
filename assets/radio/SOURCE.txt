@@ -1,0 +1,9 @@
+LEO Radio integration
+Source: https://github.com/leo0183/leo-radio
+Commit: e28b8adafb2ca95e386e8b6e7db0db042cf09523
+Copyright (c) 2026 Leo. MIT license retained in LICENSE.txt.
+Adapted catalog, frequency parsing and MP3 streaming; new badge theme UI, lifecycle, navigation and bounded shutdown.
+No upstream video/easter-egg assets, standalone Wi-Fi manager or system sleep controller are included.
+
+Decoder: Espressif esp_audio_codec 2.5.0 (managed dependency).
+Espressif Modified MIT License, exclusively for Espressif products; full notice in ESP_AUDIO_CODEC_LICENSE.txt.

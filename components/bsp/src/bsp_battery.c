@@ -22,6 +22,9 @@ static const char *TAG = "bsp_batt";
 #define CW_CONFIG_SLEEP   0xF0
 #define CW_UPDATE_FLAG    0x80
 #define CW_PROFILE_SIZE   80
+/* A freshly woken CW2017 reports 0.00% while it rebuilds SOC. At a normal
+ * cell voltage that is a transient value, not an empty battery. */
+#define CW_EMPTY_MAX_MV   3300
 
 static const uint8_t s_battery_profile[CW_PROFILE_SIZE] = {
     0x64, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -40,6 +43,7 @@ _Static_assert(sizeof(s_battery_profile) == CW_PROFILE_SIZE,
                "CW2017 battery profile must contain exactly 80 bytes");
 
 static i2c_master_dev_handle_t s_dev;
+static int s_last_soc = -1;
 
 static esp_err_t cw_read(uint8_t reg, uint8_t *buf, size_t n) {
     if (!s_dev) return ESP_ERR_INVALID_STATE;
@@ -112,12 +116,25 @@ static int cw_update_profile(void) {
     return cw_enter_active();
 }
 
-// 首次计算期间 SOC 可能暂时大于 100；最多等待 5 秒再判定初始化失败。
+static int cw_voltage_mv(void) {
+    uint8_t b[2] = { 0 };
+    if (cw_read(CW_REG_VCELL_H, b, 2) != 0) return -1;
+    uint32_t raw = ((uint32_t)b[0] << 8 | b[1]) & 0x3FFF;
+    return raw ? (int)((raw * 3125) / 10000) : -1;
+}
+
+// 首次计算期间 SOC 可能暂时为 0 或大于 100；最多等待 5 秒。
 static int cw_wait_soc_ready(void) {
     for (int retry = 0; retry < 50; retry++) {
-        uint8_t soc = 0;
+        uint8_t soc[2] = { 0 };
         vTaskDelay(pdMS_TO_TICKS(100));
-        if (cw_read(CW_REG_SOC_H, &soc, 1) == 0 && soc <= 100) return 0;
+        if (cw_read(CW_REG_SOC_H, soc, 2) != 0 || soc[0] > 100) continue;
+        int voltage_mv = cw_voltage_mv();
+        if (soc[0] > 0 || soc[1] > 0 ||
+            (voltage_mv > 0 && voltage_mv <= CW_EMPTY_MAX_MV)) {
+            s_last_soc = soc[0];
+            return 0;
+        }
     }
     return -1;
 }
@@ -217,12 +234,12 @@ int bsp_battery_soc(void) {
     if (cw_read(CW_REG_SOC_H, b, 2) != 0) return -1;
     int soc = b[0];                       // 高字节即整数百分比
     if (soc > 100) return -1;             // 芯片未就绪时可能读到 0xFF
+    if (soc == 0 && b[1] == 0) {
+        int voltage_mv = cw_voltage_mv();
+        if (voltage_mv < 0 || voltage_mv > CW_EMPTY_MAX_MV) return s_last_soc;
+    }
+    s_last_soc = soc;
     return soc;
 }
 
-int bsp_battery_mv(void) {
-    uint8_t b[2] = { 0 };
-    if (cw_read(CW_REG_VCELL_H, b, 2) != 0) return -1;
-    uint32_t raw = ((uint32_t)b[0] << 8 | b[1]) & 0x3FFF;   // 14bit
-    return (int)((raw * 3125) / 10000);                     // raw * 312.5uV → mV
-}
+int bsp_battery_mv(void) { return cw_voltage_mv(); }

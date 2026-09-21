@@ -6,6 +6,7 @@
 #include "esp_lcd_types.h"
 #include <stdbool.h>
 #include <stdint.h>
+#include <stddef.h>
 
 // The final LVGL frame is masked to this radius; pixels outside are pure black.
 #define BSP_LVGL_SCREEN_RADIUS 30
@@ -23,6 +24,11 @@ esp_lcd_panel_io_handle_t bsp_display_io(void);
 
 // 背光亮度 0..100(%)。LEDC PWM,0=全灭。
 void bsp_display_backlight(uint8_t percent);
+uint8_t bsp_display_brightness(void);
+/* Reversible panel/LVGL standby, from a worker without the LVGL lock.
+ * Stops both LVGL task and tick. Resume restores saved brightness, or 80%. */
+esp_err_t bsp_display_suspend(void);
+esp_err_t bsp_display_resume(void);
 
 // deep sleep 专用：关闭显示、让 ST7789 进入 Sleep In，停止背光 PWM，
 // 将 CS/SCLK/MOSI/DC/背光设为安全电平并在 deep sleep 中保持。调用时必须
@@ -37,12 +43,21 @@ esp_err_t bsp_display_prepare_deep_sleep(void);
 // 故此处用 struct 形式即可,避免本头文件强行 include lvgl.h。
 struct _lv_display_t;
 
-// 启动 LVGL 与其渲染任务,返回 lv_display_t*。失败返回 NULL；display/回调注册失败
-// 回滚 display 并保留已初始化的 port，后续可重试。port 自身部分初始化失败需重启，
-// 不覆盖依赖中可能尚未退出的任务。首次初始化由单一任务串行调用。
+// 启动 LVGL 与其渲染任务,返回 lv_display_t*。失败返回 NULL；display 注册失败会回滚 port。
 struct _lv_display_t *bsp_lvgl_init(void);
 
 // LVGL 非线程安全:在【非 LVGL 任务】里操作任何 lv_* 对象前后必须加解锁。
 // LVGL 尚未就绪或超时时 lock 返回 false；只有 lock 成功后才调用 unlock。
 bool bsp_lvgl_lock(int timeout_ms);
 void bsp_lvgl_unlock(void);
+
+/* Capture the actual device-rendered RGB565LE flush stream. Caller MUST hold
+ * the LVGL lock, from a worker (not a draw/timer callback). The synchronous
+ * sink must have a bounded timeout and must not call LVGL. Uses the existing
+ * partial draw buffer, no full framebuffer. Does not wake a sleeping display
+ * or change page/settings. Returns an error on incomplete output. */
+typedef bool (*bsp_display_capture_write_fn)(const uint8_t *, size_t, void *);
+esp_err_t bsp_display_capture_rgb565(bsp_display_capture_write_fn write, void *context);
+
+/* Actual task/panel transition state, including a failed rollback. */
+bool bsp_display_is_suspended(void);

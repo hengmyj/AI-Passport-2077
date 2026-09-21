@@ -1,0 +1,3465 @@
+{
+  "version": "2.6.18",
+  "scope": "Only the 39 reviewed clips at least 15 seconds; keep review IDs 4,7,8,14,19,24,25,29.",
+  "before_count": 726,
+  "after_count": 695,
+  "before_bytes": 4270480,
+  "after_bytes": 3293101,
+  "saved_bytes": 977379,
+  "kept": [
+    {
+      "name": "rap",
+      "src": "rap.mp3",
+      "path": "dir11/clip00.opus",
+      "samples": 433760,
+      "duration": 27.11,
+      "compressed_bytes": 43229,
+      "category": "宝宝肚肚打雷",
+      "seconds": 27.04,
+      "index_seconds": 27.11,
+      "id": 4,
+      "preview": "04.wav",
+      "source_sha256": "1b18896899fa356dcb1fe7a7aa1afe4fd6939ed946c32574c9a9d15fb935ac04"
+    },
+    {
+      "name": "挨刀马DJ2",
+      "src": "挨刀马DJ2.mp3",
+      "path": "dir20/clip30.opus",
+      "samples": 408320,
+      "duration": 25.52,
+      "compressed_bytes": 40388,
+      "category": "纸片人捷风",
+      "seconds": 25.44,
+      "index_seconds": 25.52,
+      "id": 7,
+      "preview": "07.wav",
+      "source_sha256": "23a8409e1dc3eb97397490d5fab1382b3efc8ab011b992f5a6b0a54a0a402be5"
+    },
+    {
+      "name": "《没出息》",
+      "src": "《没出息》.mp3",
+      "path": "dir18/clip00.opus",
+      "samples": 403200,
+      "duration": 25.2,
+      "compressed_bytes": 39163,
+      "category": "王世坚",
+      "seconds": 25.12,
+      "index_seconds": 25.2,
+      "id": 8,
+      "preview": "08.wav",
+      "source_sha256": "2ecc461d6cbecc3bb7e1358f15b845e7fc94de52cd2bd6d62f02994f461100b6"
+    },
+    {
+      "name": "哈基歌",
+      "src": "哈基歌.mp3",
+      "path": "dir09/clip08.opus",
+      "samples": 337600,
+      "duration": 21.1,
+      "compressed_bytes": 33318,
+      "category": "哈基米",
+      "seconds": 21.04,
+      "index_seconds": 21.1,
+      "id": 14,
+      "preview": "14.wav",
+      "source_sha256": "25b3e6ec0d70c37c46095a20b64c366c42191a7e2a81a70f3f0f3853c495912b"
+    },
+    {
+      "name": "咪咪咪",
+      "src": "咪咪咪.mp3",
+      "path": "dir22/clip09.opus",
+      "samples": 304160,
+      "duration": 19.01,
+      "compressed_bytes": 30324,
+      "category": "高松灯",
+      "seconds": 18.96,
+      "index_seconds": 19.01,
+      "id": 19,
+      "preview": "19.wav",
+      "source_sha256": "3cac73ef577233a1ca472bb97518491c02ddc07b1a34a14b91280334ef6ba462"
+    },
+    {
+      "name": "天空",
+      "src": "天空.mp3",
+      "path": "dir22/clip13.opus",
+      "samples": 276480,
+      "duration": 17.28,
+      "compressed_bytes": 27515,
+      "category": "高松灯",
+      "seconds": 17.22,
+      "index_seconds": 17.28,
+      "id": 24,
+      "preview": "24.wav",
+      "source_sha256": "eef97c2175b1f25c154cba89693177210a00552d20b58ed153a5697ed6034cd3"
+    },
+    {
+      "name": "只因你太美",
+      "src": "只因你太美.mp3",
+      "path": "dir23/clip07.opus",
+      "samples": 276480,
+      "duration": 17.28,
+      "compressed_bytes": 26866,
+      "category": "鸡乐",
+      "seconds": 17.2,
+      "index_seconds": 17.28,
+      "id": 25,
+      "preview": "25.wav",
+      "source_sha256": "68b7f28c2ee3c9f8760b5bf3bb55686bfe139cf1f06ef72c1abbe3f99bd74ac8"
+    },
+    {
+      "name": "漫波歌",
+      "src": "漫波歌.mp3",
+      "path": "dir09/clip29.opus",
+      "samples": 267840,
+      "duration": 16.74,
+      "compressed_bytes": 26583,
+      "category": "哈基米",
+      "seconds": 16.66,
+      "index_seconds": 16.74,
+      "id": 29,
+      "preview": "29.wav",
+      "source_sha256": "3c80e05789050d117613d62a491e63d10873814701553ab4915bb4c7caeaa511"
+    }
+  ],
+  "removed": [
+    {
+      "name": "大哥别杀我",
+      "src": "大哥别杀我.mp3",
+      "path": "dir12/clip20.opus",
+      "samples": 487840,
+      "duration": 30.49,
+      "compressed_bytes": 48274,
+      "category": "小团团",
+      "seconds": 30.44,
+      "index_seconds": 30.49,
+      "id": 1,
+      "preview": "01.wav",
+      "source_sha256": "48c96f7d00e82b673839b41dff15229d8a178210e925f6c8717db65c49ae347a"
+    },
+    {
+      "name": "马云歌",
+      "src": "马云歌.mp3",
+      "path": "dir09/clip38.opus",
+      "samples": 473440,
+      "duration": 29.59,
+      "compressed_bytes": 46510,
+      "category": "哈基米",
+      "seconds": 29.54,
+      "index_seconds": 29.59,
+      "id": 2,
+      "preview": "02.wav",
+      "source_sha256": "7436d45193b1eee4d85ee8b3d7e9b0daeda09fb1f757fe93cd374287bb1bd88e"
+    },
+    {
+      "name": "卡拉game",
+      "src": "卡拉game.mp3",
+      "path": "dir05/clip02.opus",
+      "samples": 466560,
+      "duration": 29.16,
+      "compressed_bytes": 45096,
+      "category": "卡丘米雪儿",
+      "seconds": 29.1,
+      "index_seconds": 29.16,
+      "id": 3,
+      "preview": "03.wav",
+      "source_sha256": "b0fc63e2afe720999e4d0b72aead3db8507efd96533a75ac3b06192067a43d81"
+    },
+    {
+      "name": "出卖歌",
+      "src": "出卖歌.mp3",
+      "path": "dir09/clip02.opus",
+      "samples": 430880,
+      "duration": 26.93,
+      "compressed_bytes": 42705,
+      "category": "哈基米",
+      "seconds": 26.88,
+      "index_seconds": 26.93,
+      "id": 5,
+      "preview": "05.wav",
+      "source_sha256": "2b48ea5b24cc096e1c863b7abfeb5b072561c0e26e71b9d4a7b8b2c7cfeab2f7"
+    },
+    {
+      "name": "新人注意",
+      "src": "新人注意.mp3",
+      "path": "dir05/clip23.opus",
+      "samples": 412480,
+      "duration": 25.78,
+      "compressed_bytes": 40800,
+      "category": "卡丘米雪儿",
+      "seconds": 25.68,
+      "index_seconds": 25.78,
+      "id": 6,
+      "preview": "06.wav",
+      "source_sha256": "e5c549e91e9a671d2f2eda4bd07a25d23a9ba31e2ff06a8891d9847e59aadffd"
+    },
+    {
+      "name": "广西大诗",
+      "src": "广西大诗.mp3",
+      "path": "dir09/clip21.opus",
+      "samples": 399680,
+      "duration": 24.98,
+      "compressed_bytes": 39661,
+      "category": "哈基米",
+      "seconds": 24.92,
+      "index_seconds": 24.98,
+      "id": 9,
+      "preview": "09.wav",
+      "source_sha256": "24a6280c02e3cb43065e3c2273d9716b8bff8d9f9181dc64fd0d1ac2b0b2b21a"
+    },
+    {
+      "name": "新年鸡",
+      "src": "新年鸡.mp3",
+      "path": "dir23/clip25.opus",
+      "samples": 399680,
+      "duration": 24.98,
+      "compressed_bytes": 38792,
+      "category": "鸡乐",
+      "seconds": 24.9,
+      "index_seconds": 24.98,
+      "id": 10,
+      "preview": "10.wav",
+      "source_sha256": "b15c1a30ada277f2757f4ec1129eeae546552ee94b31a7131b7a5cec2e805265"
+    },
+    {
+      "name": "二手鸡",
+      "src": "二手鸡.mp3",
+      "path": "dir23/clip06.opus",
+      "samples": 373280,
+      "duration": 23.33,
+      "compressed_bytes": 36685,
+      "category": "鸡乐",
+      "seconds": 23.26,
+      "index_seconds": 23.33,
+      "id": 11,
+      "preview": "11.wav",
+      "source_sha256": "9822d3021d4dbab0b11d3f1ca7283e7b2c09f2c4da34712d362b6621fe398d68"
+    },
+    {
+      "name": "持续man",
+      "src": "持续man.mp3",
+      "path": "dir19/clip04.opus",
+      "samples": 365760,
+      "duration": 22.86,
+      "compressed_bytes": 35801,
+      "category": "科比",
+      "seconds": 22.78,
+      "index_seconds": 22.86,
+      "id": 12,
+      "preview": "12.wav",
+      "source_sha256": "374ed74932b2898d5053e6ea626b5b957262e0a68c1b9ffdbf662907d919339e"
+    },
+    {
+      "name": "基米朵朵开",
+      "src": "基米朵朵开.mp3",
+      "path": "dir09/clip16.opus",
+      "samples": 359360,
+      "duration": 22.46,
+      "compressed_bytes": 35700,
+      "category": "哈基米",
+      "seconds": 22.4,
+      "index_seconds": 22.46,
+      "id": 13,
+      "preview": "13.wav",
+      "source_sha256": "aa321c9bc0b794a37b5eb815cebf9bb99743d95b7f596274e61ad0a95d377130"
+    },
+    {
+      "name": "桃花鸡",
+      "src": "桃花鸡.mp3",
+      "path": "dir23/clip26.opus",
+      "samples": 321440,
+      "duration": 20.09,
+      "compressed_bytes": 30878,
+      "category": "鸡乐",
+      "seconds": 20.0,
+      "index_seconds": 20.09,
+      "id": 15,
+      "preview": "15.wav",
+      "source_sha256": "50a4ab1ad7e898c7068a94b3b601dcdbc47d56de36915f20e4c2bbe40aa26a08"
+    },
+    {
+      "name": "骑上我心爱的小摩托",
+      "src": "骑上我心爱的小摩托.mp3",
+      "path": "dir12/clip42.opus",
+      "samples": 315040,
+      "duration": 19.69,
+      "compressed_bytes": 31299,
+      "category": "小团团",
+      "seconds": 19.6,
+      "index_seconds": 19.69,
+      "id": 16,
+      "preview": "16.wav",
+      "source_sha256": "c8b38fba4ac02f38bb399e72074df9fcb21f5c7b9b5f4ad44abb379e17d2fdfe"
+    },
+    {
+      "name": "哈基米雪冰城",
+      "src": "哈基米雪冰城.mp3",
+      "path": "dir09/clip12.opus",
+      "samples": 313920,
+      "duration": 19.62,
+      "compressed_bytes": 31153,
+      "category": "哈基米",
+      "seconds": 19.54,
+      "index_seconds": 19.62,
+      "id": 17,
+      "preview": "17.wav",
+      "source_sha256": "161072b2cc30cc09ffd96ab4f0e11c8868e9b2dd8fab4b82691019b3d792ab94"
+    },
+    {
+      "name": "我从南极来",
+      "src": "我从南极来.mp3",
+      "path": "dir22/clip15.opus",
+      "samples": 305280,
+      "duration": 19.08,
+      "compressed_bytes": 29520,
+      "category": "高松灯",
+      "seconds": 19.0,
+      "index_seconds": 19.08,
+      "id": 18,
+      "preview": "18.wav",
+      "source_sha256": "ed925cf926422662c7bd1bf5f158e242f2fc7ce95ad247fb2fc8e61a62e02a46"
+    },
+    {
+      "name": "黎明歌",
+      "src": "黎明歌.mp3",
+      "path": "dir09/clip39.opus",
+      "samples": 303040,
+      "duration": 18.94,
+      "compressed_bytes": 30072,
+      "category": "哈基米",
+      "seconds": 18.88,
+      "index_seconds": 18.94,
+      "id": 20,
+      "preview": "20.wav",
+      "source_sha256": "1e3acd24e2000689962d6b02dbc2b896823d8ecfb3a78a2afe3f7988505e64ad"
+    },
+    {
+      "name": "小跳哈基米",
+      "src": "小跳哈基米.mp3",
+      "path": "dir09/clip19.opus",
+      "samples": 292000,
+      "duration": 18.25,
+      "compressed_bytes": 28762,
+      "category": "哈基米",
+      "seconds": 18.18,
+      "index_seconds": 18.25,
+      "id": 21,
+      "preview": "21.wav",
+      "source_sha256": "2e588a436d174152dc8765d92106613376ee4d5d2bac9872214c30cdedb04104"
+    },
+    {
+      "name": "山坡歌",
+      "src": "山坡歌.mp3",
+      "path": "dir09/clip20.opus",
+      "samples": 288640,
+      "duration": 18.04,
+      "compressed_bytes": 28253,
+      "category": "哈基米",
+      "seconds": 17.96,
+      "index_seconds": 18.04,
+      "id": 22,
+      "preview": "22.wav",
+      "source_sha256": "720657da9882f57481761d10e7b346cd0dc7b10a4050471cc8d189438efb8d58"
+    },
+    {
+      "name": "魔术",
+      "src": "魔术.mp3",
+      "path": "dir05/clip35.opus",
+      "samples": 284000,
+      "duration": 17.75,
+      "compressed_bytes": 28174,
+      "category": "卡丘米雪儿",
+      "seconds": 17.68,
+      "index_seconds": 17.75,
+      "id": 23,
+      "preview": "23.wav",
+      "source_sha256": "3f1d0a615af2d34174cdbfd6284d87db7847f3ab049975a51ed69b902a82a343"
+    },
+    {
+      "name": "DJ鸡",
+      "src": "DJ鸡.mp3",
+      "path": "dir23/clip00.opus",
+      "samples": 275840,
+      "duration": 17.24,
+      "compressed_bytes": 26800,
+      "category": "鸡乐",
+      "seconds": 17.16,
+      "index_seconds": 17.24,
+      "id": 26,
+      "preview": "26.wav",
+      "source_sha256": "622fcf43203901c4e9988d427fd058fda4eb793c241cdb2e032adfb5bd305dc2"
+    },
+    {
+      "name": "大吉大利",
+      "src": "大吉大利.mp3",
+      "path": "dir09/clip17.opus",
+      "samples": 271840,
+      "duration": 16.99,
+      "compressed_bytes": 26839,
+      "category": "哈基米",
+      "seconds": 16.9,
+      "index_seconds": 16.99,
+      "id": 27,
+      "preview": "27.wav",
+      "source_sha256": "6d239353bb0676c04bc147b3bc63a4480053a08ed95e70ae849a3ae9c0bc7ac2"
+    },
+    {
+      "name": "鸡蛋里并没有放葱（犯错）",
+      "src": "鸡蛋里并没有放葱（犯错）.mp3",
+      "path": "dir20/clip49.opus",
+      "samples": 268480,
+      "duration": 16.78,
+      "compressed_bytes": 26738,
+      "category": "纸片人捷风",
+      "seconds": 16.7,
+      "index_seconds": 16.78,
+      "id": 28,
+      "preview": "28.wav",
+      "source_sha256": "9f116b1df30206dc42baf995227e5287086836a23091898c4282b70882d89215"
+    },
+    {
+      "name": "惊魂鸡",
+      "src": "惊魂鸡.mp3",
+      "path": "dir23/clip24.opus",
+      "samples": 266080,
+      "duration": 16.63,
+      "compressed_bytes": 25434,
+      "category": "鸡乐",
+      "seconds": 16.54,
+      "index_seconds": 16.63,
+      "id": 30,
+      "preview": "30.wav",
+      "source_sha256": "cca5c518e78491c6c51faff90fbf4d30ca2ab5e695a64ffb2d1cb4b68002c286"
+    },
+    {
+      "name": "梦中歌",
+      "src": "梦中歌.mp3",
+      "path": "dir09/clip25.opus",
+      "samples": 260320,
+      "duration": 16.27,
+      "compressed_bytes": 25844,
+      "category": "哈基米",
+      "seconds": 16.2,
+      "index_seconds": 16.27,
+      "id": 31,
+      "preview": "31.wav",
+      "source_sha256": "a529860cb1b7be95a82a1ef25b26775b6719c6c9aefcd78f9210aa94b9edf308"
+    },
+    {
+      "name": "C哩歌",
+      "src": "C哩歌.mp3",
+      "path": "dir09/clip00.opus",
+      "samples": 259200,
+      "duration": 16.2,
+      "compressed_bytes": 25679,
+      "category": "哈基米",
+      "seconds": 16.14,
+      "index_seconds": 16.2,
+      "id": 32,
+      "preview": "32.wav",
+      "source_sha256": "b65556cd8cb94d72681830620e0843597f9fb13a2a4cf402b76c7da7671aa245"
+    },
+    {
+      "name": "大风车",
+      "src": "大风车.mp3",
+      "path": "dir12/clip21.opus",
+      "samples": 254080,
+      "duration": 15.88,
+      "compressed_bytes": 25170,
+      "category": "小团团",
+      "seconds": 15.8,
+      "index_seconds": 15.88,
+      "id": 33,
+      "preview": "33.wav",
+      "source_sha256": "63e0fb4399b8c3bf899e834542359f1e1c13c29878e975144298dd6365c337f2"
+    },
+    {
+      "name": "哦耶歌",
+      "src": "哦耶歌.mp3",
+      "path": "dir09/clip14.opus",
+      "samples": 254080,
+      "duration": 15.88,
+      "compressed_bytes": 25100,
+      "category": "哈基米",
+      "seconds": 15.8,
+      "index_seconds": 15.88,
+      "id": 34,
+      "preview": "34.wav",
+      "source_sha256": "863978dc439d7a0156cffe8b6390c37e567c136bc71d7fc43f59d6ad46504e21"
+    },
+    {
+      "name": "沉默歌",
+      "src": "沉默歌.mp3",
+      "path": "dir09/clip27.opus",
+      "samples": 251200,
+      "duration": 15.7,
+      "compressed_bytes": 24786,
+      "category": "哈基米",
+      "seconds": 15.62,
+      "index_seconds": 15.7,
+      "id": 35,
+      "preview": "35.wav",
+      "source_sha256": "a3b505152a91e17bdb5bc088a988a6e2ea5f1f49a82084fd3dfafd42ffa826d8"
+    },
+    {
+      "name": "连招",
+      "src": "连招.mp3",
+      "path": "dir23/clip34.opus",
+      "samples": 247680,
+      "duration": 15.48,
+      "compressed_bytes": 24272,
+      "category": "鸡乐",
+      "seconds": 15.4,
+      "index_seconds": 15.48,
+      "id": 36,
+      "preview": "36.wav",
+      "source_sha256": "b88ca52e25e3719e60554fa7c111afb670045bb9d6d0a971adf7a0f4189e96f5"
+    },
+    {
+      "name": "香蕉歌",
+      "src": "香蕉歌.mp3",
+      "path": "dir09/clip37.opus",
+      "samples": 247040,
+      "duration": 15.44,
+      "compressed_bytes": 24256,
+      "category": "哈基米",
+      "seconds": 15.36,
+      "index_seconds": 15.44,
+      "id": 37,
+      "preview": "37.wav",
+      "source_sha256": "dba61ea6b90ae488a7734d6c3a8d3cb14927c6497d647d62a83ce06ece6a6adc"
+    },
+    {
+      "name": "当当当",
+      "src": "当当当.mp3",
+      "path": "dir12/clip25.opus",
+      "samples": 245920,
+      "duration": 15.37,
+      "compressed_bytes": 24268,
+      "category": "小团团",
+      "seconds": 15.3,
+      "index_seconds": 15.37,
+      "id": 38,
+      "preview": "38.wav",
+      "source_sha256": "a413f2710de4d787c5eb5c8a18f8e4bdcf8cf3520d5f6d5e4267d98802b4eb3b"
+    },
+    {
+      "name": "哈基米山歌",
+      "src": "哈基米山歌.mp3",
+      "path": "dir09/clip11.opus",
+      "samples": 244800,
+      "duration": 15.3,
+      "compressed_bytes": 24058,
+      "category": "哈基米",
+      "seconds": 15.24,
+      "index_seconds": 15.3,
+      "id": 39,
+      "preview": "39.wav",
+      "source_sha256": "42fba5a30b365326a089f61f52c2cf1a236592b8cd2edc0df0978c030052fc18"
+    }
+  ],
+  "before_assets": {
+    "dir00/clip00.opus": {
+      "sha256": "70055b451d63b16dbdf8ff58c02c989d501ae647259acd5fa758a50d7de9ec54",
+      "bytes": 3365
+    },
+    "dir00/clip01.opus": {
+      "sha256": "540572df234fa0925cbb9a6c0c70216028b0e6e12c0c97e42e0bfff2aa0eb7ea",
+      "bytes": 4943
+    },
+    "dir00/clip02.opus": {
+      "sha256": "b88b85ac292632aa0a2b0db7643e31f034aa2b6ebd117dd12be96c3d17460c72",
+      "bytes": 5994
+    },
+    "dir00/clip03.opus": {
+      "sha256": "34fc792423058c120f2752d8d4bcaa4f2348b3cee1fc2644a6a8e6c916727eab",
+      "bytes": 3850
+    },
+    "dir00/clip04.opus": {
+      "sha256": "6b728f73b5cf947b54cb02f9afbc0a071e4cfa83e705e0089c969b23884082c1",
+      "bytes": 4330
+    },
+    "dir00/clip05.opus": {
+      "sha256": "72139e4f6af8643451a6bac8569b984bab51779e097e370e02bda5e2be075abc",
+      "bytes": 3581
+    },
+    "dir00/clip06.opus": {
+      "sha256": "2274c6741be0692373e5e80746fbbf654ae9318b6676fcd3463bdf232ed9af8d",
+      "bytes": 2111
+    },
+    "dir00/clip08.opus": {
+      "sha256": "2dcbc3eab71d7a8f37d11293b556d488d5a71c28e022232b64fbd91926eda419",
+      "bytes": 5959
+    },
+    "dir00/clip09.opus": {
+      "sha256": "96b3dc35d5b740d229b2d842fab9a7b20529b30ec5d88199d1379e00bfb1725c",
+      "bytes": 3723
+    },
+    "dir00/clip10.opus": {
+      "sha256": "94db9b0d5639871a1aab70580c508632a46c80cb09b8ebc5415ab5651570f07c",
+      "bytes": 2593
+    },
+    "dir00/clip11.opus": {
+      "sha256": "a5f0631c9af317c083da4af15eeeb9257ad471056433fb3ed9e35c9b6ba5933c",
+      "bytes": 5169
+    },
+    "dir00/clip13.opus": {
+      "sha256": "1d40efad532ae85585d403e7ab2f618feaad96a23fe2694fd28bf6ece3a6ff2b",
+      "bytes": 4732
+    },
+    "dir00/clip14.opus": {
+      "sha256": "90a64ff6364a42443d96fd73244e20f65a1d32a4f05557296f342ba473d9d41e",
+      "bytes": 4937
+    },
+    "dir00/clip15.opus": {
+      "sha256": "71405971a5d7a4ad292fbd961984bf89c75d3ae2b4a85b02fd011d0793b9839d",
+      "bytes": 4132
+    },
+    "dir00/clip16.opus": {
+      "sha256": "554342785381db97656bf78f5d39800b88cf8291abf1c907c2a6782b907d9368",
+      "bytes": 4161
+    },
+    "dir00/clip17.opus": {
+      "sha256": "4ea80a4804c7966d13d993e72293578e1007a6ad49615a477d1dc545d90a57c1",
+      "bytes": 6549
+    },
+    "dir00/clip18.opus": {
+      "sha256": "62c8a3ab9a88cc422c353e52df79b19e2f2254c2c73f0eff3a40e4b2cdc91c11",
+      "bytes": 3517
+    },
+    "dir00/clip19.opus": {
+      "sha256": "fb9dedb6f33e6cac5383bf7728f0d2ebf5d2b2148bdc32a3d6a4fc682f16d7d0",
+      "bytes": 3250
+    },
+    "dir00/clip20.opus": {
+      "sha256": "b2313f33074f3b568c850e5c63b57335ce561c032889cab708f39792995811fd",
+      "bytes": 4512
+    },
+    "dir00/clip21.opus": {
+      "sha256": "70dc1d94fd2c29be7cbfaa9b2a3288d7e90efc38d9ad6912746103c68bd08e1d",
+      "bytes": 3654
+    },
+    "dir00/clip23.opus": {
+      "sha256": "e3783186ff03d85abd3c68cfca0644c5d2af6c145f2c89853aae72b7bea66466",
+      "bytes": 3195
+    },
+    "dir00/clip24.opus": {
+      "sha256": "eb2c4733abc8cd9ded536cf6e0d1ca2364d2f37bf455c957e0329276d1c93eb6",
+      "bytes": 3398
+    },
+    "dir00/clip25.opus": {
+      "sha256": "59464bb1796492eb76eb8496323cd8c5ad847a146a2f3f135f4e8d11d5ae37ee",
+      "bytes": 2406
+    },
+    "dir00/clip26.opus": {
+      "sha256": "d57340efa840a5432a72b863ff6ebe5ed8dd7b804c64b6645fadb87c8b907961",
+      "bytes": 3218
+    },
+    "dir00/clip27.opus": {
+      "sha256": "a7886b2a255ac3820a02a5b8805931a58a06381f72dd905692b8472567c2f5a9",
+      "bytes": 3122
+    },
+    "dir00/clip28.opus": {
+      "sha256": "8b4d82c47ce85990a18ad9ba93a0524f2746a69cf7d516273287cd8f591b53fc",
+      "bytes": 5232
+    },
+    "dir00/clip29.opus": {
+      "sha256": "0b449ee1a20bb9f37b07b8fee03dfa7fbc8c62ffcf4e6fa89246358291439f39",
+      "bytes": 5135
+    },
+    "dir00/clip30.opus": {
+      "sha256": "b7bd39ed26cac017c60128baea4929a44a3cbb74814fde2cedbdba3393307b38",
+      "bytes": 5826
+    },
+    "dir00/clip31.opus": {
+      "sha256": "2b21f8f987e9f1638c82f73e67163b0d6656f1991e2da0ebdd4576b0abc14829",
+      "bytes": 6016
+    },
+    "dir00/clip33.opus": {
+      "sha256": "6e32d9b58674dd9eccfcf88ee688478f21ce225c80c56c6d37d227aa8c99cbbf",
+      "bytes": 2507
+    },
+    "dir00/clip34.opus": {
+      "sha256": "0ac54fd90b34cb457e228b5a19c64a2d666e7b77d22ef40868c74766e51a0c2a",
+      "bytes": 3930
+    },
+    "dir00/clip35.opus": {
+      "sha256": "abffc389f11ba50f3078e661a2f8a45a5ad00f50d9ba23af6153d16014bebeea",
+      "bytes": 8539
+    },
+    "dir00/clip36.opus": {
+      "sha256": "a9d0461ea461b0350eba62ff5c0bd18cd328cee1aa7af36114d372744f7d41c5",
+      "bytes": 2501
+    },
+    "dir00/clip37.opus": {
+      "sha256": "dccf07c110211306359afd9cf22ad12f89f700ec41449a3a711793a36ccad09a",
+      "bytes": 3719
+    },
+    "dir01/clip00.opus": {
+      "sha256": "512c9de193c2a3477aaeefd54fe1ac263679b62ad48582d3deb3a5e9513c0a09",
+      "bytes": 742
+    },
+    "dir01/clip03.opus": {
+      "sha256": "21b360ce7bbd375cf6d13dbfe93b7684fa7859ff14eac3ccd782831aa88f7d9e",
+      "bytes": 971
+    },
+    "dir01/clip04.opus": {
+      "sha256": "b6c683535d4d276927899424678fb3be4cf9bef4ac38c81c792387f5f9e6712c",
+      "bytes": 886
+    },
+    "dir01/clip05.opus": {
+      "sha256": "42d5baca234a03051fd5f2c5d22662979b4d6615c54ed2e8fba76f8b4ebd27bd",
+      "bytes": 1269
+    },
+    "dir01/clip06.opus": {
+      "sha256": "fc5037539fd7494c3d98b929ecaccdfb899cd64cd6c734346c79bf80e9ab4707",
+      "bytes": 1485
+    },
+    "dir01/clip07.opus": {
+      "sha256": "34de8338a3e923043d044cc865c8d5773c482c87fcb945002cc1872803a6abed",
+      "bytes": 1099
+    },
+    "dir01/clip08.opus": {
+      "sha256": "ae2d4e8a05960608af07dbfa6c28a1463e1b3ff94b342e85c1008f09abe775f2",
+      "bytes": 1940
+    },
+    "dir01/clip09.opus": {
+      "sha256": "25e84c550a87abce9a2397aa20f94a1250385aec1af2bba2bde0325e2656c15a",
+      "bytes": 1381
+    },
+    "dir01/clip10.opus": {
+      "sha256": "c1ffb71ccccaffb559e1afa56e0a06c1dc1e4b2377b3882c280d85cc8827b6ba",
+      "bytes": 1544
+    },
+    "dir01/clip11.opus": {
+      "sha256": "127caa7633d86b6383d15d4d2ebbd3195a1be5eb9e93639874d82f7503451e82",
+      "bytes": 1974
+    },
+    "dir01/clip12.opus": {
+      "sha256": "205d83ffb2d29ec218b5923a8a3f31e4d92fc7e624c91ccf9031435c98c2370f",
+      "bytes": 1110
+    },
+    "dir02/clip00.opus": {
+      "sha256": "761391b738949e8f218a82ef94f401cfb9257d0526a94419f94e6a77982251bc",
+      "bytes": 9545
+    },
+    "dir02/clip01.opus": {
+      "sha256": "89442b2b0032b7381b3f2073948a30b979509856d22fc532c702cbdea1e0781a",
+      "bytes": 10587
+    },
+    "dir02/clip02.opus": {
+      "sha256": "22bdf29cc774c692e005a90f15ea1f623753dc1107b19cfcd04e9eff36187c3a",
+      "bytes": 952
+    },
+    "dir02/clip03.opus": {
+      "sha256": "520f6255a0a9f1102ab6b3e8fd61a8e008ae7a848b8104ce09e36318899df8b1",
+      "bytes": 901
+    },
+    "dir02/clip04.opus": {
+      "sha256": "baf5ce2b4596ec66053baf0a65a292d3af3ab12aedd92b16e6be08a81f80ae44",
+      "bytes": 2935
+    },
+    "dir02/clip05.opus": {
+      "sha256": "ace8d13490cad32a2901774a8a24feb0824a9a2cabf2433e83317fa4cb6521f5",
+      "bytes": 3764
+    },
+    "dir02/clip07.opus": {
+      "sha256": "d2b5eb6510a119b78c2fee613e4164d4451097ab445fa5272e375a44066e0ee0",
+      "bytes": 2089
+    },
+    "dir02/clip08.opus": {
+      "sha256": "b7cd921a58004a4e0e3545126ac008333646cdfa8730a66d1cc2b4cdcf0fe9c3",
+      "bytes": 7114
+    },
+    "dir02/clip09.opus": {
+      "sha256": "5b7af6cdf094ebfd7f2085f618e259b9e834c20ec3006e804e49165067bb9b27",
+      "bytes": 5356
+    },
+    "dir02/clip10.opus": {
+      "sha256": "d9d8badac27cf7297c175c1849c2359ac5bc40178bbe03d5f11938b7f33a21f0",
+      "bytes": 6454
+    },
+    "dir02/clip11.opus": {
+      "sha256": "cf973e36abf46b254dd52a5c4b5a50e7ab80ef3c47901400270b63cc19ca4efa",
+      "bytes": 6477
+    },
+    "dir02/clip12.opus": {
+      "sha256": "be82e273c891b3fac9415753af25dc849d7de687085ff2f3427e67b79812cc7f",
+      "bytes": 7055
+    },
+    "dir02/clip13.opus": {
+      "sha256": "c6719fb94ca15c079e308ee29cddf454361f414a48c0411d66bb16c1f46123ac",
+      "bytes": 5212
+    },
+    "dir02/clip14.opus": {
+      "sha256": "1730573222034b7b553a534aaed3a3acbf41ae37bc105914581a51c5b2d30b4d",
+      "bytes": 2034
+    },
+    "dir02/clip15.opus": {
+      "sha256": "284da9e2465ae5420cca314be70fd47e95961b0fd73b4f4237f875d1b18a4e6e",
+      "bytes": 5514
+    },
+    "dir02/clip16.opus": {
+      "sha256": "7518017c4f901b769f049046ebdd23655e3eefc0edea6368c2520d897ba29255",
+      "bytes": 3950
+    },
+    "dir02/clip17.opus": {
+      "sha256": "968e43e7d63bea2db0b2904c02574433792effecc7f9a58637f145330ad61c3d",
+      "bytes": 4256
+    },
+    "dir02/clip18.opus": {
+      "sha256": "3e9ab4e2a2c35afcbc47a7bb4382883cb11a7f929cb7a4cec47459e8b11e8e4c",
+      "bytes": 5885
+    },
+    "dir02/clip19.opus": {
+      "sha256": "e84bd06f6600e54eda53182cc232fa4c5f47021afc451f5448f171acdee33adb",
+      "bytes": 1272
+    },
+    "dir02/clip20.opus": {
+      "sha256": "1e03ba62d5491c426b30d82a52393fc30c38b44cdcb91c376206048f22aa99a9",
+      "bytes": 6512
+    },
+    "dir02/clip21.opus": {
+      "sha256": "2a593cb5d40308c646ac0dbd8743ce733a78846c8b9e82456d1570b16f065ca6",
+      "bytes": 1898
+    },
+    "dir02/clip22.opus": {
+      "sha256": "d81840714a4f1188e52b1f07be0a9180062f6370c1563313b54fc7ad86308d01",
+      "bytes": 8054
+    },
+    "dir02/clip23.opus": {
+      "sha256": "1683ee1a1dbc622b471da83c87488941e07ff0eac612b8cd354c7102fcbc57e0",
+      "bytes": 5891
+    },
+    "dir02/clip24.opus": {
+      "sha256": "06ce4829d8c078d05e3b96ac49d90be60df9e56bf4142334a16fc95e8f7c55ac",
+      "bytes": 2399
+    },
+    "dir02/clip25.opus": {
+      "sha256": "6e50bafd4330b1735dcf48922a75b0985f6c0d15571cd93f64887dda8a71d66f",
+      "bytes": 3354
+    },
+    "dir02/clip26.opus": {
+      "sha256": "7b35ef5e1da968609e0b013e4141c579ecdaf5b070e3a8e2970d7a80e16e5cfa",
+      "bytes": 2145
+    },
+    "dir02/clip27.opus": {
+      "sha256": "3ff78a8b5e45ee40a44a9a00a2152aeeddf590ab6383720dadaa9997e3af7fd3",
+      "bytes": 1843
+    },
+    "dir02/clip28.opus": {
+      "sha256": "ea202a82015d139897bbe8e80fd6f870aa87122bbd00b59f4df711009b91f3d2",
+      "bytes": 7780
+    },
+    "dir02/clip29.opus": {
+      "sha256": "ae5f3a356f8653fb69ee854ae731a18ea3be860ed42b990af15ff373f9221f7c",
+      "bytes": 6324
+    },
+    "dir02/clip30.opus": {
+      "sha256": "997cc80b16695c87a2129f27685e742f93ec1c15b0af4d8adb200854fe11f078",
+      "bytes": 6633
+    },
+    "dir02/clip31.opus": {
+      "sha256": "82ee7a2b93a248e632e89da83b09480e04415a366b14063b01af4eb63da621b6",
+      "bytes": 5333
+    },
+    "dir02/clip32.opus": {
+      "sha256": "58e25dc1a9164d11607d87a0c51f443f06cb148c307a605590ca2567c9a31e55",
+      "bytes": 4936
+    },
+    "dir02/clip33.opus": {
+      "sha256": "43551fa7fba8a8076791e94f679c92046e3355ca059236cafe09ce12bb071421",
+      "bytes": 6854
+    },
+    "dir02/clip34.opus": {
+      "sha256": "13bd924c6b54d4a347dbb466746397d6b56d789ea49da680f30cbcb9e9cf032c",
+      "bytes": 5132
+    },
+    "dir02/clip35.opus": {
+      "sha256": "96b724c4d2757d8901dd600df7040ad328dc8209be05bbd6a730da77a637f951",
+      "bytes": 6508
+    },
+    "dir02/clip36.opus": {
+      "sha256": "77da031edcd456af3b2d8a6d5a0251951e9360a2e50afbe75231dbc4d065b0e7",
+      "bytes": 5038
+    },
+    "dir02/clip37.opus": {
+      "sha256": "7d6e8ea2b8c0e70a35d5934f98e5c455c215c31567a5930490491947ea78b5ab",
+      "bytes": 6923
+    },
+    "dir02/clip38.opus": {
+      "sha256": "6e679fb17ed4cf699c4d564fb4b9f945e6dcce43d97fb3dc916eca1fe5530294",
+      "bytes": 3502
+    },
+    "dir03/clip00.opus": {
+      "sha256": "b9a87b539eebca1ee6a1af235288fe2558488c79714fe0bbcf8ba6bb3620ae96",
+      "bytes": 4810
+    },
+    "dir03/clip01.opus": {
+      "sha256": "8ca1e7109bc0d14bb5366f59ef5d6450f0ba99604abb3bc1dbc37da3a583de10",
+      "bytes": 5503
+    },
+    "dir03/clip02.opus": {
+      "sha256": "236c8f4fb59f1c895608c2d720830974b3fea9e12875fd204f953dff8270bd4b",
+      "bytes": 519
+    },
+    "dir03/clip03.opus": {
+      "sha256": "e494a595a986a44fb22734fa3f5b9c6cb59868f50b2d595c05eb3927a9afa4dc",
+      "bytes": 1229
+    },
+    "dir03/clip04.opus": {
+      "sha256": "44adfe809897c733eb0769643761d46fc5e59be0fffad90572995e59962f2f51",
+      "bytes": 1029
+    },
+    "dir03/clip05.opus": {
+      "sha256": "cd2794aa4d77cdffe95c2d4398618410fc3658c81a00224b5eab185344e560f4",
+      "bytes": 2583
+    },
+    "dir03/clip06.opus": {
+      "sha256": "783679c8a23402af35131b4722463d37cbbb20d88e37b09f661a05f272725ef9",
+      "bytes": 3296
+    },
+    "dir03/clip07.opus": {
+      "sha256": "6aec2a36354ad74d255c2f363cf0dbbba03c538f7446c2b62f2db09e5afa2b27",
+      "bytes": 1756
+    },
+    "dir03/clip08.opus": {
+      "sha256": "b48f7a549056820e8724ae5f6179b6dd1bc3e4709e9c9bf127039de218def382",
+      "bytes": 1355
+    },
+    "dir03/clip09.opus": {
+      "sha256": "f9cd8df9e3995e50b30c7e056342bef79426c6617c432479e0960e69496bf28e",
+      "bytes": 1766
+    },
+    "dir03/clip10.opus": {
+      "sha256": "b0a3025c7aa96f6d6b76017305fd23936f45e6970afce8d9973d69bd0e7883ba",
+      "bytes": 772
+    },
+    "dir03/clip11.opus": {
+      "sha256": "1bbc5abd897f7a59c699dc94b3e2b5f5eca725e3a57f3f98ba90021612bc18f3",
+      "bytes": 750
+    },
+    "dir03/clip12.opus": {
+      "sha256": "e40b9cf196a9285347d2a047bc65562b180c09d115ddd2e7b4bf45c6d8ba7d06",
+      "bytes": 1020
+    },
+    "dir03/clip13.opus": {
+      "sha256": "634916c141c7a55711937c3cf9a532666e6cfd9660869137d787e6f95a693875",
+      "bytes": 2973
+    },
+    "dir03/clip15.opus": {
+      "sha256": "db874dcd8372e4022252dbdb525f1742b277ec60b065e171b44847729dfdbcd6",
+      "bytes": 17208
+    },
+    "dir03/clip16.opus": {
+      "sha256": "5f3adfa0e6659f194c3081e9bd72bd32710a6615e8d34c8433fe48bcaa77a472",
+      "bytes": 1825
+    },
+    "dir03/clip17.opus": {
+      "sha256": "fc3c79a2d505c5fb5d32ab871b59084e202b1776640db567bdbd39aefeae7361",
+      "bytes": 1260
+    },
+    "dir03/clip18.opus": {
+      "sha256": "f4cef3095ed914394f6b4f9db27385dd7afa880bd54c014b23a4a77b5ed2adac",
+      "bytes": 1917
+    },
+    "dir03/clip19.opus": {
+      "sha256": "ed3db2262693083065630895af7debc2a1ef4e07bbd6230a0f7962239e4a3051",
+      "bytes": 1640
+    },
+    "dir03/clip20.opus": {
+      "sha256": "73049504368aa81c2df27a47f0696cb03520c28949ad09aea9dc7bd4b732eb8e",
+      "bytes": 2914
+    },
+    "dir03/clip21.opus": {
+      "sha256": "061853da080a4d79177e6053029ee02ee97667338fdd5fda53df30cb211097e3",
+      "bytes": 2530
+    },
+    "dir03/clip24.opus": {
+      "sha256": "0747766119d9d0c44627fcbc6d6f53e287b3c3d9f284b6c81f1ea30d2ca82584",
+      "bytes": 798
+    },
+    "dir03/clip25.opus": {
+      "sha256": "4e61e79e8f302eea1d19f4b00690ae23b38d8f3e21accb3dfcfdf3faf854c999",
+      "bytes": 824
+    },
+    "dir03/clip26.opus": {
+      "sha256": "48f39e72543bdc57aa2cfce5f75f52e8240382bc3c3fb292c5e925520f7cf49e",
+      "bytes": 3553
+    },
+    "dir03/clip27.opus": {
+      "sha256": "741845f4739433d426ce2b59cf1d0c5e4c1c239eb0e3b5ff400e85158d73d16e",
+      "bytes": 1472
+    },
+    "dir03/clip28.opus": {
+      "sha256": "d3d42f3c414b916469432cbfb91474e0fb49f18eee110c824a851feb680149c7",
+      "bytes": 2273
+    },
+    "dir03/clip29.opus": {
+      "sha256": "6b142ee9bc8d9c8c7db60ef0d2c08ce211dc2c809babfedf20cbf397552e370e",
+      "bytes": 2953
+    },
+    "dir03/clip30.opus": {
+      "sha256": "9cfccbdc9cbda4e78b3b7298b270443c13833c564b004cb649f7ec3d27abacd6",
+      "bytes": 5814
+    },
+    "dir04/clip00.opus": {
+      "sha256": "56a123411bdacbca37e218005468fc83672bf9ce0c7fdb21b20706eb65afb654",
+      "bytes": 4598
+    },
+    "dir04/clip01.opus": {
+      "sha256": "3740a72f9fb888dc3cf739e7e2eaa2165d1e6863f5b9a4b57be2ab458844f3c2",
+      "bytes": 5303
+    },
+    "dir04/clip02.opus": {
+      "sha256": "51cc15472ba1a2013f580f6102403866ccccf5783e164c8bc707a75451c06564",
+      "bytes": 11976
+    },
+    "dir04/clip03.opus": {
+      "sha256": "4d812334f0790aa8d790bb5a687a1039b9f4f9bb81b6b486057674a0c981bc85",
+      "bytes": 14691
+    },
+    "dir04/clip04.opus": {
+      "sha256": "810862b35d0b3a0836ec50548dc2413194721f346244de504b0c08477a6c88e9",
+      "bytes": 5376
+    },
+    "dir04/clip05.opus": {
+      "sha256": "2cba94cfe3526022544eb75dad9c0dfb29e176f7f6b2236058d946569fe1ecb5",
+      "bytes": 3692
+    },
+    "dir04/clip06.opus": {
+      "sha256": "9c3f8c2a04a418ce6fe4fc0269f94a805bb99a5aee99c62d2cdcd8f403707d90",
+      "bytes": 3831
+    },
+    "dir04/clip07.opus": {
+      "sha256": "bf366eb06c0525bc908d0e11628c3866a7d8d5904eea2bfbe761eeb46f74c249",
+      "bytes": 7606
+    },
+    "dir04/clip08.opus": {
+      "sha256": "21f5c57544e7ac6e02f0b97035695ec0bc7e2c4760f90e1417cf6993db2e1664",
+      "bytes": 8410
+    },
+    "dir04/clip09.opus": {
+      "sha256": "2711704bfe7ae61765c908103ce37fcee5cdc3ff4d60f3ede4dd9039a9daa3bb",
+      "bytes": 3445
+    },
+    "dir04/clip10.opus": {
+      "sha256": "2adfe09288727cab59b3b6248fa10500126cf2d82ad6f5c939f16f6a96b682d2",
+      "bytes": 6142
+    },
+    "dir04/clip12.opus": {
+      "sha256": "266ffb0fe89b86c9f2e33716dcdf8d8de7dc2cf1e8be9c4df0fdd1cd4ca9140a",
+      "bytes": 5446
+    },
+    "dir04/clip13.opus": {
+      "sha256": "d53ec3f30e0f8ef814bfa5291b17ffd64503028036ef11f604b5f3db4df8934c",
+      "bytes": 3587
+    },
+    "dir04/clip14.opus": {
+      "sha256": "b0718ac69c4dd81eeb1ed64abd9be647fb0bddf1c87e83059ba5e71735053c41",
+      "bytes": 3905
+    },
+    "dir04/clip15.opus": {
+      "sha256": "8c0f92819d30e1ea05e9731ad081fee4e0a542ab4acce3ede3e6c7da56271a26",
+      "bytes": 5203
+    },
+    "dir04/clip16.opus": {
+      "sha256": "e60338049f6b32f2ffa2adffbe33671b597d56d38b831e90351e2e8aaca898ab",
+      "bytes": 3499
+    },
+    "dir04/clip17.opus": {
+      "sha256": "b7e7fa7c88d66b036a70d98413f8acf2a25702ccd24adecde7f73dc19e6651e7",
+      "bytes": 5468
+    },
+    "dir04/clip18.opus": {
+      "sha256": "230b97b62cac748124d01d6e76ab3fde4c69239c832ce1c495ec0615a5c142e1",
+      "bytes": 3759
+    },
+    "dir04/clip19.opus": {
+      "sha256": "5b2bcbbf5986af5970a014e70611db4b50c76227c849027a75f47aa8c1a744bd",
+      "bytes": 5124
+    },
+    "dir04/clip20.opus": {
+      "sha256": "289393982ca5bb2d3f5dcfc823453fbe3ff5ce8ac7985cc2c4c5e6d1ea65b3b4",
+      "bytes": 3374
+    },
+    "dir04/clip21.opus": {
+      "sha256": "893ca38170b8749483f0b7e6dc0b6cb9301184d1763597734912702931ddb58e",
+      "bytes": 5483
+    },
+    "dir04/clip22.opus": {
+      "sha256": "2b404aff1cc5774155d6c24feff88982841cfdb4155a5458a95608ff5e756093",
+      "bytes": 10779
+    },
+    "dir05/clip00.opus": {
+      "sha256": "4c9631c0954e04a9070a089f3fb318bcf64ac6e0c9ee8179ee0ae1d1177640d9",
+      "bytes": 5821
+    },
+    "dir05/clip01.opus": {
+      "sha256": "1060da19c888272d0cc856a3aaa99579c255d19f2273b069fb6189f3381b3997",
+      "bytes": 5184
+    },
+    "dir05/clip02.opus": {
+      "sha256": "b0fc63e2afe720999e4d0b72aead3db8507efd96533a75ac3b06192067a43d81",
+      "bytes": 45096
+    },
+    "dir05/clip03.opus": {
+      "sha256": "23a25496df4be755fe9ad9ad72b7f8d10f70e6e78b78810ea7b221cb3c42e569",
+      "bytes": 2518
+    },
+    "dir05/clip04.opus": {
+      "sha256": "00fdd1509aee0cdfb556c31748915be7c63c2540ddac88607109ca0364031045",
+      "bytes": 5336
+    },
+    "dir05/clip05.opus": {
+      "sha256": "e9b26ec395fcab748bb3dfa67befc2cfacdfd5cc19bf8b850f35fa78ee27418c",
+      "bytes": 1648
+    },
+    "dir05/clip06.opus": {
+      "sha256": "04e1be09b4a4b698b401da42b77960da4023161cf5e2891e3124997860111622",
+      "bytes": 5553
+    },
+    "dir05/clip07.opus": {
+      "sha256": "b48ec4a526d3a4c43d6abe0a223598591d9198a2ac7852576fa39e8fc6661758",
+      "bytes": 3270
+    },
+    "dir05/clip08.opus": {
+      "sha256": "a9d81a44912a1a2f41551e6fbea9dd05a379edb8a7bb384668e2a2231675d09f",
+      "bytes": 6641
+    },
+    "dir05/clip09.opus": {
+      "sha256": "e51bd3a6da4f3fb0be3b139cb0dd4617c59de987be0732c2f4fa1fc27796d38a",
+      "bytes": 2849
+    },
+    "dir05/clip11.opus": {
+      "sha256": "c0666aca3d3c78259af88d5eae771b433230d6f2ab0c2cbc67b08d7848665ee5",
+      "bytes": 789
+    },
+    "dir05/clip12.opus": {
+      "sha256": "ed62f12f3a4ef37fde64e64a1b00bfbac3ccaa65e16a4b8315645ce7921b4b9d",
+      "bytes": 3806
+    },
+    "dir05/clip13.opus": {
+      "sha256": "fc1d86c62f641c61b97faf4f9f1404fe218e1bf17f3000eac85554a13d4663a0",
+      "bytes": 6130
+    },
+    "dir05/clip14.opus": {
+      "sha256": "7442b51b4824623c2dd99ab4c673e5478ec6bbdfae754ea122b8c8e569ccee60",
+      "bytes": 3221
+    },
+    "dir05/clip15.opus": {
+      "sha256": "325b480f39c6b04b56bffade454d77ed47c1cfdb82f8a235268d2983429fa5f6",
+      "bytes": 4039
+    },
+    "dir05/clip16.opus": {
+      "sha256": "3c8820095d4b701a9e57d9464fa9dd0e42356c0dfe083683862e0ab47706c7b6",
+      "bytes": 1991
+    },
+    "dir05/clip17.opus": {
+      "sha256": "151278b0f434f093894ad852a51c160bc858afe76abe248057da4a2fec605587",
+      "bytes": 5102
+    },
+    "dir05/clip18.opus": {
+      "sha256": "50c71717a9354b8ef089fe5caf7cb653a8df3a987983df7b0b14681950a80f2d",
+      "bytes": 5234
+    },
+    "dir05/clip19.opus": {
+      "sha256": "5b3835772a3b07ff3b72ecf39a859ed556323fb852ad0e6f4e0570a61e85a3fc",
+      "bytes": 1986
+    },
+    "dir05/clip20.opus": {
+      "sha256": "a594e300c04f3eab3fb38cd7a6500fca4ecd849c6cc224be1ac66a1157100aac",
+      "bytes": 4310
+    },
+    "dir05/clip21.opus": {
+      "sha256": "99040394606627af42905cfded05d9603cda53f4f98de66057a196dd7d1b0840",
+      "bytes": 7201
+    },
+    "dir05/clip22.opus": {
+      "sha256": "60cbed8525d4caaf16e8860126f233b493908fc239e451a20791637e959656b6",
+      "bytes": 2755
+    },
+    "dir05/clip23.opus": {
+      "sha256": "e5c549e91e9a671d2f2eda4bd07a25d23a9ba31e2ff06a8891d9847e59aadffd",
+      "bytes": 40800
+    },
+    "dir05/clip24.opus": {
+      "sha256": "0ba51f8461d39130bc0e85f4e9e0042063ba2dd479344d3d72512c089a62aac0",
+      "bytes": 9719
+    },
+    "dir05/clip25.opus": {
+      "sha256": "597cd1b77f21d88d5656ee18fcfc4505723e2729c44195aaa12df3718a7b842f",
+      "bytes": 10730
+    },
+    "dir05/clip26.opus": {
+      "sha256": "9b5846ff998fd2cdcfe4ee567d9d95dfd250ea921c71765cf562758f8572e427",
+      "bytes": 2105
+    },
+    "dir05/clip27.opus": {
+      "sha256": "fb806cd527c01bc9e5274aaff024fd8c2ad4ccaebc3d7f9601109c859e9f1f7f",
+      "bytes": 2201
+    },
+    "dir05/clip28.opus": {
+      "sha256": "176625cb8c1def911329a3044ea77d7b1c57074400f2b0b7de1e05ea6d2c4646",
+      "bytes": 3580
+    },
+    "dir05/clip29.opus": {
+      "sha256": "77da54e74cdaae4aba6f73186390fc176290a10123f489e97995af3bfde7501a",
+      "bytes": 4474
+    },
+    "dir05/clip30.opus": {
+      "sha256": "830de9638e92c81a1650ea6fb1f56edc493706904e6d21cbc06387aa9e278a9f",
+      "bytes": 2414
+    },
+    "dir05/clip31.opus": {
+      "sha256": "b81eae569433ce089c43eef7b3fadc3f56c619877f68fbc1eb2dc6594af04587",
+      "bytes": 5057
+    },
+    "dir05/clip32.opus": {
+      "sha256": "e5b75edb13b2af8d7b703f2f6105646bfb60d84226c23ac6763ba0ae9712f100",
+      "bytes": 732
+    },
+    "dir05/clip33.opus": {
+      "sha256": "ab365250b4de341d5fee481d812e0ff981f7b24c802bc883cfdba8e04933b99d",
+      "bytes": 7703
+    },
+    "dir05/clip34.opus": {
+      "sha256": "563274c58b36554983558ec7eb250e7a62ce961731ec5b34cc15be65488632d7",
+      "bytes": 5071
+    },
+    "dir05/clip35.opus": {
+      "sha256": "3f1d0a615af2d34174cdbfd6284d87db7847f3ab049975a51ed69b902a82a343",
+      "bytes": 28174
+    },
+    "dir06/clip00.opus": {
+      "sha256": "76fd06c4c23995c93836cedf9419f2f521df700db600ef4ef96382efdf1879ea",
+      "bytes": 2513
+    },
+    "dir06/clip01.opus": {
+      "sha256": "7d2e31ce00bfb977910a405cc9563762933414ef0fb17474512e7d0e722421eb",
+      "bytes": 4839
+    },
+    "dir06/clip02.opus": {
+      "sha256": "8473cec12466be68f15bd04fa0e451e524a5379901d6c8762a422c038a363f22",
+      "bytes": 6121
+    },
+    "dir06/clip03.opus": {
+      "sha256": "bc09fcbd83d3bd87df9b5614c8b933a730b792b856bf3cd7e353eeb2b671ee05",
+      "bytes": 4914
+    },
+    "dir06/clip04.opus": {
+      "sha256": "d015dd4d812cb7976d2c9bcfb7bbfb495ef2cd3b214eea6a7200713e1254d63e",
+      "bytes": 3984
+    },
+    "dir06/clip05.opus": {
+      "sha256": "8cfd7fe744e31663cfd3cf9bd7d2d7d645d1ee899e131f24ba8d200b30f91119",
+      "bytes": 5725
+    },
+    "dir06/clip06.opus": {
+      "sha256": "f498cada7e99ae242e4676b21f472a2a63c0ed0838caace35388d13008f803f6",
+      "bytes": 1086
+    },
+    "dir06/clip07.opus": {
+      "sha256": "d35650aeea87b8dfaa714995d0db35c051952c188ac6961c80a125f411aa6707",
+      "bytes": 1399
+    },
+    "dir06/clip08.opus": {
+      "sha256": "261961a160bda33835ef73dda88e80ec556561b05855c5f6bb4021d434207aa6",
+      "bytes": 2291
+    },
+    "dir06/clip09.opus": {
+      "sha256": "89b050ec3891dc927e3cee89d996c6592d26687082ddfc11588416a13931eeee",
+      "bytes": 1998
+    },
+    "dir06/clip10.opus": {
+      "sha256": "eaeaa4ce292303fcf0af16eccc5cf6c3e720927859a5309b26e1c19d36bdafa2",
+      "bytes": 2459
+    },
+    "dir06/clip12.opus": {
+      "sha256": "e6268377f414722087d525dc746152730e004305dc0f60f679ac680f34b61134",
+      "bytes": 3400
+    },
+    "dir06/clip13.opus": {
+      "sha256": "f2ec808ab9d0e074e03b8eb8a15d159a7cadefe9e394712d8c6b7ad05dccf764",
+      "bytes": 1298
+    },
+    "dir06/clip14.opus": {
+      "sha256": "74bee53ed7d3de086e2308d513142e8ba956d7e62636b8d61d8d5d377db112c9",
+      "bytes": 1712
+    },
+    "dir06/clip15.opus": {
+      "sha256": "350f4b48bc79707bd1fcaa38419078b24c0391e483810f4398af0567463e8209",
+      "bytes": 1421
+    },
+    "dir06/clip16.opus": {
+      "sha256": "596acfec157607496b3deca2438691480553eacde1efd44f99ff740fd8da5576",
+      "bytes": 1171
+    },
+    "dir06/clip17.opus": {
+      "sha256": "bb7c2fd62396eb685aed1ddcca570a623b77454155f4cf29d30803fc3916d38d",
+      "bytes": 2116
+    },
+    "dir06/clip18.opus": {
+      "sha256": "4df5ce32aa1095122afc8c127df67bea0cfd41ca07c7524302bb69a4837acfaa",
+      "bytes": 2825
+    },
+    "dir06/clip19.opus": {
+      "sha256": "850c166fa345c80811b4cff54be3269e5b15463b03a3fdc46e734af614a714a6",
+      "bytes": 2237
+    },
+    "dir06/clip20.opus": {
+      "sha256": "db612f4f79d238ae26c32523055b2e6fdde593e023ecc02e33c0a7fd3c9edb8c",
+      "bytes": 909
+    },
+    "dir06/clip21.opus": {
+      "sha256": "5d5b6c5f622ca66d78f6ba49cc6c6f24c05969f32c295c7edbc9ab0b459aa341",
+      "bytes": 3490
+    },
+    "dir06/clip22.opus": {
+      "sha256": "611281c5475ce5e211f7229b8c4c84d470dd3d0a1fef57dcb427e78beefe48c0",
+      "bytes": 1101
+    },
+    "dir06/clip23.opus": {
+      "sha256": "e163c9a831bda9181f35603e59e37e8e06fbcfe3f8f31f7be0b1b130da44b4f3",
+      "bytes": 1514
+    },
+    "dir06/clip24.opus": {
+      "sha256": "5cdb68e762563602ef1d8e8528370430c4f030e1b6331456100c165961cc855d",
+      "bytes": 3138
+    },
+    "dir06/clip25.opus": {
+      "sha256": "b65c2ebfadb757fac6db8a022c010c87327736601e78ea91e7d84c909af049bf",
+      "bytes": 1260
+    },
+    "dir06/clip26.opus": {
+      "sha256": "cd73530701dd10b91089004f4c84769eaecdc767c7c0357d3dd3f18888c9faf4",
+      "bytes": 1625
+    },
+    "dir06/clip27.opus": {
+      "sha256": "b0acbe49eaab9c92133b5cc2a49f3ea909fb7e1f295fa8e4d0a5eedac2b99b08",
+      "bytes": 4188
+    },
+    "dir06/clip28.opus": {
+      "sha256": "ecb4733e94b14152326229bc9c2c645941613620025a502e569e3552c15f7588",
+      "bytes": 4228
+    },
+    "dir06/clip29.opus": {
+      "sha256": "e6313d0152eaaaa2dc7e399636d9261c823f761b0c3f3323395ea00ac8103ffd",
+      "bytes": 2620
+    },
+    "dir06/clip30.opus": {
+      "sha256": "e16d0464779a725580fa68ef0573732911bafcb7a57fc594eeff745644cfc1c8",
+      "bytes": 1625
+    },
+    "dir06/clip31.opus": {
+      "sha256": "bbb22a955bfb6a58b550fa7ae05096608eb489b10f18e835e0ff84575f5634ac",
+      "bytes": 1028
+    },
+    "dir06/clip32.opus": {
+      "sha256": "a1828db055e8d783030a3dedb213872f22389deb8dc68626ea9d07781ec76b22",
+      "bytes": 6527
+    },
+    "dir06/clip33.opus": {
+      "sha256": "567129c45b0838c4a28f3a99f7d2633899e12745a214e73bcc656bf777bc95f2",
+      "bytes": 1585
+    },
+    "dir06/clip34.opus": {
+      "sha256": "94611b869a3404cb262e13eb796d355898e8ca1b497414aac3f3ed20727c4b0d",
+      "bytes": 1261
+    },
+    "dir06/clip35.opus": {
+      "sha256": "8dfafe0b2cb19077c39732fe1652dea9efaae6e10135596d60f2355e92169193",
+      "bytes": 1109
+    },
+    "dir06/clip36.opus": {
+      "sha256": "a749c6a0dac81fa737f01f08ae4ec3ab64dbe84ca9a86e1442c92a987ba413fa",
+      "bytes": 3447
+    },
+    "dir06/clip37.opus": {
+      "sha256": "2ffa803a67b7866a8d9a38af524f924d396c632903a7a37f9146449b3e5fc43b",
+      "bytes": 1577
+    },
+    "dir06/clip38.opus": {
+      "sha256": "e35fb210dd382b00e9ebf4f9575d884ff0072fb3b25e92e70eb6bfc675c2cd8e",
+      "bytes": 2295
+    },
+    "dir06/clip39.opus": {
+      "sha256": "7769ea4d068237f2883cfcd877b7b8fe54b0054dc5999d1a9dda172284b598bb",
+      "bytes": 4064
+    },
+    "dir07/clip00.opus": {
+      "sha256": "b28e0edbd1fd0932ff4eb04e874c5e53f7eb65af0ca64ba208d0530ba46be4d5",
+      "bytes": 2004
+    },
+    "dir07/clip01.opus": {
+      "sha256": "6b93d25e7d9c4b92e3621448f8eb90d1248da4d7e584e2ad04327df175311fea",
+      "bytes": 3764
+    },
+    "dir07/clip02.opus": {
+      "sha256": "8137484a94203b2e46c0b7263860d8d7482f1e6272b322d3f986a8c70b44b9a6",
+      "bytes": 3770
+    },
+    "dir07/clip03.opus": {
+      "sha256": "94b6a2cad5d4aaa3abaa215b5e44a99295b5452272139eb81934490d4bf2feca",
+      "bytes": 6546
+    },
+    "dir07/clip05.opus": {
+      "sha256": "1448fde6d36e7abd021078402eb1a14b9b26339eafa75fe6fa14b94aee9956b0",
+      "bytes": 1912
+    },
+    "dir07/clip06.opus": {
+      "sha256": "3cba28662d073ee2cb9abac51918a6fd00a1d8aa58fb8c8c94cbc0e18a0ac295",
+      "bytes": 1334
+    },
+    "dir07/clip07.opus": {
+      "sha256": "49fad5f40ab048234ec546b96d089fd0b5955489b2eba8fc42f564c7fa0b5bd0",
+      "bytes": 3993
+    },
+    "dir07/clip08.opus": {
+      "sha256": "b3f6492c03612b56baca660b692dae55861473b6371a8780140c08790fa793a7",
+      "bytes": 3741
+    },
+    "dir07/clip09.opus": {
+      "sha256": "e39e39bb3937f546c276398cf8def96ea42aab8ff67fc0e08d302bd1f0c45568",
+      "bytes": 3407
+    },
+    "dir07/clip11.opus": {
+      "sha256": "75ae69117941283b0313de4573745a98a4711821409612c178932f14b0ee98ae",
+      "bytes": 1923
+    },
+    "dir07/clip12.opus": {
+      "sha256": "1f4bae9c8fdbca370bde1aded043d166be36b8888a924f76e214b2af5e942f7d",
+      "bytes": 1591
+    },
+    "dir07/clip13.opus": {
+      "sha256": "d659ee2ee1e8e51fc099c07b80dafe2f72db37358cb317adb8939b1ad5817b1c",
+      "bytes": 2041
+    },
+    "dir07/clip14.opus": {
+      "sha256": "9ea06d4df4092089c91fa47d1436800fec299b4305c66249b2605080f303db7c",
+      "bytes": 1942
+    },
+    "dir07/clip15.opus": {
+      "sha256": "c1d2f9b8ad2a479a1b00fd5a31c7e81e2270115864f42f832909deaa39c77527",
+      "bytes": 12164
+    },
+    "dir07/clip17.opus": {
+      "sha256": "a70da9bd827190f3a4b2445ca666d76faf3224af839fbd808180e17f5b3d219f",
+      "bytes": 1405
+    },
+    "dir08/clip00.opus": {
+      "sha256": "61f51e7b072c86452885a53e06e4b0b0b742b2be8c120e653f0392c563c0cc24",
+      "bytes": 5459
+    },
+    "dir08/clip01.opus": {
+      "sha256": "5ec096130977ca15f802c2cc712903a01dbf2dcab184717ecd68b1a3d254c91a",
+      "bytes": 1129
+    },
+    "dir08/clip02.opus": {
+      "sha256": "5f51252e5551b6c7b2d8f4a41af931c4a3c40f97123f299e3b5fa178da9ca09e",
+      "bytes": 7332
+    },
+    "dir08/clip03.opus": {
+      "sha256": "6e15f9f6c63debdaff5500045c898dab896e7bd54c14462d20cd055f93139ade",
+      "bytes": 4041
+    },
+    "dir08/clip04.opus": {
+      "sha256": "b136bc2bb189f3132ea3e97ef1b2034cf04e0b085438056781018729c7624898",
+      "bytes": 1260
+    },
+    "dir08/clip05.opus": {
+      "sha256": "7d4b4d8577015757ff1c534dac478600d9d0d9232adc81e48357c4b34f110b1c",
+      "bytes": 6091
+    },
+    "dir08/clip06.opus": {
+      "sha256": "7510e15aec3e3c06b80aafd1ed0c2bca474707e9d4ed1545381b40f20a4b40b5",
+      "bytes": 2070
+    },
+    "dir08/clip07.opus": {
+      "sha256": "5c214c68813bcc3f53579f08a3c7ac4b44d09d87c483d7736889868c73d4b9d2",
+      "bytes": 1658
+    },
+    "dir08/clip08.opus": {
+      "sha256": "fbbd54fa489f66e92080c20b4bf0b50247251e23a85d69241cd52601d2f6ecfc",
+      "bytes": 19288
+    },
+    "dir08/clip09.opus": {
+      "sha256": "a9f80adbed1c4143502226c926084eec8001b79d0b7f8d5cee7d4ef6e40e9bc0",
+      "bytes": 2210
+    },
+    "dir08/clip10.opus": {
+      "sha256": "fe803d441b10e0569006259f4c80363ede414d0d5ea94d8831e1c27bb6d0b804",
+      "bytes": 3387
+    },
+    "dir08/clip11.opus": {
+      "sha256": "b8e74fa5641cb6fa0b6adbf59913f6d831e7c4a962588a3e7086ea6d6c9da5eb",
+      "bytes": 1677
+    },
+    "dir08/clip12.opus": {
+      "sha256": "6ed77c84ca9f1164d3965f6301419671f954fa1eba8038ff4cd9c899f27a49fb",
+      "bytes": 1957
+    },
+    "dir08/clip13.opus": {
+      "sha256": "6cf2293b89cc4b25d24ae119d30a30d372df98821ba4df7e32a5721c0e0c619a",
+      "bytes": 1151
+    },
+    "dir08/clip14.opus": {
+      "sha256": "9bdcb4c4d812b40638873aefa393e0615abfd283e5030e9bca42666d9c0bd96f",
+      "bytes": 1449
+    },
+    "dir08/clip15.opus": {
+      "sha256": "b102f1f6b27c636f3ca23455bdac9f0718b7499e2d19ceb0622ef73bfd897610",
+      "bytes": 1343
+    },
+    "dir08/clip16.opus": {
+      "sha256": "8518c82e955f5eba68fed63289d705d6fb24e4edaa4d92cf047465331a071332",
+      "bytes": 1861
+    },
+    "dir08/clip17.opus": {
+      "sha256": "e6d289cac9e2517f4930e16afd3c311517219ca36acf3d13444bb4be522bcfe0",
+      "bytes": 1231
+    },
+    "dir08/clip19.opus": {
+      "sha256": "2fa9c1b25a20e740fa498fd4e07650484032022dab7cb57abf1cdc6dee49fb26",
+      "bytes": 2856
+    },
+    "dir08/clip20.opus": {
+      "sha256": "d0316253561c92346ab217cdaf2fa7d14e12c34012c5684d4b2f60b7413a915b",
+      "bytes": 1245
+    },
+    "dir08/clip21.opus": {
+      "sha256": "fab390e641872c453c6d93879fff8c963551959cefdc3651bc8c9ca31d37f09c",
+      "bytes": 1147
+    },
+    "dir08/clip22.opus": {
+      "sha256": "837daf4663b0ee5c915aaf5a1e4ad7202c2c1af08a812e17740ca8afdca2bc94",
+      "bytes": 1716
+    },
+    "dir08/clip23.opus": {
+      "sha256": "846fc15aa86bf199b703b7787936e982122b20bae0b3c859aa0d1a696727ac31",
+      "bytes": 2825
+    },
+    "dir08/clip24.opus": {
+      "sha256": "994e83ac1ae01b5d14748e8929a25cb96317eac41d7828d58de04fe8883e64aa",
+      "bytes": 2132
+    },
+    "dir08/clip34.opus": {
+      "sha256": "5bcaf3ff0ed3a69b5cb5513b455720da428999489014b039d589f7b25ee89e53",
+      "bytes": 1776
+    },
+    "dir08/clip35.opus": {
+      "sha256": "1498939ce005b64fcb5dc1bfb0f94c932b79d4844b7488265d7fc85d9931f74e",
+      "bytes": 822
+    },
+    "dir08/clip36.opus": {
+      "sha256": "1078b2b8d44081a783e560cacd0c165377d41ead9fe786f756ea3df7dcc82a1e",
+      "bytes": 1225
+    },
+    "dir08/clip37.opus": {
+      "sha256": "7b2ad54bce0eb685554a3a71620fa9943313cdeb8f7ebf3ca9c576c17a4cffc9",
+      "bytes": 2084
+    },
+    "dir08/clip39.opus": {
+      "sha256": "75b77df080b1f2474bf4e8b34176435d5682ce91fcfc5a3db56ec8d23caabc98",
+      "bytes": 1100
+    },
+    "dir08/clip40.opus": {
+      "sha256": "fec937ae5daff7d9bcffa912b98aa6e8162fde8dfc1168b8ff7c9a76aec38bbb",
+      "bytes": 782
+    },
+    "dir08/clip41.opus": {
+      "sha256": "0801a62380fab1344c78b19050caa298ed0f11698845bd0b8689749541154033",
+      "bytes": 2111
+    },
+    "dir08/clip42.opus": {
+      "sha256": "0072f0fd5f196616c052d56fe20490b5bd0f1402ea09941ec9e9302857f3ee4b",
+      "bytes": 2804
+    },
+    "dir08/clip43.opus": {
+      "sha256": "5e17012b46d0c77188befd480ff5c23930182e54bbb397806dcdcc10ea4c9c7e",
+      "bytes": 2689
+    },
+    "dir08/clip44.opus": {
+      "sha256": "0d230d971aac6d93cb6d8ce517c52943f2c3d5298445e0c54b1ab9e697829aa3",
+      "bytes": 9238
+    },
+    "dir08/clip45.opus": {
+      "sha256": "21b610010504e8f5e3aaec1ecd6aab8ab63f87bc599564535068ca92eac1826e",
+      "bytes": 1581
+    },
+    "dir08/clip46.opus": {
+      "sha256": "98f88cff793195206b55edfbbbe15a6341b5095965937c9b66296d167e9190f3",
+      "bytes": 1506
+    },
+    "dir08/clip47.opus": {
+      "sha256": "5eaafd7db17aa077898a7c16598dab0d79a1a1b8cdec79578727070ee5c8d2b1",
+      "bytes": 1836
+    },
+    "dir08/clip48.opus": {
+      "sha256": "7025448f84bcafa834b825b98cf6590ed8cdc2f43fad34ad369f5482a4c045e9",
+      "bytes": 1785
+    },
+    "dir08/clip49.opus": {
+      "sha256": "82a49fd354d14208d29a190b7257f2e2b021ea8d20dbeec25b2db8e878cd005d",
+      "bytes": 1515
+    },
+    "dir08/clip50.opus": {
+      "sha256": "94d1d1427c06283af7477b192d5b5e2404070ec65a06f1319758182fae4aca83",
+      "bytes": 3722
+    },
+    "dir08/clip51.opus": {
+      "sha256": "cb7f04fc36693ca8de33c17d79e3cd019ce0d375ff6afead6190294ccc4f2b4e",
+      "bytes": 3068
+    },
+    "dir08/clip52.opus": {
+      "sha256": "a73b9abbe429194ebe5dd750b607d1f8f3f7f41070c61b10246b57370a2d7cfa",
+      "bytes": 1595
+    },
+    "dir08/clip53.opus": {
+      "sha256": "4e3d68920e396d44348d19e94c6c60744b60245b7415ff3365a5bf27cbf7bdec",
+      "bytes": 3140
+    },
+    "dir08/clip54.opus": {
+      "sha256": "6dc0ce9cce69cff525e1f6f596217cebf715180509106a0254f0795ebd32c310",
+      "bytes": 7327
+    },
+    "dir08/clip55.opus": {
+      "sha256": "37a2d87b9a1a4debc99c21d2f6fb745d112b82e0aec2e2972a948e62d6e1183e",
+      "bytes": 1189
+    },
+    "dir08/clip56.opus": {
+      "sha256": "6d0c08dfd6ea469c9807663671593e5234a12baba1de8cd6455f9690c3e8eada",
+      "bytes": 1644
+    },
+    "dir08/clip57.opus": {
+      "sha256": "1cce3f1a3f6bc760852e11af46d33e4a94ee7f38cd7c7514e79205e929dd9ffb",
+      "bytes": 3185
+    },
+    "dir08/clip58.opus": {
+      "sha256": "f9d4967b02a9da723a59da066d9337e0b7da71462a499d68c403c417492f59ab",
+      "bytes": 2656
+    },
+    "dir08/clip59.opus": {
+      "sha256": "babb4bdb8418e5bed1f5f1f88fe428b6ae02d05669cb219e9ac114f6b6aa733d",
+      "bytes": 5635
+    },
+    "dir08/clip60.opus": {
+      "sha256": "765d09db87c7a855d5f9471c541d13d0b40d7f12bbd5942f4c9791b131329b5a",
+      "bytes": 1464
+    },
+    "dir09/clip00.opus": {
+      "sha256": "b65556cd8cb94d72681830620e0843597f9fb13a2a4cf402b76c7da7671aa245",
+      "bytes": 25679
+    },
+    "dir09/clip01.opus": {
+      "sha256": "1e04bd21be9b11244bec36a943c6298123640f0d7948fc5f24e6e7c0c4029764",
+      "bytes": 1970
+    },
+    "dir09/clip02.opus": {
+      "sha256": "2b48ea5b24cc096e1c863b7abfeb5b072561c0e26e71b9d4a7b8b2c7cfeab2f7",
+      "bytes": 42705
+    },
+    "dir09/clip03.opus": {
+      "sha256": "dd1179b9e7db4fab1b5f1cbd1d21561afbe4b4bb9b8a259ac4be9f84265497df",
+      "bytes": 16030
+    },
+    "dir09/clip04.opus": {
+      "sha256": "d8e9b9cc7a5e22fb4f47cad6f7684ef89fb578b252742512ba63d528fea25cfc",
+      "bytes": 2611
+    },
+    "dir09/clip05.opus": {
+      "sha256": "73861461dfbc9d266fbb8114df13150060fb64f201180331c970a796f1afc52b",
+      "bytes": 5018
+    },
+    "dir09/clip06.opus": {
+      "sha256": "d677f3c832d7fdffff95fe10af22b0fe2c316a39ccc2483d7c070d7f1cb5cb5f",
+      "bytes": 4710
+    },
+    "dir09/clip07.opus": {
+      "sha256": "641f161097f27fb827ca86710d7afb429d025af7ddce3209b73071760833589c",
+      "bytes": 5402
+    },
+    "dir09/clip08.opus": {
+      "sha256": "25b3e6ec0d70c37c46095a20b64c366c42191a7e2a81a70f3f0f3853c495912b",
+      "bytes": 33318
+    },
+    "dir09/clip09.opus": {
+      "sha256": "3adf0d0ef36c453d41d6990fd498e85a123f19a443451ae6f99fb0e7985a7713",
+      "bytes": 4501
+    },
+    "dir09/clip10.opus": {
+      "sha256": "f2fd6caabbe79f9c9384f396b024f05c6fdbd19bc9b92c71b34aedd16f667530",
+      "bytes": 2564
+    },
+    "dir09/clip11.opus": {
+      "sha256": "42fba5a30b365326a089f61f52c2cf1a236592b8cd2edc0df0978c030052fc18",
+      "bytes": 24058
+    },
+    "dir09/clip12.opus": {
+      "sha256": "161072b2cc30cc09ffd96ab4f0e11c8868e9b2dd8fab4b82691019b3d792ab94",
+      "bytes": 31153
+    },
+    "dir09/clip13.opus": {
+      "sha256": "b6080bf83a065b90ff6864319952d95d24ed3578f74b4c1e4a752027c2d7f69b",
+      "bytes": 5300
+    },
+    "dir09/clip14.opus": {
+      "sha256": "863978dc439d7a0156cffe8b6390c37e567c136bc71d7fc43f59d6ad46504e21",
+      "bytes": 25100
+    },
+    "dir09/clip15.opus": {
+      "sha256": "fd530fb07db2bd29f809a0e31d8d53ef3cf29c092fcd249d0f456c09ed16b80e",
+      "bytes": 2117
+    },
+    "dir09/clip16.opus": {
+      "sha256": "aa321c9bc0b794a37b5eb815cebf9bb99743d95b7f596274e61ad0a95d377130",
+      "bytes": 35700
+    },
+    "dir09/clip17.opus": {
+      "sha256": "6d239353bb0676c04bc147b3bc63a4480053a08ed95e70ae849a3ae9c0bc7ac2",
+      "bytes": 26839
+    },
+    "dir09/clip18.opus": {
+      "sha256": "0ffc1b8e661a252a30713009fe78ae5e3632a1560dbb90321bb61c8a9efa6d3e",
+      "bytes": 5063
+    },
+    "dir09/clip19.opus": {
+      "sha256": "2e588a436d174152dc8765d92106613376ee4d5d2bac9872214c30cdedb04104",
+      "bytes": 28762
+    },
+    "dir09/clip20.opus": {
+      "sha256": "720657da9882f57481761d10e7b346cd0dc7b10a4050471cc8d189438efb8d58",
+      "bytes": 28253
+    },
+    "dir09/clip21.opus": {
+      "sha256": "24a6280c02e3cb43065e3c2273d9716b8bff8d9f9181dc64fd0d1ac2b0b2b21a",
+      "bytes": 39661
+    },
+    "dir09/clip22.opus": {
+      "sha256": "37355e8f4f3063b06469c42ba4c0db0b8dced9f005a38b6f96dcd5d380163ec5",
+      "bytes": 2740
+    },
+    "dir09/clip23.opus": {
+      "sha256": "197f56594cf588706f986e7d6e5831284c6854242151414a2d523cbbbc9b64fb",
+      "bytes": 5088
+    },
+    "dir09/clip24.opus": {
+      "sha256": "40b1a31489e95c188adca8ec4881cf556a038e938b4d68a015e23d274f1ce678",
+      "bytes": 4340
+    },
+    "dir09/clip25.opus": {
+      "sha256": "a529860cb1b7be95a82a1ef25b26775b6719c6c9aefcd78f9210aa94b9edf308",
+      "bytes": 25844
+    },
+    "dir09/clip26.opus": {
+      "sha256": "88d7760a8870c15e3b4d4a0b83f4936e460d01ac58fd8d89c05f01735005cabf",
+      "bytes": 4885
+    },
+    "dir09/clip27.opus": {
+      "sha256": "a3b505152a91e17bdb5bc088a988a6e2ea5f1f49a82084fd3dfafd42ffa826d8",
+      "bytes": 24786
+    },
+    "dir09/clip28.opus": {
+      "sha256": "f2035f3d6ba1bb8b9048b3ece1fb80f607ef43329d9a4ca4b6e244d818abe3ad",
+      "bytes": 1401
+    },
+    "dir09/clip29.opus": {
+      "sha256": "3c80e05789050d117613d62a491e63d10873814701553ab4915bb4c7caeaa511",
+      "bytes": 26583
+    },
+    "dir09/clip30.opus": {
+      "sha256": "ac5506559e6a0c997ecb4a810bcba30753c8c04f944c1c0b81468d6d03162569",
+      "bytes": 4365
+    },
+    "dir09/clip31.opus": {
+      "sha256": "185646ac8831196186fc9c01b780d77763370dd963b1a11252395f118f2b0544",
+      "bytes": 15066
+    },
+    "dir09/clip32.opus": {
+      "sha256": "6e6a2500627c5e5c774e2501aaf84ddb48b4d8eee00c9705f9affa7d1217dac7",
+      "bytes": 3237
+    },
+    "dir09/clip33.opus": {
+      "sha256": "595dd2fc625dcd374bc6bdd94e7741a101f830e59035338ac31a3598b7451c4c",
+      "bytes": 19144
+    },
+    "dir09/clip34.opus": {
+      "sha256": "9f6d72c21f1ab3fc8e6f6a34a4f32ab0406abd488917c57a372c45bfcbea543d",
+      "bytes": 7567
+    },
+    "dir09/clip35.opus": {
+      "sha256": "85effe673578899b8af0ff71f8f55afae15f7127aea9da05f6bb0d211e4aa7bc",
+      "bytes": 2697
+    },
+    "dir09/clip36.opus": {
+      "sha256": "52cc035a1ac84e961bc6458a77f97f543cbaa624c85d6da36318ed73e228801c",
+      "bytes": 5051
+    },
+    "dir09/clip37.opus": {
+      "sha256": "dba61ea6b90ae488a7734d6c3a8d3cb14927c6497d647d62a83ce06ece6a6adc",
+      "bytes": 24256
+    },
+    "dir09/clip38.opus": {
+      "sha256": "7436d45193b1eee4d85ee8b3d7e9b0daeda09fb1f757fe93cd374287bb1bd88e",
+      "bytes": 46510
+    },
+    "dir09/clip39.opus": {
+      "sha256": "1e3acd24e2000689962d6b02dbc2b896823d8ecfb3a78a2afe3f7988505e64ad",
+      "bytes": 30072
+    },
+    "dir09/clip40.opus": {
+      "sha256": "78b82b5f276c22594f83775d8a788025ce892b3c04f131e35a5f626154ca9e06",
+      "bytes": 50052
+    },
+    "dir10/clip00.opus": {
+      "sha256": "d951cf677af7bdc351eea6c0bdd3a1a850cde8235ffc7d39d855d794382a8aee",
+      "bytes": 4149
+    },
+    "dir10/clip01.opus": {
+      "sha256": "3987e21ba8cb8eb614353ee402e80150e7350d52f2d830e2ec6756993d895227",
+      "bytes": 6005
+    },
+    "dir10/clip02.opus": {
+      "sha256": "2527e75f7f4736a50aa27d6bb4f980a9d443ff81d46ca4a281f2a955a7d7832b",
+      "bytes": 1627
+    },
+    "dir10/clip03.opus": {
+      "sha256": "5b23ff89d3ac21fdbd5d5fa87839686cb66006a86e73e14b8f9df84d882fdf3a",
+      "bytes": 2763
+    },
+    "dir10/clip04.opus": {
+      "sha256": "1ae9c22dcb8928261f355eaf829e620a67b1dcc06ebab2b0b9a77d011f651232",
+      "bytes": 4068
+    },
+    "dir10/clip05.opus": {
+      "sha256": "7a45b269b64bb928ed4c3cbc333c3df70f1a0963e57c5e75ac2ff93fd64165a2",
+      "bytes": 3589
+    },
+    "dir10/clip06.opus": {
+      "sha256": "df3493657d3b0b7ebb7f77ff5bf4ad7b3c6cb0c652391f8f9249b86f96ad90f8",
+      "bytes": 2218
+    },
+    "dir10/clip07.opus": {
+      "sha256": "5be08b48d948a5b2be6e8da21a5fc0052b3c572cfdb14f252ec8765fd9f3e57d",
+      "bytes": 3219
+    },
+    "dir10/clip08.opus": {
+      "sha256": "9dfe1d44040ba5675a8555f60cfffd086b0e940428427c7e58794b5711e9ef43",
+      "bytes": 3566
+    },
+    "dir10/clip09.opus": {
+      "sha256": "592e23e816a57920347473a8d1499fe95117fdeb9607778c1c18195bc815ed81",
+      "bytes": 3036
+    },
+    "dir10/clip10.opus": {
+      "sha256": "37b4602bb8b0d1aed54d115839ed1519aa77f397d2f02f740bf56911bf71e8f9",
+      "bytes": 1513
+    },
+    "dir10/clip11.opus": {
+      "sha256": "cb46076da37e3e433ec71eb410c1429f90f0864f9cb5fe71e0d6b9d6ae036a04",
+      "bytes": 2681
+    },
+    "dir10/clip12.opus": {
+      "sha256": "941def8c5a6bf71597333457f38dfbdf87b6ff0d00bccd7fdc5cd8b5f116d807",
+      "bytes": 2673
+    },
+    "dir10/clip13.opus": {
+      "sha256": "398400f813eb0ab45fd3b136d8d5318c92ff428986751fa6811fec492aff74c2",
+      "bytes": 1477
+    },
+    "dir10/clip14.opus": {
+      "sha256": "e5e6b0deba8dc851aa84b3ac5a300b9b3be45d7ed148a652e645c377ef2af2c0",
+      "bytes": 7315
+    },
+    "dir10/clip15.opus": {
+      "sha256": "5e8450ac4b6724230887d39be012355c03efa0a59e4ba7e13436fd2559c5b30f",
+      "bytes": 4448
+    },
+    "dir10/clip16.opus": {
+      "sha256": "a99576558ee398967996eda94de1bd47569f4b89e6b54acd4b2d71703cad3676",
+      "bytes": 3437
+    },
+    "dir10/clip17.opus": {
+      "sha256": "aecf8be1e8d5450a800caa8e9edef18a0f7dfcc56d36459d23d47e5e6e25aa06",
+      "bytes": 5797
+    },
+    "dir10/clip18.opus": {
+      "sha256": "d6f4f10d78ce1240fccf2717b3cc1447c1f56f2ecd33c025fb05806d236adb18",
+      "bytes": 4720
+    },
+    "dir10/clip19.opus": {
+      "sha256": "e483f8c733c05e272ed7742052939b849f4071d8664490e3edfcf6fa95c1ac5a",
+      "bytes": 6546
+    },
+    "dir10/clip20.opus": {
+      "sha256": "fccd5b5261fad98cfa24b58e3256a22fb5f3742c2c7c893991b21e86700c9612",
+      "bytes": 2843
+    },
+    "dir10/clip21.opus": {
+      "sha256": "3f400e376c2d82b2b6c45e9ebc7018a3f590fc4456b4c2e06eb78d12c8fe3d9a",
+      "bytes": 4088
+    },
+    "dir10/clip22.opus": {
+      "sha256": "b551cac0525f7a4a49bff47cf8b6cb81bc878fc7719b99285a09d938be663b5c",
+      "bytes": 1871
+    },
+    "dir10/clip23.opus": {
+      "sha256": "46eba6e7bfefd15ab229c96844860765d6ef76bddf9961e1ee4a967c00159996",
+      "bytes": 5366
+    },
+    "dir10/clip24.opus": {
+      "sha256": "9b041eb2d1a416bffafe3ff1805ff39efc3d4d8d1ad4e1aec7060dc5f558bdc5",
+      "bytes": 7108
+    },
+    "dir10/clip25.opus": {
+      "sha256": "0154c119f7058e1316f70c95ea2023c7efb96d5605bddc79f06c1f3a5c41ed0f",
+      "bytes": 2052
+    },
+    "dir10/clip26.opus": {
+      "sha256": "bf9f8182088579c2d3dd352538ac54b2bc0758ea885e27d804e289c6afb3b0d3",
+      "bytes": 2853
+    },
+    "dir10/clip27.opus": {
+      "sha256": "fe8771f0a3872af50c9770394111e062e199f36a927f2f2b8391b6214f6161c8",
+      "bytes": 4414
+    },
+    "dir10/clip28.opus": {
+      "sha256": "2690bfd8515d3021468db4b5b94ce4c42c93e7f16499e2948d61cb968497deb7",
+      "bytes": 3182
+    },
+    "dir10/clip29.opus": {
+      "sha256": "eee6368f4774154c8932eb07d2d46c7c177c768833c59595a7fe787c884d9bbf",
+      "bytes": 5417
+    },
+    "dir10/clip30.opus": {
+      "sha256": "6fd68e69331060103999bbd23e103916f133c83d277d3fa16948861bb24f11ac",
+      "bytes": 2817
+    },
+    "dir10/clip31.opus": {
+      "sha256": "c462945c70a544a284846f5764e3c558a73f0c8d0f8bddd5a8d855937dbfaa0b",
+      "bytes": 3700
+    },
+    "dir10/clip32.opus": {
+      "sha256": "0bcc7a41dc652ce4049bae2712bbf8118db92055dfc51b9e1f8996ece077e8c1",
+      "bytes": 8884
+    },
+    "dir10/clip33.opus": {
+      "sha256": "ca2834d7f719402b5e51612d942f50fe07d1e68e89c6ebf831d16a35be68e64f",
+      "bytes": 6806
+    },
+    "dir10/clip34.opus": {
+      "sha256": "6d15b33b3516252685ebd5e70a300d61a02c98b8d638f5e21d09658a5c58a2b4",
+      "bytes": 5944
+    },
+    "dir10/clip35.opus": {
+      "sha256": "d86dbfc3cc16fe04fa7696d2ee31ae463b20888f07f3621a3015f8a649ba0fbf",
+      "bytes": 4039
+    },
+    "dir10/clip36.opus": {
+      "sha256": "9f670c1b32054edfb8638f3c9f67e776c0fd527fa366a45bbdfb0886b2c4ca38",
+      "bytes": 3300
+    },
+    "dir10/clip37.opus": {
+      "sha256": "1ded7faabac122bd8cd2aca51096dac25d4b1b2bcb630cf611a2e59b0969901d",
+      "bytes": 1471
+    },
+    "dir10/clip38.opus": {
+      "sha256": "62b35cae07ba84a9a2a83b66a8261b4813fb23f704ff0b7ad117d59c885b2b06",
+      "bytes": 4460
+    },
+    "dir10/clip39.opus": {
+      "sha256": "c9d3bbc246de9d1e1eb280aa2e1085165c6ae84c559cf868a81392aad47eb633",
+      "bytes": 3112
+    },
+    "dir10/clip40.opus": {
+      "sha256": "1723e8d79989ddf2dc765dcdbd7582ca8d965d5d55f4f135957fe7ebe79645c5",
+      "bytes": 2945
+    },
+    "dir10/clip41.opus": {
+      "sha256": "eb932b23528a0a83550ebb957f1a117284a9acb28c7b7d0161e963c5230ec456",
+      "bytes": 885
+    },
+    "dir11/clip00.opus": {
+      "sha256": "1b18896899fa356dcb1fe7a7aa1afe4fd6939ed946c32574c9a9d15fb935ac04",
+      "bytes": 43229
+    },
+    "dir11/clip01.opus": {
+      "sha256": "ae027fd5e96181d82a727042ecc7a08d852b8ff7189454e9438bb002f63ce6d1",
+      "bytes": 3897
+    },
+    "dir11/clip02.opus": {
+      "sha256": "dbc1ca6649793e3d0c900cebde7a6916a27c22d39d14830b0932b924a3d09dc1",
+      "bytes": 3540
+    },
+    "dir11/clip03.opus": {
+      "sha256": "9ec7f25ca778fb0e961e12a318827e19574e7c6bee14e0027f3e5c1569af0672",
+      "bytes": 2176
+    },
+    "dir11/clip04.opus": {
+      "sha256": "9744ab4460fdd70252072db27b35ad6bba670586ddbfbff8669bfd75fb03b898",
+      "bytes": 14663
+    },
+    "dir11/clip05.opus": {
+      "sha256": "3b64f02c734ec7e49d4705312a04a1e92e7637b9ee7fd5fe2ac93f3e9f4e7a7b",
+      "bytes": 1986
+    },
+    "dir11/clip07.opus": {
+      "sha256": "42960bf76a7b29ca055d0dee0b8f52843b02ba78af50bddf2d9bcd49c1ce5d97",
+      "bytes": 3925
+    },
+    "dir11/clip09.opus": {
+      "sha256": "67b826be82156f2e56279c9569d2339ef04c34b6ea6a56176b2605fd2084b1de",
+      "bytes": 2222
+    },
+    "dir11/clip10.opus": {
+      "sha256": "c3f1333244670d9a2c8d58d8f9ffae0f3f894f2876f4ff27413acab7cbfdc2be",
+      "bytes": 2003
+    },
+    "dir11/clip11.opus": {
+      "sha256": "0595a5b0a485adc0899bfa4f1f680eefa0ff70605d13f4d621911d2759d02a3a",
+      "bytes": 2050
+    },
+    "dir11/clip12.opus": {
+      "sha256": "558251f00e15efcc3106740962acb468e4aa3d50a00fc0b29590f525980d9e6b",
+      "bytes": 3994
+    },
+    "dir11/clip13.opus": {
+      "sha256": "4c2107f5e28fa7a12b593aadbd68363da502e5e989b625ebbf90faf46c6f0622",
+      "bytes": 3908
+    },
+    "dir11/clip14.opus": {
+      "sha256": "1e8ea674e5ae261195fc4675663de9242a1ad8e9388361a05500b6e2ed5a04e3",
+      "bytes": 3813
+    },
+    "dir11/clip16.opus": {
+      "sha256": "5952284f0f38e1a9baaea639d39ad8a646b0b1f60885b0ee1279c720e2744d58",
+      "bytes": 3949
+    },
+    "dir11/clip17.opus": {
+      "sha256": "12cbfbaa11c9dea19009d2694774c06a3a5d713d5e3382ab34418ecd8e291d8a",
+      "bytes": 3858
+    },
+    "dir11/clip18.opus": {
+      "sha256": "066afd87a9e1a551f6ac5714418e7c0b11869357e894d0a030a059a62e95c616",
+      "bytes": 3966
+    },
+    "dir11/clip19.opus": {
+      "sha256": "ca89da4199054f428c1b0f4bf3d9294db2789b43a37e59d4caa4ef9fde7c07f2",
+      "bytes": 4060
+    },
+    "dir11/clip20.opus": {
+      "sha256": "e2b1c018d2bd2a60832d8a3636b2b6cfd4c4ba1b1a83cc94ef2f9733717e817a",
+      "bytes": 4253
+    },
+    "dir11/clip21.opus": {
+      "sha256": "ffb8ec677dc527bf9bf3002334cd37447a9d382b0c9c8d3cec49c831f3455510",
+      "bytes": 4959
+    },
+    "dir11/clip24.opus": {
+      "sha256": "2d51701168941e3227ed5f089a20fdd7bd6650efa6469ab75c5617223be1111b",
+      "bytes": 4063
+    },
+    "dir11/clip25.opus": {
+      "sha256": "f5b1a2af18e18ece8dcf0a18e98aca8ba9d3913b04124717d206c9f9dbb18f7a",
+      "bytes": 4003
+    },
+    "dir11/clip26.opus": {
+      "sha256": "015228d22cfd7138a569e88e6a191a13fe92574219d4cea8607d3171ad71bc4c",
+      "bytes": 3892
+    },
+    "dir11/clip27.opus": {
+      "sha256": "55fcc982c72b0f58d8afa23ed56e47dc237dcd24d120226f6195a24f6a8cd1ca",
+      "bytes": 3935
+    },
+    "dir11/clip28.opus": {
+      "sha256": "503c5576da7e784c56367e5cd9ee47f3e4f2b1971f41bb1086ce65c3c6577519",
+      "bytes": 3911
+    },
+    "dir11/clip29.opus": {
+      "sha256": "8ecdcdf050c68c1813e064fca45889356aeb7921a199abb786e31a60b6d73812",
+      "bytes": 3886
+    },
+    "dir12/clip00.opus": {
+      "sha256": "c1432b6e266f1347de698da005f02bda56bc1edfc4c800da2d075dfc3d93a179",
+      "bytes": 7415
+    },
+    "dir12/clip01.opus": {
+      "sha256": "63d9c95962bd29e501e2e84f663c44689093a0dfeb636bced129aa0944343375",
+      "bytes": 9550
+    },
+    "dir12/clip02.opus": {
+      "sha256": "2d2d0ca79b0c9d8685de9a672b62d51488602741d707e740fdb61b8c5d0132bc",
+      "bytes": 7754
+    },
+    "dir12/clip03.opus": {
+      "sha256": "e1734b4fb99bb056b02d8cd554ecddabe842d7493a1044c0829618d636d0486e",
+      "bytes": 5354
+    },
+    "dir12/clip04.opus": {
+      "sha256": "a32194621c71f23b7bd9fb7bed0e4964c35e307ad4fd9604549d70b94af6d621",
+      "bytes": 3306
+    },
+    "dir12/clip05.opus": {
+      "sha256": "1881f90f7cb28716ae410f3b442ac62608a952b5f5254157a2ece6c950437881",
+      "bytes": 5512
+    },
+    "dir12/clip06.opus": {
+      "sha256": "1613e57d74bb009d3265e4b05d09cd029842d44ce6fe69a1f79b4f3c917d3d98",
+      "bytes": 6469
+    },
+    "dir12/clip07.opus": {
+      "sha256": "2da5f6feebae1810f10c43ee52a68b1464b078cda44464aab3cf86c3de2d5eaf",
+      "bytes": 6228
+    },
+    "dir12/clip08.opus": {
+      "sha256": "b844627f3f997087f062970a7d322a94f143c47659fa8d8026e4aa7773c43ea9",
+      "bytes": 7988
+    },
+    "dir12/clip09.opus": {
+      "sha256": "d666497f68b45a3e251c1289e16e04b7a591e872f94da626a10f7f448d571bf4",
+      "bytes": 6751
+    },
+    "dir12/clip10.opus": {
+      "sha256": "aaa7d58b789157d2d545dc30b0d251fa900c803a7dcaaf06eed10b28fdf9ad46",
+      "bytes": 3829
+    },
+    "dir12/clip11.opus": {
+      "sha256": "9870cefc6aee7d7124943fee63ea12c773938a9c08c36714182938fce9fa1975",
+      "bytes": 2893
+    },
+    "dir12/clip12.opus": {
+      "sha256": "57c861ecdad7cd0d9620f01832d6aa8888084ec9a800b7fdd7c9145c84119065",
+      "bytes": 4807
+    },
+    "dir12/clip13.opus": {
+      "sha256": "f4ff25030225fcd9ecc8514d22384c3215455c6eb88941c5a73bffdef21b4b07",
+      "bytes": 6933
+    },
+    "dir12/clip14.opus": {
+      "sha256": "551a1301e927127cd25540bdc3d4546758d479b40c61f36704eaf20ee2d78e49",
+      "bytes": 1334
+    },
+    "dir12/clip15.opus": {
+      "sha256": "1b952d8d1a7e51731e1ab77165b27dbe11353854edadb930a54821bf228a00f5",
+      "bytes": 9066
+    },
+    "dir12/clip16.opus": {
+      "sha256": "cfda8479e1753a682a5289667af3a1bef642011f89ac6ca279d4ca37f95d4f30",
+      "bytes": 2200
+    },
+    "dir12/clip17.opus": {
+      "sha256": "2cfaac142b95c9711dae5596c2e05b5edd4653ebba264044ae4797f1f99e94a1",
+      "bytes": 6005
+    },
+    "dir12/clip18.opus": {
+      "sha256": "da5167fcc405f2ddc923b500faabaeb6c599644ba42e7f9bb53c846c720a234b",
+      "bytes": 5010
+    },
+    "dir12/clip19.opus": {
+      "sha256": "5075eaeff8db7c5958f1664ab2346ba0571596baed8b631928eeb896918584e1",
+      "bytes": 6584
+    },
+    "dir12/clip20.opus": {
+      "sha256": "48c96f7d00e82b673839b41dff15229d8a178210e925f6c8717db65c49ae347a",
+      "bytes": 48274
+    },
+    "dir12/clip21.opus": {
+      "sha256": "63e0fb4399b8c3bf899e834542359f1e1c13c29878e975144298dd6365c337f2",
+      "bytes": 25170
+    },
+    "dir12/clip22.opus": {
+      "sha256": "12c8da355da23e2d34411253f9e8ab356f64c267c48468634cc179d3f2d54170",
+      "bytes": 3453
+    },
+    "dir12/clip23.opus": {
+      "sha256": "cd5803bbbf9b0afa8534745079da64260dd0855d38c5064c65407b75ae8d697c",
+      "bytes": 8735
+    },
+    "dir12/clip24.opus": {
+      "sha256": "8ec5cb6f370f1c2c86e6e7f5673141c44132951ad34ea49107a0dda7a0517167",
+      "bytes": 5778
+    },
+    "dir12/clip25.opus": {
+      "sha256": "a413f2710de4d787c5eb5c8a18f8e4bdcf8cf3520d5f6d5e4267d98802b4eb3b",
+      "bytes": 24268
+    },
+    "dir12/clip26.opus": {
+      "sha256": "25865b9fd38b6f15cc041676cfb5f05000878fd3bfc4e2d5dfa54ba6abd531e3",
+      "bytes": 7173
+    },
+    "dir12/clip27.opus": {
+      "sha256": "d02868dc4b554cdd11d56b66b46fb2c68206c48a47b97de1767086fe8553df17",
+      "bytes": 7635
+    },
+    "dir12/clip28.opus": {
+      "sha256": "51d332a8fdc295ee0fc5d4d9c93dd3ea715e1086d98917a54c304c195ac105a9",
+      "bytes": 5749
+    },
+    "dir12/clip29.opus": {
+      "sha256": "b8876fc67f9d6fa2657bc379133a0130a732ff0058152936fdb25cb8503cb496",
+      "bytes": 7341
+    },
+    "dir12/clip30.opus": {
+      "sha256": "64486c4ee91fefaae4765c1bb4bde658a12390bfe92bd5e94f2fe1663dfe2bd6",
+      "bytes": 4342
+    },
+    "dir12/clip31.opus": {
+      "sha256": "7bc512e2952db20def2f925dcca6670858f07ffd40413c0a815b3010a8027e22",
+      "bytes": 3997
+    },
+    "dir12/clip32.opus": {
+      "sha256": "f579d563cb8f9a094ae6ce03dad6109a2fc67d35e11872c956a005bbb99ecfd9",
+      "bytes": 5472
+    },
+    "dir12/clip33.opus": {
+      "sha256": "82b3544c09ec17e73c8be4b2fcf54eaafe127e0fbf51d1d7291051dd521807df",
+      "bytes": 7002
+    },
+    "dir12/clip34.opus": {
+      "sha256": "496f94a6176101cd6f8a714fc6c7c6b84e8f197c6e21cd908d6c41684872b3f0",
+      "bytes": 5912
+    },
+    "dir12/clip35.opus": {
+      "sha256": "7a8b4310803c5b4c718573d0f9ae4b4c24e6ad6383ddc93b5ba72d6d7df7f4fc",
+      "bytes": 5302
+    },
+    "dir12/clip36.opus": {
+      "sha256": "01e837b9bd90471d47bd2f0efb18aba49711d48f92a05b39691214aa3267dd0d",
+      "bytes": 3552
+    },
+    "dir12/clip37.opus": {
+      "sha256": "59c65826c6146a0d2dc7999c68e9a4bc56010048c4bd908b42f10a42afd448c4",
+      "bytes": 6304
+    },
+    "dir12/clip38.opus": {
+      "sha256": "13d8edb9446487e3b416e5069ed245dd28e1d240512025e513e8686dd1979c85",
+      "bytes": 6268
+    },
+    "dir12/clip39.opus": {
+      "sha256": "dbb83e92b472564b2fab025d20633e1ae117b3aba4d820911014de7d2a7deae5",
+      "bytes": 5951
+    },
+    "dir12/clip40.opus": {
+      "sha256": "243b43bf63e9d023dce74f82e72dd3bf5f940e6ebf93f81dfb39466d6ca1f4e6",
+      "bytes": 5118
+    },
+    "dir12/clip41.opus": {
+      "sha256": "7e695d3b6e7a78b4eb28eb5c245cb8594a84eeb1e6af5cfd1f48f0ce92cc9571",
+      "bytes": 5847
+    },
+    "dir12/clip42.opus": {
+      "sha256": "c8b38fba4ac02f38bb399e72074df9fcb21f5c7b9b5f4ad44abb379e17d2fdfe",
+      "bytes": 31299
+    },
+    "dir13/clip00.opus": {
+      "sha256": "4aa7c273ca20aeba91dc38031205d8a9d6c89395b1cc924d7944a823e2d1ad98",
+      "bytes": 1318
+    },
+    "dir13/clip01.opus": {
+      "sha256": "f59af1d6ddf366e0a3c8e05d4b180d1d001dd5a87d2e58602f1d5551acddf4af",
+      "bytes": 3040
+    },
+    "dir13/clip02.opus": {
+      "sha256": "be379a8211ceca83f32f0b4b94fc08460286104a979346117e398d6b84b5cfbb",
+      "bytes": 3245
+    },
+    "dir13/clip04.opus": {
+      "sha256": "97083092dd9fee19e7fb8d6a70454103b54a5f017c8dbf9b1d7e28058cdf5d49",
+      "bytes": 2619
+    },
+    "dir13/clip05.opus": {
+      "sha256": "9f3b56269ae3622aa367e590b711ba2ae0aab78b1e783725d1944f43d6758e97",
+      "bytes": 5527
+    },
+    "dir13/clip06.opus": {
+      "sha256": "36d096e36ffc267989216840d35b9726838c5134a454eae98a43ee14d8cafe4d",
+      "bytes": 7424
+    },
+    "dir13/clip07.opus": {
+      "sha256": "7949fdfcfdebab2892b08a1c78b3bda07775f5f86b1f53e10ccd8a1ca107afb4",
+      "bytes": 2771
+    },
+    "dir13/clip08.opus": {
+      "sha256": "02f4a232d8be3216062901d9bc6852b5a713be2b3c43483d185e866150240c19",
+      "bytes": 3234
+    },
+    "dir13/clip09.opus": {
+      "sha256": "cd9ce38379277cd5bd8146b3f3634ab537792a00606462e695028449b9d72b70",
+      "bytes": 2976
+    },
+    "dir13/clip10.opus": {
+      "sha256": "17a74ba847813c236b5e97c7256e3d9d120050f73cadad5dd62fbbd42ef340e4",
+      "bytes": 5449
+    },
+    "dir13/clip11.opus": {
+      "sha256": "1100042cf6e7b969556cdccb80afde6d6a2a73f2de18db9bee81ced3e83a5009",
+      "bytes": 10819
+    },
+    "dir13/clip12.opus": {
+      "sha256": "76b64f48b45c137a5c4b9c40fb5c58f018436d298b14e66b9467a6c51b583a91",
+      "bytes": 2175
+    },
+    "dir13/clip13.opus": {
+      "sha256": "02373470f4b7177fe5b2f6597044c5c53557a03da3b8bc97e8dcdceb2ebc4180",
+      "bytes": 4856
+    },
+    "dir13/clip14.opus": {
+      "sha256": "d83005c495598389ebe66389a15d758929edf2c8360dd7729ca066d1213b94c3",
+      "bytes": 5425
+    },
+    "dir13/clip15.opus": {
+      "sha256": "20be0e27516c462575e22ca1018e9a2cfdb27267fb500009c16cc991c4534f8c",
+      "bytes": 3623
+    },
+    "dir13/clip16.opus": {
+      "sha256": "48d90d5a3532d01e3ab49f88337bb3469ae4e1c99190e163e4b8ba0d54e237ee",
+      "bytes": 3207
+    },
+    "dir13/clip17.opus": {
+      "sha256": "83798d03ed4dd32f2e5b602f9b3ffa84f2c26554cb26dd0886b9cf43bfb7b16d",
+      "bytes": 2721
+    },
+    "dir13/clip18.opus": {
+      "sha256": "977cf52e70b5625c9c00df8c0428ac1539728e416841125605db0b1ac0ea724b",
+      "bytes": 2593
+    },
+    "dir13/clip19.opus": {
+      "sha256": "435a2075772f6ed489e46aaf062c4443e05dd375619499a80b22e09991989b49",
+      "bytes": 3125
+    },
+    "dir13/clip20.opus": {
+      "sha256": "f56ae23c58d447023002099ba379a66375c781606f9aa2a1853c0ab5b1699c1f",
+      "bytes": 3490
+    },
+    "dir13/clip21.opus": {
+      "sha256": "b7cdffd59f5f8ba2771f3cfb92e163a613f698283237efe6600ecdefded4643f",
+      "bytes": 1889
+    },
+    "dir13/clip22.opus": {
+      "sha256": "37debf5fb449e456efd34dc96af57544c60bd52bb297379c84b75e11998bca5d",
+      "bytes": 2824
+    },
+    "dir13/clip23.opus": {
+      "sha256": "f6530a993c280d92331d11ba3ac951a45140c06c74e25f64238b0c97460e01f7",
+      "bytes": 2866
+    },
+    "dir13/clip24.opus": {
+      "sha256": "50c7f079d94567e7e848cb746681dd042d1310f0929776d0f035d916776339c2",
+      "bytes": 1713
+    },
+    "dir13/clip25.opus": {
+      "sha256": "052166248d5259e0cf6681af8eae17f05e998728ee1fc287632d18b89514febd",
+      "bytes": 5412
+    },
+    "dir13/clip26.opus": {
+      "sha256": "c399ea25e91af059ff469d88f44dd04d57e050bb85b256c6fda552621ca631d6",
+      "bytes": 2505
+    },
+    "dir13/clip27.opus": {
+      "sha256": "ef4b9fd947510ac84e4bfeb9d5f01961baa434d2e77a17f35f9838cdd06beb7e",
+      "bytes": 2669
+    },
+    "dir13/clip28.opus": {
+      "sha256": "775b00c2fab51ec50eeb7889436fae088c811bfbf0884506adf9214c096c1438",
+      "bytes": 2671
+    },
+    "dir13/clip29.opus": {
+      "sha256": "0e161d12e5ec401c2525121e83823d9451a6cc8b8d898ec23c26f251622ba09e",
+      "bytes": 1871
+    },
+    "dir13/clip30.opus": {
+      "sha256": "2b62cf0eb7dc02f4c293f948029d7c228a9a9d088e07e230fee0ef78fab8b17f",
+      "bytes": 2857
+    },
+    "dir13/clip31.opus": {
+      "sha256": "712c75d887b12da9bff8442e2378f68163b5b0d9b7864ce52206dea449775ce0",
+      "bytes": 6361
+    },
+    "dir13/clip32.opus": {
+      "sha256": "fd5ec56c00377854101f5cdc2b632e476abc9193aa117628778ec750e8a5a199",
+      "bytes": 3004
+    },
+    "dir13/clip33.opus": {
+      "sha256": "57e40421d8a205811950f0ce5857c3847f6b740e83e0a51b6f7a31f70e463eed",
+      "bytes": 7499
+    },
+    "dir13/clip34.opus": {
+      "sha256": "ace9b2a9a6d6842fb559988d34a14e376709c113487eac67ff2a2515ebbb5149",
+      "bytes": 2897
+    },
+    "dir13/clip35.opus": {
+      "sha256": "21a44ccb65b9ebb5597c75e8aab8e97fbe14029ff43bfb523b2466aee48f84d1",
+      "bytes": 5725
+    },
+    "dir13/clip36.opus": {
+      "sha256": "2e58538592945a7a92983c6e11cae1243836fa2e8be21b3e121aae017a93a007",
+      "bytes": 6738
+    },
+    "dir13/clip37.opus": {
+      "sha256": "5afd708d7c3a1780c2955fcc74a6c9482635e5cde85f92a48c85e5e037902230",
+      "bytes": 3449
+    },
+    "dir13/clip38.opus": {
+      "sha256": "1288a963d9b386737549a5889ebdb8fdd62fc8baac5e1835fde2358703dd29ec",
+      "bytes": 4068
+    },
+    "dir13/clip39.opus": {
+      "sha256": "0921f4b4f1fc7ebfe51beab3242e340d1afcab5545175afa20cb4db4d7eb41b3",
+      "bytes": 3762
+    },
+    "dir13/clip40.opus": {
+      "sha256": "21efca2c1ac5fb0f62ef83339ad51753248b684cbb4b8b289e3223a30c1a2d37",
+      "bytes": 2735
+    },
+    "dir13/clip42.opus": {
+      "sha256": "37e62b90061ce8ac26393df22d0f84874fa63e95896e7a828621bb13e9ac6ed6",
+      "bytes": 5816
+    },
+    "dir13/clip43.opus": {
+      "sha256": "92c6b6ec13a989e909d25fa649fb46d475f54b13cc788a121f7bc13d8beda4e2",
+      "bytes": 5672
+    },
+    "dir13/clip44.opus": {
+      "sha256": "8bc02a62028b4cfd6e1027b9932d925d80d7f26f40e131fc1a6341e8db153ba7",
+      "bytes": 1417
+    },
+    "dir13/clip45.opus": {
+      "sha256": "cbdac97c22314c994ed74d3c03a1bff480c81279889651fb1dcfa689933f575d",
+      "bytes": 2371
+    },
+    "dir13/clip46.opus": {
+      "sha256": "fc872bf9c8404f59e519ab91e8a79ab620748ccb8229357d37b2eab551be87e0",
+      "bytes": 1326
+    },
+    "dir14/clip00.opus": {
+      "sha256": "496675f6497dc658b4de387b33347bb850174f9c87f9ef0ab54c3a0451da2f5b",
+      "bytes": 4804
+    },
+    "dir14/clip01.opus": {
+      "sha256": "f5231880b40cb2349f80806bae1eb0c034876760f3aae961626fdf053bc9827e",
+      "bytes": 2626
+    },
+    "dir14/clip02.opus": {
+      "sha256": "0fea46e95a8e650591022a6ed7c70347d0c7d562db1274348cb84de01d72c88e",
+      "bytes": 4946
+    },
+    "dir14/clip04.opus": {
+      "sha256": "7a79f3bb6671cd7b0407f1a6646126152ca7faee4f447745e5007d3f3683aba4",
+      "bytes": 5043
+    },
+    "dir14/clip05.opus": {
+      "sha256": "5d094aa61ebd3494b7a0ace4910a03d76f5ea1c82a859bed79e8c82cbd6bdf26",
+      "bytes": 5055
+    },
+    "dir14/clip06.opus": {
+      "sha256": "a2263fa6b47fb3437342a3a26de4271d1842819b70303aa6986e21b6b8a918c6",
+      "bytes": 5617
+    },
+    "dir14/clip07.opus": {
+      "sha256": "b5bacd1c577fe596123c4a59970c4793a068681bdf272b01af9bddb900ee5b46",
+      "bytes": 5140
+    },
+    "dir14/clip08.opus": {
+      "sha256": "d830eb8f6acc304b382034cf1912aaba560c4847dd95ffd8b9ef4821d9df4074",
+      "bytes": 4402
+    },
+    "dir14/clip09.opus": {
+      "sha256": "73b39490e4c87ffdd5713fc617c3e420cec10a15b1334f370b4f729e827fde5b",
+      "bytes": 5565
+    },
+    "dir14/clip10.opus": {
+      "sha256": "ca09ba210c8bc783b45cbe2d4741e9d3ef7f24aa3fd101a95cd26cf8be2dc148",
+      "bytes": 5153
+    },
+    "dir14/clip11.opus": {
+      "sha256": "349c6d67afe6d3eead5c6f83257dd75ea423aa252127df6403327552293088e3",
+      "bytes": 7469
+    },
+    "dir14/clip12.opus": {
+      "sha256": "bda5ab015420821c8d85e4ac1c62b0b10e0e48b354942c17d15c4218dd3a9fe2",
+      "bytes": 4743
+    },
+    "dir14/clip16.opus": {
+      "sha256": "6e0db5d16de77dd520ec6f18b1442504ed9bd123cc10f8322f61193bf19aad94",
+      "bytes": 4641
+    },
+    "dir14/clip17.opus": {
+      "sha256": "516282e3370d2787160a5329c0c6161a7f196c9f9c9ef1028fd27dfa6d538660",
+      "bytes": 4978
+    },
+    "dir14/clip19.opus": {
+      "sha256": "186ceecb491ade56cad8669cdacf4fa1dfcfba3a2c7da1fb5fe64a090130a123",
+      "bytes": 4763
+    },
+    "dir14/clip20.opus": {
+      "sha256": "6259d3c5ce2de2d9069018369049cd98a62d2039d02c3b709912924d9efcbc51",
+      "bytes": 5194
+    },
+    "dir14/clip21.opus": {
+      "sha256": "3bd60139a3c41bc163a5f6b2fbbfb5c3defc635a9d6ea492f3f604ea0b9ec5f1",
+      "bytes": 5230
+    },
+    "dir14/clip22.opus": {
+      "sha256": "dcf24aa29f3e90ff69cbe804c831b5222cbc50cea8cb491569e5b3436a022d57",
+      "bytes": 5244
+    },
+    "dir14/clip23.opus": {
+      "sha256": "0f7f9d4621f3de3b8d61ffc69ccb447131ab9c4702758c7ea64ca98829dbdfff",
+      "bytes": 4983
+    },
+    "dir14/clip24.opus": {
+      "sha256": "ef52d54ec495c37e0dcdf3e2498d41d9be258d732a3fc6a2f09a2a557fe31cd2",
+      "bytes": 4861
+    },
+    "dir14/clip25.opus": {
+      "sha256": "067c7742b50d08f98337242d09184f433f456abf452add3611fe28ffdb06ef28",
+      "bytes": 5402
+    },
+    "dir14/clip26.opus": {
+      "sha256": "52796974467e8f113c33564226131e5c6b46041f9c7f0f65c3a1ee467c005a85",
+      "bytes": 5090
+    },
+    "dir14/clip27.opus": {
+      "sha256": "a2bfeb7128b459f4f77049a60ef418f0ef32fb3503b4a47c5aeddc35abad0571",
+      "bytes": 5046
+    },
+    "dir14/clip28.opus": {
+      "sha256": "cbacb009bef4de33b2d393781a677fd52cc61d24f5bd5dbf7503ebecdac38f30",
+      "bytes": 5141
+    },
+    "dir15/clip00.opus": {
+      "sha256": "72680c9427190aa3b921ce8e0a1dce06f148fff91b54efcbbcc647ae888b6f55",
+      "bytes": 1803
+    },
+    "dir15/clip01.opus": {
+      "sha256": "a4c52b77ff4945967643b82cb61977ec671a3867856f8e6d3600da320e5806ca",
+      "bytes": 3085
+    },
+    "dir15/clip02.opus": {
+      "sha256": "bf8c1c2ab571c843894301bf7dd35f519415c9ffc0f10e0020287465eed91278",
+      "bytes": 1816
+    },
+    "dir15/clip03.opus": {
+      "sha256": "e86828158f986fbd1386bd71d41861a59fb961235394e7b82c33ebe2c68968a4",
+      "bytes": 2101
+    },
+    "dir15/clip04.opus": {
+      "sha256": "b73e5531451c25161148976770306fdc8ca75408c61496535e8ce03c5556cd77",
+      "bytes": 1171
+    },
+    "dir15/clip07.opus": {
+      "sha256": "32e88f67cdc00400257756db5e03550bb8e4e5ce90cff68e9c0427a8021a33a9",
+      "bytes": 2327
+    },
+    "dir15/clip08.opus": {
+      "sha256": "beacf7581139214d69b531e6f2a5cd4a9d3a9fa6f06a90d1e3fe15916ccb98b1",
+      "bytes": 933
+    },
+    "dir15/clip09.opus": {
+      "sha256": "e02d3e07938e6175d8709be7bbae1858fa57255806c0f64579c4a9a080f8b939",
+      "bytes": 2078
+    },
+    "dir15/clip10.opus": {
+      "sha256": "7d43c83084aa42df6d5a2678822332e9b9a6377efadf62a4256d6885cc3ae519",
+      "bytes": 2458
+    },
+    "dir16/clip00.opus": {
+      "sha256": "9f2b5409ecdf67e162db1ad278348a6816c8e1e2f5c727da5292c1427a080184",
+      "bytes": 6076
+    },
+    "dir16/clip01.opus": {
+      "sha256": "807c6b48cdcc49850bba6d1948bf355fe1a59d9566912081a48a0b4228f110a5",
+      "bytes": 2432
+    },
+    "dir16/clip02.opus": {
+      "sha256": "abadca3efb1c677e8227a3066f861ba98e88ace208e7fa0f9d650bec1bdd76a1",
+      "bytes": 8188
+    },
+    "dir16/clip03.opus": {
+      "sha256": "e252215e46276a9a3fd6923ab86311b4d6eec6116d85f2f632ce09209b77fbd7",
+      "bytes": 7970
+    },
+    "dir16/clip04.opus": {
+      "sha256": "2cc66b57c57cfb2ca264f312f0d304ae0ea4457e76024a8777c265dd74c14c2b",
+      "bytes": 7208
+    },
+    "dir16/clip05.opus": {
+      "sha256": "a2c57689357f2106ef6c0692e26068f436e182c0c659252894867097558c728b",
+      "bytes": 5907
+    },
+    "dir16/clip06.opus": {
+      "sha256": "7ce88a3fabf248ba7b0d10fc9e3eed10838747143c6e822c16c31e41c13cf204",
+      "bytes": 9889
+    },
+    "dir16/clip07.opus": {
+      "sha256": "adda6d1ea7719235a9d1a6d06b4ad0b617de7e1e487fe2888b58b17c2cfa1240",
+      "bytes": 9032
+    },
+    "dir16/clip08.opus": {
+      "sha256": "b6feda5d062044a2624d07f6d52c05bd4a3e0751410e8b63259c61a02de37d11",
+      "bytes": 2732
+    },
+    "dir16/clip09.opus": {
+      "sha256": "0dbf198d2a3c8422ce1973a50bb5b75417cf9f28a826adba73379fa0d65465c4",
+      "bytes": 4080
+    },
+    "dir16/clip10.opus": {
+      "sha256": "6912a51308985a69c8770d1a31b8d3d39a1210b10b81f4acec7426d9d493d62e",
+      "bytes": 5086
+    },
+    "dir16/clip11.opus": {
+      "sha256": "fa9aaa9332bd109e85ba184d979768aa2851904d227ffc7c98b14c40b2621303",
+      "bytes": 5279
+    },
+    "dir16/clip12.opus": {
+      "sha256": "b589afd9a4c3d7fb51383aec2f81ef46c4d25a789326e0ad0ba39baa4ff06c75",
+      "bytes": 7727
+    },
+    "dir16/clip13.opus": {
+      "sha256": "c39f0eee39740dde8e76d2371f3b504c77e6ee51e75bf5d19d635bdc316abf7f",
+      "bytes": 9173
+    },
+    "dir16/clip14.opus": {
+      "sha256": "91381dc1fccd0bff81e440d08ae3dfa6fe2c1213a9789033f3acc0a823821960",
+      "bytes": 9125
+    },
+    "dir16/clip15.opus": {
+      "sha256": "09f28e6d2ce520106cb279870e87f1bd59a8b2130994218cd860083682f47373",
+      "bytes": 3099
+    },
+    "dir16/clip16.opus": {
+      "sha256": "c283ba6e37e6240f292da2c34098ab9fc39dfd0c7e475c8f302dbadafa1a01d4",
+      "bytes": 1601
+    },
+    "dir16/clip17.opus": {
+      "sha256": "c0eea479922db423cac5330adb5327f299090bfc63a99d42f33b9f2b8925961d",
+      "bytes": 1220
+    },
+    "dir16/clip18.opus": {
+      "sha256": "51cb8ae126e8fd55b2d2e794aa035d1638f6e4f9bf14fc840af8ac08a91718fa",
+      "bytes": 6368
+    },
+    "dir16/clip19.opus": {
+      "sha256": "1042b43c52827bd78a51e36140c5672df22697a56b54c50a8d3d703babe9025f",
+      "bytes": 6515
+    },
+    "dir16/clip20.opus": {
+      "sha256": "c775bb1de75b6737668b4cd53fd57cededcbd39b2b0f1ae49277d8b16492e260",
+      "bytes": 5801
+    },
+    "dir16/clip21.opus": {
+      "sha256": "72fa54904f0b95c50cc489951c9b851fdcd49c13b2a4b3c2fddd66606c81c42c",
+      "bytes": 3357
+    },
+    "dir16/clip22.opus": {
+      "sha256": "3197b86bcec075ecb4d5bcaeeb330e30d407e40d1a94038f0eacd9c7b745b913",
+      "bytes": 4076
+    },
+    "dir16/clip23.opus": {
+      "sha256": "ccf1392efa180831042d0b4d62e79ff3336aacd0af4706e58416d93443fe7851",
+      "bytes": 9916
+    },
+    "dir16/clip24.opus": {
+      "sha256": "307cfdd2ffdd95a353ae9e35dbf59827784cb6222fe73d94bb85b2f40c2d0e72",
+      "bytes": 8267
+    },
+    "dir16/clip25.opus": {
+      "sha256": "ba2091a29f72280b096525b91fd2aa819773a5e0c006f5443093fd9991822278",
+      "bytes": 6263
+    },
+    "dir16/clip26.opus": {
+      "sha256": "a40f1f59272d4ec94c2433c8d480121c1944ea78569d1cb1b7f1f32953b96da0",
+      "bytes": 5315
+    },
+    "dir16/clip27.opus": {
+      "sha256": "e9cd3f35cecd1c53809fd75972b778fc79fad0351aa320d481a56d9c6e96386d",
+      "bytes": 3680
+    },
+    "dir16/clip28.opus": {
+      "sha256": "7c28ac9a6a2d1a3d21ff855c8907447ddf908f82ed2067e57975130002f48300",
+      "bytes": 7029
+    },
+    "dir16/clip29.opus": {
+      "sha256": "f424fb91631d1884cc3a895c2bfeafbb29f73840595d40164c3f410355a10cd1",
+      "bytes": 3083
+    },
+    "dir16/clip30.opus": {
+      "sha256": "3404ac21949da69b9a649de29ec0c94e2aff10e5266f117415fde8870d609e3e",
+      "bytes": 6282
+    },
+    "dir16/clip31.opus": {
+      "sha256": "35569ccbfbc37bd2edc9785a91818486da293596d9bb4de80430afc8f27afe13",
+      "bytes": 5847
+    },
+    "dir16/clip32.opus": {
+      "sha256": "269994bc3f73112a55f1fe946a25a695a931df10934de8dea66f78fc2991c7d3",
+      "bytes": 8011
+    },
+    "dir16/clip33.opus": {
+      "sha256": "d09f20aba77bb7e002e131556da48b689b88063cb231d2d054cecb6d29d5e24d",
+      "bytes": 5710
+    },
+    "dir16/clip34.opus": {
+      "sha256": "12ef3d397e10537acc0db0c93b06dee3ddcd10259cedad77c1bf04709bed75bd",
+      "bytes": 6922
+    },
+    "dir16/clip35.opus": {
+      "sha256": "69bd24748f8214f2423bea0daabe12424546fafba5e7b7f4da5498a8d9683ae9",
+      "bytes": 3496
+    },
+    "dir17/clip00.opus": {
+      "sha256": "24356429d7ec113e7bdba8068f22cbb0de83f958a2e724875207014bcb190c56",
+      "bytes": 5282
+    },
+    "dir17/clip01.opus": {
+      "sha256": "afa3314c4009282507caf15d696c1d9f93b86991513bd4643c4ed9ca8fee59e4",
+      "bytes": 2829
+    },
+    "dir18/clip00.opus": {
+      "sha256": "2ecc461d6cbecc3bb7e1358f15b845e7fc94de52cd2bd6d62f02994f461100b6",
+      "bytes": 39163
+    },
+    "dir18/clip01.opus": {
+      "sha256": "3f12ffecedcc69f49c518070307b40c9cc836e1fb5e8fb83f92273d32bfa89aa",
+      "bytes": 2165
+    },
+    "dir18/clip02.opus": {
+      "sha256": "9cc3bfb8f07d763653e7d832b88df534fd600ee986145c5d0307e40f1c4e2b9b",
+      "bytes": 3033
+    },
+    "dir18/clip03.opus": {
+      "sha256": "1d47dd00351faa6468c09e750d7d888ce157d637cb92572874b4181b37433dbc",
+      "bytes": 5038
+    },
+    "dir18/clip04.opus": {
+      "sha256": "5a6101d00e4265ff57401a028d0a5a5945c69f661921057682c3f45d4aa70e6f",
+      "bytes": 3827
+    },
+    "dir18/clip05.opus": {
+      "sha256": "5aa423c04991ffb165569bb8e66c7f47a3874cbc80fea366d9fccb776c18e28a",
+      "bytes": 1588
+    },
+    "dir18/clip06.opus": {
+      "sha256": "89ffc8340f1934075f3269b1cce099b97d30db4a1404623e96b61acb57476773",
+      "bytes": 4691
+    },
+    "dir18/clip07.opus": {
+      "sha256": "1f0dab85057e62c0af95f92e1278eb07e9444b7de22bdfde13baa452b9a0f65e",
+      "bytes": 3499
+    },
+    "dir18/clip08.opus": {
+      "sha256": "eb5473d9071b649a5faf310f98b08559fec61801626157a49d715bd13ae26a0f",
+      "bytes": 3965
+    },
+    "dir18/clip09.opus": {
+      "sha256": "d9ee6e49b38f5d2da391ec613d857e35834ae2a7c0e58f6ba4c8f483a8bd9b10",
+      "bytes": 5193
+    },
+    "dir18/clip10.opus": {
+      "sha256": "430bffc46184bb44f9661f8b51a0934c18cc135f047f2e088c997f4b0e14d5d9",
+      "bytes": 1223
+    },
+    "dir18/clip11.opus": {
+      "sha256": "c5b1e064433a35df8d2153d5c5928166121d63c9f3fb5382bf2ec332c549c2bc",
+      "bytes": 1907
+    },
+    "dir18/clip12.opus": {
+      "sha256": "460e0275c116099d9a2762255e46889691888ca378f7cab3e22a3934a88b6e86",
+      "bytes": 7131
+    },
+    "dir18/clip13.opus": {
+      "sha256": "4b642835bd7d6574c0f478b431dd75dd1160532686322c366181847b9042a05a",
+      "bytes": 8211
+    },
+    "dir18/clip14.opus": {
+      "sha256": "241f513a6faab10665165bf3d3d25fabba37e62bf5cb6343648bc29984475c95",
+      "bytes": 3709
+    },
+    "dir18/clip15.opus": {
+      "sha256": "36d0fb47b10d59de96db01b1a0b814d3fe8f5431d75bf0faadd29285a16da764",
+      "bytes": 3594
+    },
+    "dir18/clip16.opus": {
+      "sha256": "6e5d2f9f6544d247e0ff3162a166ef447e0070ac1a3bce61c1df60b11c95cdc8",
+      "bytes": 2610
+    },
+    "dir18/clip17.opus": {
+      "sha256": "2163d43d116724c30437b2faed691d945385500a4a6e44a9d12db92ff42e86aa",
+      "bytes": 3074
+    },
+    "dir18/clip18.opus": {
+      "sha256": "9f4d3d033c091f8edaa2a02bf95d6f2e67307d2ec1669bdd51701ad6cd29400d",
+      "bytes": 3244
+    },
+    "dir18/clip19.opus": {
+      "sha256": "5b5c06f23bd9a02ffe533fd517406851f9bac4562e3d1ef8902e39cd4d0184d1",
+      "bytes": 2886
+    },
+    "dir18/clip20.opus": {
+      "sha256": "41ece30bd26380bcab0b3d176bb2e1609335e1c2bb4dd5e9349d1f98da884dbb",
+      "bytes": 3710
+    },
+    "dir18/clip21.opus": {
+      "sha256": "8749fa22864aea7969ec7f987e4851f54f46fffe75a35eb3029b858cae44858a",
+      "bytes": 4194
+    },
+    "dir18/clip22.opus": {
+      "sha256": "0ff1d012f60b7a24680303df0f9806033697517d0bc754da6b663ba3cfa5de89",
+      "bytes": 5888
+    },
+    "dir18/clip23.opus": {
+      "sha256": "56f07b37ec0a9dc6f6ed46ba706108e32584750459ecc3c47369c40048656c68",
+      "bytes": 3120
+    },
+    "dir18/clip24.opus": {
+      "sha256": "ee14f5be5de467911c322f6ef78a3b42f5dc35aba8b7b2c159a15edca583636b",
+      "bytes": 5565
+    },
+    "dir18/clip25.opus": {
+      "sha256": "ae14d179f7f44c713962c3f2afc04db69860e6ab2e6292619f96894ddd8840b0",
+      "bytes": 3299
+    },
+    "dir18/clip26.opus": {
+      "sha256": "6116932011dd15480a9411fba6f4b6e88c0d1cf37a9083d2b81cfb2cbde507bb",
+      "bytes": 5808
+    },
+    "dir18/clip27.opus": {
+      "sha256": "35efec086a434bb42dfdb44061ee28c85c2d07cfc0ae96ae24df0847dd3a6271",
+      "bytes": 3720
+    },
+    "dir18/clip28.opus": {
+      "sha256": "39132a2858e02e6d804c3a2c9a3061942f9ad3a36fd903a845f1c8667dcb650b",
+      "bytes": 4228
+    },
+    "dir18/clip29.opus": {
+      "sha256": "f84dced2da53f036514c8341298805e0362678ab3361aef50a36e75c9ce38cc1",
+      "bytes": 3094
+    },
+    "dir18/clip30.opus": {
+      "sha256": "ae6aff3449b4695e60a5a815dfc275fe06d64e422912721c147bb8ddaf75e649",
+      "bytes": 3338
+    },
+    "dir18/clip31.opus": {
+      "sha256": "a4487b2ab2f5c7416ba99236a2371f6a9938f393c7d5516980151ed33eb41922",
+      "bytes": 2686
+    },
+    "dir18/clip32.opus": {
+      "sha256": "9243528d3d79692e30fa3bb652a824d35997f59826899d2081282b069173fa85",
+      "bytes": 3212
+    },
+    "dir18/clip33.opus": {
+      "sha256": "7d36e4b843d38e34d027dfd22106b9ce6860d992e16551fd7c63a7d2aec4e13d",
+      "bytes": 3912
+    },
+    "dir18/clip34.opus": {
+      "sha256": "d0eacfd063ee5819410137625943e0074d3b129ef3246b0fbaa46b6e234f971f",
+      "bytes": 2748
+    },
+    "dir18/clip35.opus": {
+      "sha256": "e936bdb2ee7c8424f3b2050a9aa463d02bdd7fafa8d83994b2f61ecdb7969620",
+      "bytes": 3526
+    },
+    "dir18/clip36.opus": {
+      "sha256": "a8b2c4d30d20a2371f90929cc75a8a80f464ea84e4d0a9a1428c58c415a8e610",
+      "bytes": 4372
+    },
+    "dir18/clip37.opus": {
+      "sha256": "955afa86e2b64207140136cd8504fdb961c39bcbfd6fd27530228a96eefb1812",
+      "bytes": 4379
+    },
+    "dir18/clip38.opus": {
+      "sha256": "887487ba14dc3e359ff1868216d7c169deb82976974d6be25de8b7f9237dc6c7",
+      "bytes": 3449
+    },
+    "dir18/clip39.opus": {
+      "sha256": "3bc5dd4b35945ead872659fbf8985eb4c4e220407aae9966282f349659df150c",
+      "bytes": 6238
+    },
+    "dir19/clip00.opus": {
+      "sha256": "59c609f3938b353522c70095ed4d9d39a428dcf85c015ac5adbb94cc3bb3775f",
+      "bytes": 1942
+    },
+    "dir19/clip01.opus": {
+      "sha256": "0e86cfc936c6e0aa1604ff5dce0ad7d89f6db9031f38f332a4745db195724ddd",
+      "bytes": 11567
+    },
+    "dir19/clip02.opus": {
+      "sha256": "c62e54d7083c7fd2b1eb844a594b7f7a88d565a127ba31cbed9262a96ff876e3",
+      "bytes": 1530
+    },
+    "dir19/clip03.opus": {
+      "sha256": "7ea4c2144407beecd04a37cd9545b299db706af8adf6cccaa6da0654fb401952",
+      "bytes": 1087
+    },
+    "dir19/clip04.opus": {
+      "sha256": "374ed74932b2898d5053e6ea626b5b957262e0a68c1b9ffdbf662907d919339e",
+      "bytes": 35801
+    },
+    "dir19/clip05.opus": {
+      "sha256": "ee4e44edac236f6abbecad2b360efb23952d779b498b2f619b2ae4f1cee188e4",
+      "bytes": 1308
+    },
+    "dir19/clip06.opus": {
+      "sha256": "f37c13bd7dda2432b65a99e116e14de1f5dfe05c90287adba3d9edaee3b3927b",
+      "bytes": 14972
+    },
+    "dir19/clip28.opus": {
+      "sha256": "3d5ee63542561321a136494700a4851a6754b88e40144258db4286bc702caaf1",
+      "bytes": 2281
+    },
+    "dir19/clip29.opus": {
+      "sha256": "c75498608fd40bc1b891d21d366e65b0778670695099e5347555a6a40be6f43f",
+      "bytes": 12702
+    },
+    "dir20/clip00.opus": {
+      "sha256": "1b36cb5f85b0450789b34648375b04e771fd276157471c353d80525dc584ee93",
+      "bytes": 11772
+    },
+    "dir20/clip01.opus": {
+      "sha256": "f1f13f185ce91e12c14e6f8ac4c4121554be1cd9d7669879a885348530a99737",
+      "bytes": 3887
+    },
+    "dir20/clip02.opus": {
+      "sha256": "6b58346f3508f5266c8ba3502feb588eeeafcf0c0c4b0373eda8c04bf1ac7e94",
+      "bytes": 4741
+    },
+    "dir20/clip03.opus": {
+      "sha256": "e1b1715f4163ac8ba763fdac8f25202d9f2991c733663c00ab15ccae749bd760",
+      "bytes": 3759
+    },
+    "dir20/clip04.opus": {
+      "sha256": "f668dd0516549619d4eccf66be5a25ebcd80bb58d19b7c4f19d2064a1b9bf7e4",
+      "bytes": 5205
+    },
+    "dir20/clip05.opus": {
+      "sha256": "c052ff42a09397a000ab56c3bd9dbeeda4699266b0566acec0ec9dfb8f8bcf21",
+      "bytes": 4427
+    },
+    "dir20/clip06.opus": {
+      "sha256": "b7b34e27b332b8093dae8e18f2bbcad119f4531f264ad8116d204366f1e120a4",
+      "bytes": 3457
+    },
+    "dir20/clip07.opus": {
+      "sha256": "91a7f75bd0ceba878931ae564e664a34e5208f9ef727cb310a55063a71d4215a",
+      "bytes": 3915
+    },
+    "dir20/clip08.opus": {
+      "sha256": "0abc3dff04003751583ba389343981e6741fb6f310a2b7b5e69d3e7d4b0d9bea",
+      "bytes": 1617
+    },
+    "dir20/clip09.opus": {
+      "sha256": "befc3b1af80fc9e3e3ed4eb09f0f43c0459a7a88da68d7551e6fd44a4c48bf1a",
+      "bytes": 5672
+    },
+    "dir20/clip10.opus": {
+      "sha256": "091c0919737e187ddb375a61cc7134e45232e50888f082a8a2b585042252171e",
+      "bytes": 6086
+    },
+    "dir20/clip11.opus": {
+      "sha256": "8a4b2355daf3c5fb13c2a662330c4dd9a31ca826a5eb0c56b7fb2ddd2f0ec6df",
+      "bytes": 5119
+    },
+    "dir20/clip12.opus": {
+      "sha256": "a71bc8a09502776703bc353aa0cd9ca443540233431e7c7d048110425914c9b9",
+      "bytes": 6066
+    },
+    "dir20/clip14.opus": {
+      "sha256": "4582d6add58014600aa5e7b279cd56df4916f7dc9f686edb62c4a051072481c0",
+      "bytes": 2719
+    },
+    "dir20/clip15.opus": {
+      "sha256": "0e51b095bb7fa5a1c21826f0d4c1e1f4ab633ca33c45f1b00bef22985ac3776a",
+      "bytes": 4505
+    },
+    "dir20/clip16.opus": {
+      "sha256": "efac9618da0f04e8e5174647548af4f9ba7fdbd41d81b5922c3735874bd163d7",
+      "bytes": 4230
+    },
+    "dir20/clip18.opus": {
+      "sha256": "513db09f58d36b62651c76755295ad813ba5108dde16a886647abfd1277bb395",
+      "bytes": 6432
+    },
+    "dir20/clip19.opus": {
+      "sha256": "ecb0be98fbb3f67740559e4b59f89a035a67298eec4995857958e25c64d60756",
+      "bytes": 7443
+    },
+    "dir20/clip21.opus": {
+      "sha256": "8503cb419750e27e74ab25b0c96473b4986b0e34a361380e7a4e8aee5b3f733a",
+      "bytes": 4937
+    },
+    "dir20/clip22.opus": {
+      "sha256": "393918957d436b1823b10936edcc3b5c0560b47f71649b24b84a524ad0defd4c",
+      "bytes": 7068
+    },
+    "dir20/clip23.opus": {
+      "sha256": "4e400115a312325e48235c930a56b0089016a0d1285f36024f171e5181bb6ab9",
+      "bytes": 2438
+    },
+    "dir20/clip24.opus": {
+      "sha256": "15a95391efacc1ce1a2fc5f5e89e04d2d5a14b50f79332ba3668ca4300d167e0",
+      "bytes": 1297
+    },
+    "dir20/clip26.opus": {
+      "sha256": "4cd4457ae6ae1fbc8c8ea4a4308614a13e9f3420c4345b053f2011c7024a5d6a",
+      "bytes": 2315
+    },
+    "dir20/clip28.opus": {
+      "sha256": "573b30951efb2ef91062da8a3d7f9ddcbabc244503ee3a25c918dd15f318d926",
+      "bytes": 6739
+    },
+    "dir20/clip29.opus": {
+      "sha256": "6e95e85a73c174acda3f6596ff65b9adfcc9a869a48a6b83c2cc84d9790b6371",
+      "bytes": 6145
+    },
+    "dir20/clip30.opus": {
+      "sha256": "23a8409e1dc3eb97397490d5fab1382b3efc8ab011b992f5a6b0a54a0a402be5",
+      "bytes": 40388
+    },
+    "dir20/clip31.opus": {
+      "sha256": "34882d9e4f2b7c04a334c3dc87121f733e3ba095fca764da0bbf4e1c00ae50b4",
+      "bytes": 4796
+    },
+    "dir20/clip32.opus": {
+      "sha256": "1846254ae719e25f7d7e59b769d4ff4c3142f513ee1a0c0f2cfad7d1109004c4",
+      "bytes": 2784
+    },
+    "dir20/clip34.opus": {
+      "sha256": "d1fc97835a571771601e0e889a12cd5c77b9244dedada1969b44774f112660cc",
+      "bytes": 2610
+    },
+    "dir20/clip35.opus": {
+      "sha256": "8fa098717fa8c23767b1e03fb6779f1774c7acc2332320308d9473ce6496fe99",
+      "bytes": 1458
+    },
+    "dir20/clip36.opus": {
+      "sha256": "78abb7046837623974d4dce507184109e5d5a33de51d01a3f9bd929f0c24a10d",
+      "bytes": 23278
+    },
+    "dir20/clip37.opus": {
+      "sha256": "dcde080a3b0ddfd45ab7dc1ad532489dac7dc95f57facde7637938e03e7ee8f4",
+      "bytes": 4049
+    },
+    "dir20/clip38.opus": {
+      "sha256": "16869e3fe2db9b56aa785cfc9f57b4ae037f7f513a949830aec02a649125eeac",
+      "bytes": 13327
+    },
+    "dir20/clip39.opus": {
+      "sha256": "4dc5eda4de68b955f5b1af40e3ccf266aedfd00e256e85fef2f85c9d7b881afe",
+      "bytes": 3798
+    },
+    "dir20/clip41.opus": {
+      "sha256": "f5e1106ed50d5b4fae8650d68d1ea143c0e265c82cbbfa57a61a04b2a6cbc3c2",
+      "bytes": 6464
+    },
+    "dir20/clip42.opus": {
+      "sha256": "6d7485fea0018c79fd4aecf64fe929d920eec79b8ea623ac0a99e6fb12e108c9",
+      "bytes": 3058
+    },
+    "dir20/clip43.opus": {
+      "sha256": "8823bd436261c6e690c71fa9b50cf3f2ff299fe54d145d6ec99d24576a550bf2",
+      "bytes": 4544
+    },
+    "dir20/clip44.opus": {
+      "sha256": "20ec310d3df443627b5e99731508b3b6bf8282136ba6a2c6142786817f732354",
+      "bytes": 3681
+    },
+    "dir20/clip45.opus": {
+      "sha256": "041342420f98a50b6656e7a9c392923ca67b180de0df40beabd9220d10007e07",
+      "bytes": 2626
+    },
+    "dir20/clip46.opus": {
+      "sha256": "fbe5addcbac42ae8067dc1c24aaea8956b49041e719441f05d6e3f8f1157deaa",
+      "bytes": 3447
+    },
+    "dir20/clip47.opus": {
+      "sha256": "803491a3f7072c7b7db44500aaf2f456e578157983808473af0cb26288388128",
+      "bytes": 3194
+    },
+    "dir20/clip49.opus": {
+      "sha256": "9f116b1df30206dc42baf995227e5287086836a23091898c4282b70882d89215",
+      "bytes": 26738
+    },
+    "dir21/clip00.opus": {
+      "sha256": "2e6342ce3212ee05e345bb15d6c4efc25265116e393ea2354fd35d25e10b17b1",
+      "bytes": 4957
+    },
+    "dir21/clip01.opus": {
+      "sha256": "19f1fa186050241ceffe21cbf41deb495c1c90e4044417fcc66f6a9766a2e18a",
+      "bytes": 1910
+    },
+    "dir21/clip02.opus": {
+      "sha256": "2a0a566f6d5fea04f659c671974177843461d8c27d343dc3326a36f94f5a36a7",
+      "bytes": 2321
+    },
+    "dir21/clip04.opus": {
+      "sha256": "96621c33ff4b740572f721632886c4ac66898ad8c98cb75bf260c35ed014e2c6",
+      "bytes": 2014
+    },
+    "dir21/clip05.opus": {
+      "sha256": "d45eda5bf08aebdd7b854f815fcdf792c51d80e7104ea852e2b452a2a6c223c2",
+      "bytes": 3232
+    },
+    "dir21/clip06.opus": {
+      "sha256": "362642500c53fd3ddf149d1c99615b0c274178b04dbbd5799e4d322e77e4896c",
+      "bytes": 2321
+    },
+    "dir21/clip07.opus": {
+      "sha256": "b1254a01c155f92386f60a588bde7d62cf61860d1318d89ffafd4723fbaef065",
+      "bytes": 5240
+    },
+    "dir21/clip08.opus": {
+      "sha256": "88b8cfd95dd6c0c0e808ab7108a62166bab9dda96a74f08c6fdf5c4892438b9d",
+      "bytes": 2187
+    },
+    "dir21/clip09.opus": {
+      "sha256": "99176cc4c85d890eca4493d6320d3df69ed69dfcf345a1b39b1d20fc6b150cdf",
+      "bytes": 4178
+    },
+    "dir21/clip10.opus": {
+      "sha256": "657a801ec00d65ccfd5d8b051829103ba8d8dfac6244f478f3d3cba23fb5581c",
+      "bytes": 4713
+    },
+    "dir21/clip11.opus": {
+      "sha256": "6f3b7fd7e708e937ef7e65d3ad00c7947e33e73e6955f97e6a861822d012cb9b",
+      "bytes": 4158
+    },
+    "dir21/clip12.opus": {
+      "sha256": "96787b5b9e7b82f34b1f2d40225b41ade2b97e469a388758daff0c234e483409",
+      "bytes": 3963
+    },
+    "dir21/clip13.opus": {
+      "sha256": "82a464b807d5833f0d3af602e9a82fdf8f4fbab4527963ba8f02063c6230bf5c",
+      "bytes": 4513
+    },
+    "dir21/clip15.opus": {
+      "sha256": "bd1cbf93fcf338e0eb4c94a6136018f3bc7e320cea1b77b386c907d4e93de2de",
+      "bytes": 2479
+    },
+    "dir21/clip16.opus": {
+      "sha256": "a78f2f3c0a52e51b1b897b73d0c87abcbd498249e7569672a4dd63a925655cd2",
+      "bytes": 1880
+    },
+    "dir21/clip17.opus": {
+      "sha256": "faf7a617767f347ed19aa4c057eb4a0dcbbdf1cc8ce9db1eea99e78c601525db",
+      "bytes": 4316
+    },
+    "dir21/clip18.opus": {
+      "sha256": "dcc895b0c257cbaa6195793c59b583c0ca45a37bfdb422d8f04ae4c1e9a82024",
+      "bytes": 2720
+    },
+    "dir21/clip20.opus": {
+      "sha256": "39719517258eaf3a28fa277ae6f0abd869e26accc1b37dcf7a73fc2471d24b1f",
+      "bytes": 2577
+    },
+    "dir21/clip21.opus": {
+      "sha256": "e61be5707422b47dec95ffe9579e465b6271872eaf471d051227208e7e654d1a",
+      "bytes": 4000
+    },
+    "dir21/clip22.opus": {
+      "sha256": "a5ec30d9eb5f9f187b3411f4048eddbb27cb7534261b76c7887f959a201eaf10",
+      "bytes": 2196
+    },
+    "dir21/clip23.opus": {
+      "sha256": "b987b2a7a5b5d2249f5bcc8688c39c1a055e3c6d03216ceb3d0417de428663a9",
+      "bytes": 2157
+    },
+    "dir21/clip24.opus": {
+      "sha256": "b2af9c5a09067410a65dbe77d0b100c98abffb930e98321b16469004220683d0",
+      "bytes": 2503
+    },
+    "dir21/clip25.opus": {
+      "sha256": "0dddf30c4ab9fc1097e432866f7febff1b7653e80c510d5840a83c3b49a116ce",
+      "bytes": 2541
+    },
+    "dir21/clip27.opus": {
+      "sha256": "eef9f1e8c046ca2c8c7e79264e9d810fb0099b49c16aa808a00184c8a543bb7b",
+      "bytes": 3054
+    },
+    "dir21/clip28.opus": {
+      "sha256": "04c55273db9b0b177356ef4556d737311127572877d885a0daffd010852a5f53",
+      "bytes": 3636
+    },
+    "dir21/clip29.opus": {
+      "sha256": "3cac48e68f088ff06c8e14d91509e4a22642adf48e1365b4ca56dfc59a410887",
+      "bytes": 3233
+    },
+    "dir21/clip30.opus": {
+      "sha256": "c59d4bc6bdcd6b073713e19217c9937ba519cb261e6b35f02f41fa48631a7951",
+      "bytes": 4548
+    },
+    "dir21/clip33.opus": {
+      "sha256": "6c3155b22c547fe89940403490fbea0c86b83097d7d6f086bf720c8e6fcbd0c8",
+      "bytes": 3907
+    },
+    "dir21/clip34.opus": {
+      "sha256": "bc0b63b35a4c1bc82aa6c8209335d3cf54a91e1ed3b6932efa3cbe140ac682eb",
+      "bytes": 4186
+    },
+    "dir21/clip35.opus": {
+      "sha256": "9f2191794cc3f928b150bd0cedc196accb24bbd2dc7e7da8ee3db0b327d52f9f",
+      "bytes": 1843
+    },
+    "dir21/clip39.opus": {
+      "sha256": "3b6c291887a3d563eea90167b4b4ca178b8f1d7c451323debfd310111c825bbf",
+      "bytes": 4651
+    },
+    "dir21/clip40.opus": {
+      "sha256": "603f11e692e6702cb1692a8b93a6445fc4607e2367d0eeabf54404882a999dce",
+      "bytes": 3355
+    },
+    "dir21/clip41.opus": {
+      "sha256": "b1a8ea592382c1fef51e279e152064b210828488fda994c0dfe0b1a6114448ec",
+      "bytes": 2444
+    },
+    "dir21/clip42.opus": {
+      "sha256": "452b1aa3df3ba928f9e2598d5ca7dd986655048433f2e77e023674b86d50c195",
+      "bytes": 3940
+    },
+    "dir21/clip43.opus": {
+      "sha256": "1bbd266c2a078fdb048f30ea97e9ab73eb87733ae2ffe56e5e6bf12634983f19",
+      "bytes": 3423
+    },
+    "dir22/clip00.opus": {
+      "sha256": "ebbbbb0d93da4cbc4954496f6a3f9e5879e1e4863a15e895b7ceb99706d59345",
+      "bytes": 3181
+    },
+    "dir22/clip01.opus": {
+      "sha256": "21af702c55cdbc46062af0ab8f2edfe274444941af2202dbd2f98c5b29f80bc8",
+      "bytes": 2110
+    },
+    "dir22/clip02.opus": {
+      "sha256": "5f5a007ae9e108860729cbc0b9c443a3eedffffb72dfa41a64db0429afe75354",
+      "bytes": 4993
+    },
+    "dir22/clip03.opus": {
+      "sha256": "dc104cadf49824cce541b20449b2d157f707177132e600be4b7b97b44dd98a5d",
+      "bytes": 2516
+    },
+    "dir22/clip07.opus": {
+      "sha256": "dfb73e0d58c7192c2546281d54b22dadfac2c7a43ec4610349cddc96644325a0",
+      "bytes": 4054
+    },
+    "dir22/clip09.opus": {
+      "sha256": "3cac73ef577233a1ca472bb97518491c02ddc07b1a34a14b91280334ef6ba462",
+      "bytes": 30324
+    },
+    "dir22/clip10.opus": {
+      "sha256": "cf4bc5336b761380af4b51bdde9fa262a2ee94feebef5477bf99eb8fab5ebb4c",
+      "bytes": 2350
+    },
+    "dir22/clip11.opus": {
+      "sha256": "d83698c0b4656e5bfbac2f0ed060dcf41cd41dd6424d55a44942be1999bb73cd",
+      "bytes": 11456
+    },
+    "dir22/clip12.opus": {
+      "sha256": "6cecea9846c76272bf0f0b134ea33419e60d970a6f86d0507335509c7d2e58f6",
+      "bytes": 11924
+    },
+    "dir22/clip13.opus": {
+      "sha256": "eef97c2175b1f25c154cba89693177210a00552d20b58ed153a5697ed6034cd3",
+      "bytes": 27515
+    },
+    "dir22/clip14.opus": {
+      "sha256": "ee2f3ec61e1615b04a4e29974274ccaf89814129a55a825047a4edbbe9aa4a9e",
+      "bytes": 3315
+    },
+    "dir22/clip15.opus": {
+      "sha256": "ed925cf926422662c7bd1bf5f158e242f2fc7ce95ad247fb2fc8e61a62e02a46",
+      "bytes": 29520
+    },
+    "dir22/clip16.opus": {
+      "sha256": "43d0fb0341f1fe9327b3e7d197b2441b0655b1c36e9a5a71358397bb970e39fd",
+      "bytes": 1761
+    },
+    "dir22/clip17.opus": {
+      "sha256": "e5f0fbfd98fbb01e1023df57408787ac64a38ee53ed905003b4c89446d221b9d",
+      "bytes": 12329
+    },
+    "dir22/clip18.opus": {
+      "sha256": "b2b22ff6f22f8f05c8e7f97d2dc43731512b2b94bb357abd73dac04542ac8ef6",
+      "bytes": 4440
+    },
+    "dir22/clip19.opus": {
+      "sha256": "8c4d4a9a89b0eadfcdf8c57fb148cb13511cdc6b8c8e02810a53b49114e9a0ea",
+      "bytes": 4414
+    },
+    "dir22/clip20.opus": {
+      "sha256": "cf2bc04b96a6269360bbee4e91cb1f7d107363dbf4c30192d0ccc65a74feff57",
+      "bytes": 6084
+    },
+    "dir22/clip21.opus": {
+      "sha256": "2f523332ae68d2c6d7d8d31e97dd363b904c95ebf9455ea6aaa2bee30c4ebd13",
+      "bytes": 5794
+    },
+    "dir22/clip22.opus": {
+      "sha256": "c14313dd3719a14d34e93a9074cca1108d2d0a4f4899d309887c538cd3b25ebd",
+      "bytes": 13269
+    },
+    "dir22/clip23.opus": {
+      "sha256": "74761efa723ea3d832b7d699e796e2237460c239eeae827c2dd53c5d15b6332b",
+      "bytes": 22472
+    },
+    "dir22/clip24.opus": {
+      "sha256": "d31e0b6da092246a740e2fdebf35a06a1a461d70715d759188eee3ce621bbc0a",
+      "bytes": 5254
+    },
+    "dir22/clip25.opus": {
+      "sha256": "02a529c5b11d62ef045a7ae30f30af2c7b63b6c6ecca62b308877198393b1343",
+      "bytes": 9487
+    },
+    "dir22/clip26.opus": {
+      "sha256": "839944f4b2762a4805795321314e5646ef981ffaf0825c8c89b24359c769682b",
+      "bytes": 7241
+    },
+    "dir22/clip27.opus": {
+      "sha256": "c521c41884dc2d1938b7547e27be2d1c3f94b83d1444852a417ea5b67d362f84",
+      "bytes": 6354
+    },
+    "dir22/clip28.opus": {
+      "sha256": "0ef22de03b5f5c60f506d8e65fd9c746781a34836dc6781670f2d9cec611c956",
+      "bytes": 5476
+    },
+    "dir22/clip29.opus": {
+      "sha256": "8cbbc3a5a2fbf1b2b2914a9fe8094f19b66e74bce83b19561991fe0be4ce17f4",
+      "bytes": 2890
+    },
+    "dir22/clip30.opus": {
+      "sha256": "b4e8bcab5a4d18bdd4e9e33827c4b859d964382c462b7fb8a8fb24542e4bcf87",
+      "bytes": 6530
+    },
+    "dir23/clip00.opus": {
+      "sha256": "622fcf43203901c4e9988d427fd058fda4eb793c241cdb2e032adfb5bd305dc2",
+      "bytes": 26800
+    },
+    "dir23/clip01.opus": {
+      "sha256": "f5c34cabd8bfb5846a190c3b5f6bba90126bbc4f7881ba8904376eae10f6cca9",
+      "bytes": 5880
+    },
+    "dir23/clip02.opus": {
+      "sha256": "4556dfd20e848b59fa48a48c7f08f1e9ac059113a92d4aa97ed1284ea13cf8da",
+      "bytes": 14925
+    },
+    "dir23/clip03.opus": {
+      "sha256": "29ff8524855131932c4163f0e9eeceb94411337e49f6d9c3de689574ac0fd378",
+      "bytes": 6072
+    },
+    "dir23/clip04.opus": {
+      "sha256": "e37a4d5313354abc3431e838ace52215e855adb152e37420739ea9cd3e0d4e42",
+      "bytes": 17986
+    },
+    "dir23/clip05.opus": {
+      "sha256": "dbb04cca1e657293ce9af9a326320ce7f0086744935683538146a6dad9ac327b",
+      "bytes": 1514
+    },
+    "dir23/clip06.opus": {
+      "sha256": "9822d3021d4dbab0b11d3f1ca7283e7b2c09f2c4da34712d362b6621fe398d68",
+      "bytes": 36685
+    },
+    "dir23/clip07.opus": {
+      "sha256": "68b7f28c2ee3c9f8760b5bf3bb55686bfe139cf1f06ef72c1abbe3f99bd74ac8",
+      "bytes": 26866
+    },
+    "dir23/clip08.opus": {
+      "sha256": "561ba8ca4de5893b20c347ae480bb982c34be12e5ff0ba5d8ad13b63c363aa6e",
+      "bytes": 3377
+    },
+    "dir23/clip10.opus": {
+      "sha256": "e097856ea3802ce0a7d4000070e276f4efe72c87c8753760a8b39362c3967450",
+      "bytes": 3647
+    },
+    "dir23/clip11.opus": {
+      "sha256": "9d08fc6b6186897cf6a62ac1e7069139266761627137c7b9d93851f5c86e0ab8",
+      "bytes": 2671
+    },
+    "dir23/clip12.opus": {
+      "sha256": "999b7c502f7b3c23ea239b8205ecf7b4aca7749bd0cfe3c49ed8b1964a6acf08",
+      "bytes": 2017
+    },
+    "dir23/clip14.opus": {
+      "sha256": "3837c5eead32e64e8f618cb3af21a164a9bcc80875067082b6e83cb6edd58c39",
+      "bytes": 3477
+    },
+    "dir23/clip15.opus": {
+      "sha256": "d2b25c24483d84dd9855f10853428b0a79c1d45f8da778f8006f72aa7c4ca694",
+      "bytes": 3230
+    },
+    "dir23/clip16.opus": {
+      "sha256": "3f1910aac3cc99e312bd952ba2678170ef6e60ff6a8797f1a679507fb82b5188",
+      "bytes": 5682
+    },
+    "dir23/clip17.opus": {
+      "sha256": "fe7b598a2a443d63fd99b08d40a3a90daf968a730e951479a1d209c70f977b45",
+      "bytes": 4741
+    },
+    "dir23/clip18.opus": {
+      "sha256": "8de511a45438d13f540bd6041db87e6eabb8abe54f3b68adc23d404768d250ab",
+      "bytes": 4107
+    },
+    "dir23/clip19.opus": {
+      "sha256": "af3ef451cfed203e7d2a22ea68e7060130832776b1d859b0b7047c1270dcb0f9",
+      "bytes": 3583
+    },
+    "dir23/clip21.opus": {
+      "sha256": "3ad2c223552f99d3ab949363a80eeb32ea27b6a72beaf40e0e27eecf58c27150",
+      "bytes": 18194
+    },
+    "dir23/clip22.opus": {
+      "sha256": "6cecf5d3f60e6f8536d09a4b9817bded18b02304300ce9730fc96261c43329f8",
+      "bytes": 12120
+    },
+    "dir23/clip23.opus": {
+      "sha256": "a6fd9e63d147c92b4ae361324874b532a173214088555e9d4f62733e2c970b51",
+      "bytes": 3048
+    },
+    "dir23/clip24.opus": {
+      "sha256": "cca5c518e78491c6c51faff90fbf4d30ca2ab5e695a64ffb2d1cb4b68002c286",
+      "bytes": 25434
+    },
+    "dir23/clip25.opus": {
+      "sha256": "b15c1a30ada277f2757f4ec1129eeae546552ee94b31a7131b7a5cec2e805265",
+      "bytes": 38792
+    },
+    "dir23/clip26.opus": {
+      "sha256": "50a4ab1ad7e898c7068a94b3b601dcdbc47d56de36915f20e4c2bbe40aa26a08",
+      "bytes": 30878
+    },
+    "dir23/clip27.opus": {
+      "sha256": "2f48ff07806c7de2facc2e1b42b8ae6d46f4a29b42141cef4e14871879c57703",
+      "bytes": 3173
+    },
+    "dir23/clip28.opus": {
+      "sha256": "32b5879b86b45e79114a80b600d8435f7e432c9627e8c4d1dce1aff0ae337dd9",
+      "bytes": 2788
+    },
+    "dir23/clip29.opus": {
+      "sha256": "ae0f05c08d07e784ed08f7b71add3307f854db13a83c543c5fb83ddb7d550bf7",
+      "bytes": 3303
+    },
+    "dir23/clip30.opus": {
+      "sha256": "c84ba786d133a245d73d6655b98df94093b142e19480eab5b0359b658b1fd336",
+      "bytes": 2713
+    },
+    "dir23/clip31.opus": {
+      "sha256": "d2c87fe2f4e3f2137a9a6950a290a0f28e28a2ce22110f1604f837767bef1d60",
+      "bytes": 2189
+    },
+    "dir23/clip32.opus": {
+      "sha256": "f7bae627b5ae272e2b2b41a4d8a6a852c159482a77616693e23fadba77e4e2d2",
+      "bytes": 1424
+    },
+    "dir23/clip33.opus": {
+      "sha256": "527d057bf44c8d5cce7053903c72d1085b20bcd1e14f9e1903ddae1ae574d0e8",
+      "bytes": 22622
+    },
+    "dir23/clip34.opus": {
+      "sha256": "b88ca52e25e3719e60554fa7c111afb670045bb9d6d0a971adf7a0f4189e96f5",
+      "bytes": 24272
+    },
+    "dir23/clip36.opus": {
+      "sha256": "3f127cb291f8b894af59b390c7cfbabd58e3d140003631f2e2fd6e54d2a72f4c",
+      "bytes": 3375
+    },
+    "dir23/clip37.opus": {
+      "sha256": "f660db8069f1c0c9a1be4b9d58eddc1f1140264a7067dfa6bc0253cb3eb666f5",
+      "bytes": 4152
+    }
+  }
+}

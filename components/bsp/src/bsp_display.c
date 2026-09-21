@@ -231,9 +231,12 @@ esp_lcd_panel_handle_t bsp_display_panel(void) { return s_panel; }
 
 esp_lcd_panel_io_handle_t bsp_display_io(void) { return s_io; }
 
+static uint8_t s_brightness;
+uint8_t bsp_display_brightness(void) {return s_brightness;}
 void bsp_display_backlight(uint8_t percent) {
     if (!s_bl_ready) return;
     if (percent > 100) percent = 100;
+    s_brightness = percent;
     uint32_t max_duty = (1u << BSP_BL_LEDC_RES) - 1u;
     uint32_t duty = (max_duty * percent) / 100u;
     ledc_set_duty(BSP_BL_LEDC_MODE, BSP_BL_LEDC_CHANNEL, duty);

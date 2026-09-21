@@ -4,6 +4,8 @@
 
 # 资源目录（Assets）
 
+应用背景、字库、音效合成方式、许可证及重新生成步骤见[一念木鱼素材来源](muyu-assets.zh_CN.md)。
+
 本目录集中存放可复用的资源（字库、图片、音乐等），按资源类型分子目录管理。每个资源放在其类型对应的子目录，并记录放置路径、命名方式、集成方式与来源/许可。二进制资源（字体、图片、音频）不属于纯 markdown 文档，请勿与文档混放。涉及版权/授权的资源需注明来源与许可。
 
 ## 字库（fonts）
@@ -19,13 +21,6 @@
 
 可复用的源图与生成的显示资产放在 `images/`。
 
-| 文件 | 尺寸与格式 | 用途与来源 |
-| --- | --- | --- |
-| [`images/home.jpg`](images/home.jpg) | 3840 × 2160，JPEG | 嵌入中英文项目 README 的产品主图，突出 AI Passport 产品形象与开放、人人可创作的理念。 |
-| [`images/readme-hardware-specs.png`](images/readme-hardware-specs.png) | 2172 × 724，PNG RGBA | 保留为可选技术参考图，不再用于首页主视觉。于 2026-09-17 使用内置图像生成工具为本仓库生成；已根据文档中的硬件能力契约核对图中的六项标签与参数。 |
-| [`images/logo-wordmark.png`](images/logo-wordmark.png) | 1648 × 336，PNG RGBA | 从仓库原始 `images/logo.png` 中精确裁切并去除背景的黑色字标；用于中英文项目 README 的浅色主题。 |
-| [`images/logo-wordmark-dark.png`](images/logo-wordmark-dark.png) | 1648 × 336，PNG RGBA | 提取字标的白色版本；README 使用 `<picture>` 在 GitHub 深色主题下显示。 |
-
 - 使用描述性命名，并记录尺寸、像素格式、转换步骤与目标路径。
 - 优先采用适合 240 × 320 RGB565 显示的格式，并纳入 Flash 与内部 RAM 考量。
 - 许可允许时保留可编辑源文件，并记录来源与许可。
@@ -39,3 +34,30 @@
 - 与当前 BSP 音频路径匹配时优先采用 16 kHz、16 位单声道 PCM。
 - 嵌入音频前评估 Flash 与内部 RAM 成本；长录音应流式或分块。
 - 无再分发许可不提交媒体文件。
+
+## 音效钥匙扣资源
+
+`audio/voice-keychain/`：来自 Shinku-Chen/ai-passport 的 feature/voice-keychain 分支（提交 `71c45cabc1b2f3b73b4929d71cafd926ccbb11f5`），24 类、726 段原始 Opus 音效。未重新编码；16 kHz 单声道，2 字节小端长度前缀数据包。`SOURCE.txt` 记录来源；上游代码 MIT，音效素材权利独立于代码许可，未将其重新授权为 MIT。通过 `tools/build_voice_pack.py` 生成分区资源及索引。中文名称采用 Noto Sans SC 14px 子集（1071 字形，SIL OFL），由 `tools/generate_voice_font.py` 生成；字体许可见 `fonts/OFL.txt`。
+
+1.9.1：按用户确认的 46 组各保留一段；`audio/voice-keychain/selection.json` 记录保留和移除项，保留文件未重新编码。
+
+- [城市电台集成、MIT 来源及主题预览](../docs/leo-radio.zh_CN.md)：源码来源 `assets/radio/`，实际 LVGL 预览 `assets/images/leo-radio/`。
+
+小智来源许可与声明：`xiaozhi/LICENSE`、`xiaozhi/NOTICE`。字幕字库使用现有 Noto Sans SC OFL 字体，由 `tools/generate_xiaozhi_font.py` 生成。详见[集成说明](../docs/xiaozhi.zh_CN.md)。
+
+[竖版首页字体及离线嵌入](../docs/portrait-home.zh_CN.md)：Orbitron 和 Caveat，SIL OFL；原始 TTF、拉丁字符 WOFF2 子集及许可证保存在 `fonts/`。
+
+共享 14px 字库：`fonts/ui14-characters.txt` 保存原有覆盖集合；`tools/generate_shared_fonts.py` 生成三个页面共用的 `main/font_ui_14.c`。仍使用 Noto Sans SC（SIL OFL），不改变原字形像素与尺寸。字幕字库补充字符前检查源字体 cmap，避免把缺字占位符编入固件。
+
+小智表情：本项目原创素材，按仓库 MIT 许可证提供，位于 images/xiaozhi-face/*.svg。tools/generate_face_assets.py 离线转换为 main/xiaozhi_face_assets.c 中可随主题变色的 A8 图片。详见[表情与时钟](../docs/face-clock.zh_CN.md)。
+
+公路之王的 SVG（images/xiaozhi-face/round_*.svg）按用户提供的角色参考图重绘；参考图片本身没有纳入仓库或发布包。
+
+赛博摇卦的经典原文和计算规则来自 CyberYAO 提交
+`3c4780feea04737e6e59b6e1849e591710e6656c`，保留
+[MIT 许可](cyberyao/LICENSE)。适配后的原文表位于 `main/yao_text_data.c`，
+未分发上游图片、音频或字体素材。
+
+赛博摇卦的 `interpret-request.ogg` 是本项目生成的固定中文合成语音，不来自上游录音。内容为请小智查询并解读保留的卦象。`main/assets/yao_request.h` 保存其每帧 60 毫秒的 Opus 数据，用于直接上传，不含个人录音。
+
+公司名称使用 `fonts/NotoSansSC-brand-latin.woff2`（Noto Sans SC，SIL OFL 1.1，见 `fonts/OFL.txt`），为 700 字重的 ASCII 与省略号子集。运行 `tools/generate_brand_font.py <NotoSansSC.ttf>` 生成。离线配置页以内嵌 BadgeBrand 使用；其他标题与签名字体保持原样。

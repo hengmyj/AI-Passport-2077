@@ -8,6 +8,27 @@ This repository is a minimal base for user-defined firmware targeting an
 ESP32-C3 with 8 MB Flash. Its default does not reserve product-specific
 identity, OTA, or unused data partitions.
 
+## Profile-enabled derivative layout
+
+This branch's 2.6.19 firmware uses the following intentional custom layout. NVS and PHY stay at their original addresses. The template baseline described below remains a reference.
+
+| Partition | Offset | Size |
+| --- | --- | --- |
+| nvs | 0x9000 | 0x6000 |
+| phy_init | 0xF000 | 0x1000 |
+| factory | 0x10000 | 0x3C0000 |
+| voice_data | 0x3D0000 | 0x2C0000 |
+| badge_slots | 0x690000 | 0xC0000 |
+| voice_tail | 0x750000 | 0x80000 |
+| badge_user | 0x7D0000 | 0x30000 |
+
+`badge_user` contains two 0x18000-byte banks. Each bank has a 32-byte CRC-protected header, up to 2048 JSON bytes after the header, a 61,568-byte identity panel at bank offset 0x1000, and a 12,672-byte avatar immediately after it. Header commit is last; sequence plus payload/header CRCs select the newest complete bank at boot. Segmented firmware flashing preserves this partition and NVS. Do not erase the whole flash when updating.
+
+`badge_slots` holds four additional profiles, each with two 0x18000-byte banks. Slot 1 stays at the unchanged `badge_user` address. Format 2 also stores brand (13,024 bytes), logo (2,048 bytes), and QR (4,608 bytes), totaling 93,920 payload bytes per bank. The active slot is stored in the separate `badge_cards` NVS namespace. Each profile has its own sequence and commit marker; interrupted writes preserve its previous bank. Before migrating an installed device, back up NVS and profile regions and ensure the added partition does not overlap existing application or user data.
+
+
+2.6.8 reclaims 128 KiB of voice headroom for the application. Only `voice_data` moves; NVS, PHY and both profile partition offsets/sizes remain unchanged. All 726 clips still contain 4,270,480 payload bytes, with 50,800 bytes of bundle headroom. Format 4 profiles contain 91,648 payload bytes and retain two 96 KiB banks per badge. Migration must rewrite both voice images, not merely the application or partition table. Back up the full flash and validate its layout, write and verify segmented resources, commit the new table last, and verify NVS/PHY and all profile bytes before resetting.
+
 ## Default layout
 
 The default partition table contains exactly:
@@ -44,37 +65,18 @@ partition bounds, unique labels, and non-overlap, then ensures the application
 offset matches an app partition large enough to contain it. It intentionally
 does not require the default partition list. CI runs the same gate.
 
-Every image listed in `flash_args`, including user-defined resources and OTA
-data, must exist, be nonempty and match the merged bytes at its configured
-offset. Image ranges must stay within 8 MB and must not overlap. Additional
-images must fit entirely inside a configured partition; an offset inside that
-partition is allowed. Merely declaring a resource partition does not require a
-preloaded image, but listing an image in `flash_args` makes it mandatory.
-
 Upload only `build/FoloToy-AI-Passport-full.bin`; the similarly named app-only
 `build/FoloToy-AI-Passport.bin` does not contain the bootloader or partition
 table.
 
 ## Flashing and stored data
 
-> **No backup of the firmware already installed on the device is required
-> before downloading (flashing) new firmware.** Do not make reading out the
-> original firmware or saving a full-Flash dump a prerequisite for this
-> workflow. The new firmware replaces the original firmware; this workflow
-> does not retain an automatic rollback copy or promise that the original
-> firmware can be restored.
-
-Firmware and user data are different. If existing NVS settings, application
-records, or files must be kept, export or otherwise save them before flashing
-using a method supported by that application. Not requiring an original-firmware
-backup does not guarantee data preservation or authorize a full-chip erase.
-
 The verified merged image is written from `0x0`. Because the merged file pads
 the gaps between images, flashing it can reset the NVS and PHY data regions.
 Use the merged image for blank-device provisioning or an intentional complete
 refresh. During normal development, use segmented `idf.py flash` when existing
-NVS state should be preserved; this also requires a compatible partition layout
-and flash targets that do not overwrite those data regions. `idf.py erase-flash`
-erases all user data. Do not add it as a routine prerequisite: use it only when
-a complete erase is explicitly intended and any data that must be kept has
-been saved.
+NVS state should be preserved. `idf.py erase-flash` erases all user data.
+
+Voice resources use a contiguous logical stream split around the profile partitions, without filesystem formatting. `tools/flash_badge.py` backs up and validates before segmented installation. Merged-image padding also covers profiles 2–5; it must not be used for preserving updates.
+
+2.6.19 moves 896 KiB from voice capacity into the application after the approved selection: factory capacity is 0x3C0000 (3.75 MiB); voice head starts at 0x3D0000 with size 0x2C0000, and the tail stays at 0x750000 / 0x80000. The 695 clips contain 3,293,101 payload bytes, leaving 110,675 bytes after the 4,096-byte header. NVS, PHY, all profile/image/QR regions and the bootloader retain their addresses. Migration requires a verified full 8 MiB backup, writing and verifying the application and both repacked voice images, committing the partition table last, then verifying protected data. An app-only update is insufficient.

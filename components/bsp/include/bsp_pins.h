@@ -20,7 +20,7 @@
 // -1 = 复位脚未接 MCU(硬接 3.3V),由 esp_lcd_panel_reset() 走 SWRESET 软复位。
 #define BSP_LCD_RST          (-1)
 #define BSP_LCD_BL           21          // 背光,LEDC PWM 调光
-#define BSP_LCD_PCLK_HZ      (80 * 1000 * 1000)
+#define BSP_LCD_PCLK_HZ      (40 * 1000 * 1000)
 // ST7789 SCK 空闲低、上升沿采样 → SPI mode 0。
 #define BSP_LCD_SPI_MODE     0
 // 本屏出厂即需反色(参考例程 TFT_init() 末尾无条件发 0x21 INVON)。
@@ -52,6 +52,7 @@
 // ============================================================================
 #define BSP_BTN_ADC_UNIT     ADC_UNIT_1
 #define BSP_BTN_ADC_CHANNEL  ADC_CHANNEL_0    // GPIO0
+#define BSP_BTN_GPIO         0
 #define BSP_BTN_COUNT        3
 
 // 每键的电压窗口 {min_mV, max_mV};边界取相邻档中点。

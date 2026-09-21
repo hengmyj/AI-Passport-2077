@@ -14,6 +14,21 @@ int main(void) {
     result = demo_navigation_handle(&navigation, DEMO_NAV_INPUT_OK_CLICK, false);
     assert(result.action == DEMO_NAV_ACTION_NONE);
     assert(navigation.active == -1);
+    /* Integrated menu: all eight entries remain reachable, including Muyu. */
+    demo_navigation_init(&navigation, 8);
+    for (size_t i = 0; i < 8; i++) {
+        result = demo_navigation_handle(&navigation, DEMO_NAV_INPUT_OK_CLICK, true);
+        assert(result.action == DEMO_NAV_ACTION_ENTER && result.index == i);
+        result = demo_navigation_handle(&navigation, DEMO_NAV_INPUT_OK_LONG, true);
+        assert(result.action == DEMO_NAV_ACTION_EXIT && navigation.active == (int)i);
+        demo_navigation_complete_exit(&navigation);
+        demo_navigation_handle(&navigation, DEMO_NAV_INPUT_DOWN_CLICK, true);
+    }
+    assert(navigation.selected == 0);
+    demo_navigation_handle(&navigation, DEMO_NAV_INPUT_UP_CLICK, true);
+    assert(navigation.selected == 7);
+    demo_navigation_init(&navigation, 3);
+    demo_navigation_handle(&navigation, DEMO_NAV_INPUT_UP_CLICK, true);
 
     result = demo_navigation_handle(&navigation, DEMO_NAV_INPUT_DOWN_CLICK, true);
     assert(result.action == DEMO_NAV_ACTION_REFRESH);

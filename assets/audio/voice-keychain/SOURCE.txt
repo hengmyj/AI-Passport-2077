@@ -1,0 +1,7 @@
+Source: https://github.com/Shinku-Chen/ai-passport/tree/feature/voice-keychain
+Commit: 71c45cabc1b2f3b73b4929d71cafd926ccbb11f5
+Originally 24 packs / 818 raw Opus clips, copied without re-encoding.
+Version 1.9.1 retains 24 packs / 726 clips after user-approved selection.
+selection.json records the 46 groups, representatives and 92 removed entries.
+Retained recordings are byte-identical to upstream; no re-encoding.
+Upstream code is MIT; libopus retains its COPYING. Media may carry separate third-party rights; source metadata is retained.

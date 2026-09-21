@@ -2,18 +2,25 @@
 // LVGL 接入单独成文件:不用 LVGL 的开发者删掉本文件 + idf_component.yml 里的两条依赖即可。
 #include "bsp_display.h"
 #include "bsp_display_rounding.h"
+#include "bsp_capture_stream.h"
 #include "bsp_pins.h"
 #include "esp_lvgl_port.h"
 #include "esp_log.h"
-#include <string.h>
+#include "esp_lcd_panel_ops.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 static const char *TAG = "bsp_lvgl";
 
-#define BSP_LVGL_DRAW_BUFFER_LINES 40
-
 static lv_display_t *s_disp;
-static bool s_port_initialized;
-static bool s_port_init_failed;
+static bool s_port_initialized, s_port_init_failed;
+static TaskHandle_t s_lvgl_task;
+static bool s_suspended;
+static bsp_capture_stream_t *s_capture; /* Only accessed under the LVGL lock. */
+static uint8_t s_saved_brightness=80;
+static void remember_lvgl_task(lv_timer_t *timer) {
+    s_lvgl_task=xTaskGetCurrentTaskHandle();lv_timer_delete(timer);
+}
 
 static void rounded_flush_event(lv_event_t *event)
 {
@@ -29,28 +36,44 @@ static void rounded_flush_event(lv_event_t *event)
     if (draw_buf->header.stride < (uint32_t)width * sizeof(uint16_t)) return;
 
     for (int32_t y = area->y1; y <= area->y2; ++y) {
-        uint16_t *row = (uint16_t *)(draw_buf->data +
-                                     (y - area->y1) * draw_buf->header.stride);
-        int32_t visible_x1;
-        int32_t visible_x2;
-        if (!bsp_display_rounded_row_span(y, BSP_LCD_W, BSP_LCD_H,
-                                          BSP_LVGL_SCREEN_RADIUS, &visible_x1,
-                                          &visible_x2)) {
-            memset(row, 0, (size_t)width * sizeof(uint16_t));
+        if (y >= BSP_LVGL_SCREEN_RADIUS &&
+            y < BSP_LCD_H - BSP_LVGL_SCREEN_RADIUS) {
             continue;
         }
-        // Only clear pixels outside the visible span. The port swaps RGB565
-        // bytes after this event; black is 0 in either byte order.
-        const int32_t clear_left_end = visible_x1 > area->x2 ? area->x2 : visible_x1 - 1;
-        const int32_t clear_right_start = visible_x2 < area->x1 ? area->x1 : visible_x2 + 1;
-        for (int32_t x = area->x1; x <= clear_left_end; ++x) {
-            row[x - area->x1] = 0;
-        }
-        for (int32_t x = clear_right_start; x <= area->x2; ++x) {
-            row[x - area->x1] = 0;
+
+        uint16_t *row = (uint16_t *)(draw_buf->data +
+                                     (y - area->y1) * draw_buf->header.stride);
+        for (int32_t x = area->x1; x <= area->x2; ++x) {
+            if (bsp_display_pixel_outside_rounded_rect(
+                    x, y, BSP_LCD_W, BSP_LCD_H, BSP_LVGL_SCREEN_RADIUS)) {
+                // The port swaps RGB565 bytes after this event; black is 0 in
+                // either byte order, so masking here is safe.
+                row[x - area->x1] = 0;
+            }
         }
     }
+    if (s_capture) {
+        bsp_capture_stream_strip(s_capture, area->x1, area->y1, area->x2, area->y2,
+                                 draw_buf->data, draw_buf->header.stride);
+    }
+}
 
+esp_err_t bsp_display_capture_rgb565(bsp_display_capture_write_fn write, void *context) {
+    if (!s_disp || s_suspended || s_capture || !write ||
+        lv_display_get_color_format(s_disp) != LV_COLOR_FORMAT_RGB565) {
+        return ESP_ERR_INVALID_STATE;
+    }
+    bsp_capture_stream_t capture = {
+        .width = BSP_LCD_W, .height = BSP_LCD_H, .write = write, .context = context
+    };
+    /* Invalidate the full screen so the existing partial renderer emits every
+     * row once. These exact masked pixels also reach the panel after byte swap.
+     * Holding the port lock freezes page mutations for the entire frame. */
+    lv_obj_invalidate(lv_display_get_screen_active(s_disp));
+    s_capture = &capture;
+    lv_refr_now(s_disp);
+    s_capture = NULL;
+    return bsp_capture_stream_complete(&capture) ? ESP_OK : ESP_FAIL;
 }
 
 lv_display_t *bsp_lvgl_init(void) {
@@ -79,9 +102,11 @@ lv_display_t *bsp_lvgl_init(void) {
     const lvgl_port_display_cfg_t dc = {
         .panel_handle = bsp_display_panel(),
         .io_handle    = bsp_display_io(),
-        // ⚠ C3 无 PSRAM,DMA 只能用内部 RAM。40 行单缓冲约 19.2KB，
-        // 可减少窗口命令和队列提交次数；仍保留单缓冲，避免双缓冲挤压音频/Wi-Fi。
-        .buffer_size   = (uint32_t)BSP_LCD_W * BSP_LVGL_DRAW_BUFFER_LINES,
+        // ⚠ C3 无 PSRAM,DMA 只能用内部 RAM(总共约 150KB)。
+        // 20 行单缓冲 ≈ 9.6KB;若改成 40 行双缓冲(≈37.5KB)会把 I2S 等外设的
+        // DMA 描述符挤到 NO_MEM。刷新略慢但稳。
+        // Ten rows leave 4,800 more contiguous bytes for TLS + Opus on C3.
+        .buffer_size   = (uint32_t)BSP_LCD_W * 10,
         .double_buffer = false,
         .hres = BSP_LCD_W, .vres = BSP_LCD_H,
         // 旋转/镜像必须在这里配:esp_lvgl_port 注册显示时会重新下发 MADCTL,
@@ -116,6 +141,12 @@ lv_display_t *bsp_lvgl_init(void) {
     // Mask the final RGB565 flush instead of using root-screen clip_corner.
     // Full-screen rounded clipping creates an ARGB layer that does not fit the
     // 24 KB LVGL pool reliably on this no-PSRAM target.
+    lv_timer_t *task_timer = lv_timer_create(remember_lvgl_task, 1, NULL);
+    if (!task_timer) {
+        lvgl_port_remove_disp(disp);
+        lvgl_port_unlock();
+        return NULL;
+    }
     s_disp = disp;
     lvgl_port_unlock();
 
@@ -130,3 +161,38 @@ bool bsp_lvgl_lock(int timeout_ms) {
 void bsp_lvgl_unlock(void) {
     if (s_disp) lvgl_port_unlock();
 }
+
+esp_err_t bsp_display_suspend(void) {
+    if(s_suspended)return ESP_OK;
+    if(!s_disp||!s_lvgl_task)return ESP_ERR_INVALID_STATE;
+    if(!bsp_lvgl_lock(1000))return ESP_ERR_TIMEOUT;
+    s_saved_brightness=bsp_display_brightness();
+    if(!s_saved_brightness)s_saved_brightness=80;
+    esp_err_t e=lvgl_port_stop();
+    if(e!=ESP_OK){lvgl_port_resume();bsp_lvgl_unlock();return e;}
+    /* In this LVGL version the disabled handler returns 1 ms. Stop alone
+     * would increase wakeups. With its port lock held, the LVGL task cannot
+     * own any UI/flush work, so it is safe to suspend it as well. */
+    vTaskSuspend(s_lvgl_task);s_suspended=true;
+    bsp_display_backlight(0);
+    e=esp_lcd_panel_disp_on_off(bsp_display_panel(),false);
+    if(e==ESP_OK)e=esp_lcd_panel_disp_sleep(bsp_display_panel(),true);
+    bsp_lvgl_unlock();
+    if(e!=ESP_OK)(void)bsp_display_resume();
+    return e;
+}
+esp_err_t bsp_display_resume(void) {
+    if(!s_suspended)return ESP_OK;
+    if(!bsp_lvgl_lock(1000))return ESP_ERR_TIMEOUT;
+    esp_err_t e=esp_lcd_panel_disp_sleep(bsp_display_panel(),false);
+    if(e==ESP_OK){vTaskDelay(pdMS_TO_TICKS(120));e=esp_lcd_panel_disp_on_off(bsp_display_panel(),true);}
+    if(e==ESP_OK)e=lvgl_port_resume();
+    if(e==ESP_OK){
+        lv_obj_invalidate(lv_display_get_screen_active(s_disp));
+        vTaskResume(s_lvgl_task);s_suspended=false;
+        bsp_display_backlight(s_saved_brightness?s_saved_brightness:80);
+    }
+    bsp_lvgl_unlock();return e;
+}
+
+bool bsp_display_is_suspended(void) { return s_suspended; }

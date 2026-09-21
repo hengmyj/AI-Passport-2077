@@ -1,0 +1,12 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),path=require('path');
+const source=fs.readFileSync(path.join(__dirname,'../configure/app.js'),'utf8');
+const html=fs.readFileSync(path.join(__dirname,'../configure/page.html'),'utf8');
+const el={textContent:''},scope={$:()=>el};vm.createContext(scope);
+vm.runInContext(source.slice(source.indexOf('function showYaoTime(')),scope);
+assert(!html.includes('id="yaoLongitude"')&&!html.includes('id="saveYaoLocation"')&&!source.includes("rpc('yao_location_save'"));
+scope.showYaoTime(undefined);assert(el.textContent.includes('无需填写'));
+scope.showYaoTime({location_set:false,clock_valid:true,beijing_utc8:'2026-09-18 12:00:00'},'unavailable');assert(el.textContent.includes('不校准真太阳时')&&el.textContent.includes('12:00:00'));
+scope.showYaoTime({location_set:false,clock_valid:false},'pending');assert(el.textContent.includes('排队')&&el.textContent.includes('尚未校时'));
+scope.showYaoTime({location_set:false,clock_valid:true,beijing_utc8:'2026-09-18 12:00:00'},'retrying');assert(el.textContent.includes('15 秒后自动重试'));
+scope.showYaoTime({location_set:true,region:'<img src=x>',longitude_east:0,clock_valid:true,true_solar_time:'2026-09-18 04:05:00'},'ready');assert(el.textContent.includes('<img src=x>')&&el.textContent.includes('近似'));
+console.log('Automatic location UI PASS: read-only, pending/failure fallback, safe text, no manual save');

@@ -34,3 +34,12 @@ static inline void *lv_event_get_param(lv_event_t *ev) { return ev->area; }
 static inline lv_draw_buf_t *lv_display_get_buf_active(lv_display_t *disp) { return &disp->buffer; }
 static inline int lv_display_get_color_format(lv_display_t *disp) { (void)disp; return LV_COLOR_FORMAT_RGB565; }
 static inline int32_t lv_area_get_width(const lv_area_t *a) { return a->x2 - a->x1 + 1; }
+
+typedef struct {int unused;} lv_timer_t;
+lv_timer_t *lv_timer_create(void (*)(lv_timer_t *),unsigned,void *);
+void lv_timer_delete(lv_timer_t *);
+void *lv_display_get_screen_active(lv_display_t *);
+void lv_obj_invalidate(void *);
+void lv_refr_now(lv_display_t *);
+esp_err_t lvgl_port_stop(void);
+esp_err_t lvgl_port_resume(void);

@@ -5,6 +5,26 @@
 #include "../components/bsp/src/bsp_display_lvgl.c"
 
 static lv_display_t display;
+static lv_timer_t timer;
+static bool timer_fail,panel_sleep_fail,port_resume_fail,task_suspended;
+static unsigned brightness=63;
+static int task_token;
+TaskHandle_t xTaskGetCurrentTaskHandle(void){return &task_token;}
+void vTaskSuspend(TaskHandle_t t){assert(t==&task_token);task_suspended=true;}
+void vTaskResume(TaskHandle_t t){assert(t==&task_token);task_suspended=false;}
+void vTaskDelay(unsigned ms){(void)ms;}
+lv_timer_t *lv_timer_create(void (*cb)(lv_timer_t *),unsigned ms,void *u){(void)cb;(void)ms;(void)u;return timer_fail?NULL:&timer;}
+void lv_timer_delete(lv_timer_t *t){assert(t==&timer);}
+void *lv_display_get_screen_active(lv_display_t *d){return d;}
+void lv_obj_invalidate(void *o){(void)o;}
+void lv_refr_now(lv_display_t *d){(void)d;}
+esp_err_t lvgl_port_stop(void){return ESP_OK;}
+esp_err_t lvgl_port_resume(void){return port_resume_fail?ESP_FAIL:ESP_OK;}
+uint8_t bsp_display_brightness(void){return brightness;}
+void bsp_display_backlight(uint8_t b){brightness=b;}
+esp_err_t esp_lcd_panel_disp_sleep(esp_lcd_panel_handle_t h,bool s){(void)h;(void)s;return panel_sleep_fail?ESP_FAIL:ESP_OK;}
+esp_err_t esp_lcd_panel_disp_on_off(esp_lcd_panel_handle_t h,bool s){(void)h;(void)s;return ESP_OK;}
+
 static int panel_present = 1, lock_depth, port_live, display_live, callback_live;
 static int fail_lock, fail_port, fail_display, fail_event, init_calls, unlocked_flushes;
 static int panel_token, io_token;
@@ -69,6 +89,7 @@ int main(void) {
     const int retained_init_calls = init_calls;
     fail_display = 1; expect_failure(); fail_display = 0;
     fail_event = 1; expect_failure(); fail_event = 0;
+    timer_fail=true;expect_failure();timer_fail=false;
     assert(bsp_lvgl_init() == &display);
     assert(init_calls == retained_init_calls); // Display retries reuse the port.
     assert(callback_live && !lock_depth && unlocked_flushes == 1);
@@ -82,5 +103,11 @@ int main(void) {
     lv_event_t ev = { .target = &display, .area = &area };
     rounded_flush_event(&ev);
     assert(pixels[0] == 0 && pixels[BSP_LCD_W - 1] == 0 && pixels[BSP_LCD_W / 2] == 0xffff);
-    puts("BSP LVGL initialization tests: PASS");
+    remember_lvgl_task(&timer);
+    assert(bsp_display_suspend()==ESP_OK&&task_suspended&&brightness==0);
+    port_resume_fail=true;assert(bsp_display_resume()!=ESP_OK&&task_suspended);
+    port_resume_fail=false;assert(bsp_display_resume()==ESP_OK&&!task_suspended&&brightness==63);
+    panel_sleep_fail=true;assert(bsp_display_suspend()!=ESP_OK&&bsp_display_is_suspended());
+    panel_sleep_fail=false;assert(bsp_display_resume()==ESP_OK&&!task_suspended&&brightness==63);
+    puts("BSP LVGL initialization, rollback, suspend/resume retries: PASS");
 }

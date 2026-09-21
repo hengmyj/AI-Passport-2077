@@ -54,6 +54,10 @@ class DeepSleepContractTest(unittest.TestCase):
         cls.display = read("components/bsp/src/bsp_display.c")
         cls.i2c = read("components/bsp/src/bsp_i2c.c")
         cls.demo = read("main/demo_low_power.c")
+        cls.main = read("main/main.c")
+        cls.muyu = read("main/muyu_app.c")
+        cls.voice = read("main/voice_app.c")
+        cls.radio = read("main/radio_player.cc")
 
     def test_es8311_force_sleep_sequence_is_complete_and_ordered(self) -> None:
         expected = [
@@ -110,6 +114,13 @@ class DeepSleepContractTest(unittest.TestCase):
         self.assertIn("cw_read(CW_REG_CONFIG, &actual, 1)", body)
         self.assertIn("actual == CW_CONFIG_SLEEP", body)
 
+    def test_cw2017_wake_rejects_transient_zero_soc(self) -> None:
+        wait = function_body(self.battery, "cw_wait_soc_ready")
+        read = function_body(self.battery, "bsp_battery_soc")
+        self.assertIn("soc[1] > 0", wait)
+        self.assertIn("voltage_mv <= CW_EMPTY_MAX_MV", wait)
+        self.assertIn("return s_last_soc", read)
+
     def test_shared_i2c_is_released_after_device_transactions(self) -> None:
         body = function_body(self.i2c, "bsp_i2c_prepare_deep_sleep")
         self.assertIn("BSP_I2C_SDA", body)
@@ -152,6 +163,27 @@ class DeepSleepContractTest(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
         self.assertLess(body.index("bsp_lvgl_lock(1000)"),
                         body.index("bsp_display_prepare_deep_sleep()"))
+
+    def test_assistant_shutdown_uses_the_same_terminal_sequence(self) -> None:
+        body = function_body(self.main, "control_shutdown")
+        calls = [
+            "bsp_battery_sleep()",
+            "bsp_audio_sleep()",
+            "bsp_audio_prepare_deep_sleep()",
+            "bsp_i2c_prepare_deep_sleep()",
+            "bsp_display_prepare_deep_sleep()",
+            "esp_deep_sleep_start()",
+        ]
+        positions = [body.index(call) for call in calls]
+        self.assertEqual(positions, sorted(positions))
+
+    def test_every_user_facing_battery_reader_keeps_last_valid_soc(self) -> None:
+        self.assertIn("if(next>=0)battery=next", self.main)
+        self.assertIn("if (next_battery >= 0) battery = next_battery", self.muyu)
+        self.assertIn("if(next_battery>=0)atomic_store(&battery,next_battery)", self.voice)
+        self.assertIn("if(next>=0)s_last_battery=next", self.radio)
+        for source in (self.main, self.muyu, self.voice, self.radio):
+            self.assertIn("bsp_battery_init()==ESP_OK".replace(" ", ""), source.replace(" ", ""))
 
 
 if __name__ == "__main__":

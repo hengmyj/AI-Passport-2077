@@ -1,0 +1,17 @@
+<p align="right"><a href="muyu-assets.zh_CN.md">简体中文</a> · <strong>English</strong></p>
+
+# Zen Muyu asset provenance
+
+- `images/coloros-muyu/background-240x320.png` and `main/assets/coloros_muyu_bg.rgb565` are copied unchanged from upstream `demo/coloros-muyu`, commit `16df9944d0f6a83b475e05acabbea73c8b49c3e1`, under the repository MIT license. The original branch describes the background as an ImageGen-edited image. Before 1.7.0 it was embedded as RGB565LE (240 x 320; 153,600 bytes); the PNG is also used by the browser preview. Conversion: `ffmpeg -i assets/images/coloros-muyu/background-240x320.png -pix_fmt rgb565le -f rawvideo main/assets/coloros_muyu_bg.rgb565`.
+- `main/font_muyu_22.c` is the unchanged Source Han Sans SC Medium subset from that branch (digits, space, plus sign and seven ideographs). Its SIL OFL 1.1 notice is in `fonts/SourceHan-OFL.txt` from [Adobe Source Han Sans](https://github.com/adobe-fonts/source-han-sans).
+- `main/font_muyu_14.c` is a generated 14 px / 4 bpp UI subset, renamed for this app, derived from [Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc). Its SIL OFL 1.1 notice is in `fonts/OFL.txt`. Source file `NotoSansSC[wght].ttf` SHA-256: `a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da`. Regenerate with `python tools/generate_muyu_font.py /path/to/NotoSansSC.ttf` (Pillow required). The generator extracts all Chinese UI characters and printable ASCII; 238 glyphs, 17,812 bitmap bytes. The full source font is a development download and is not embedded or bundled.
+- Percussion is synthesized at startup in `main/muyu_app.c` (16 kHz, 16-bit, mono, 140 ms) from decaying resonances and a noise attack. No third-party audio recording is included.
+
+- `images/cyber-badge/` contains actual 240 × 320 LVGL renders of the badge, employee terminal, game library, settings and Muyu. The Arasaka emblem is geometrically redrawn in `main/badge_ui.c`; preview status values are examples. Muyu retains the asset licenses above. The font generator also includes Chinese punctuation and badge/registry/profile text.
+
+- `font_badge_10.c` and `font_badge_28.c` are Noto Sans SC OFL subsets: 2,384 and 16,612 bitmap bytes. Regenerate with `python tools/generate_badge_fonts.py /path/to/NotoSansSC.ttf`. The 10 px font is supplementary terminal text; 28 px is used for headings and the configurable name. The 28 px subset also collects Chinese characters from the display-name field.
+- Arasaka branding references: [employee-card design](https://ko-fi.com/s/5aad91d702), [emblem reference](https://cyberpunk.fandom.com/fr/wiki/Arasaka). No marketplace artwork is downloaded or bundled. The geometric redraw references fictional branding whose rights are separate from the implementation license.
+
+- `images/cyber-badge/demo-{card,brand,logo}.rgb565` are synthetic host-render fixtures for the configured badge layout. Their example identity is fictional; the portrait is an original geometric illustration. Text uses the Noto Sans SC font credited above. These files are test inputs, not flashed user profiles.
+
+- Since 1.7.0 the native game uses original LVGL vector geometry in `main/muyu_ui.c`, colored through `main/badge_theme.h`. The original orange bitmap remains as a historical reference and in the legacy web simulation; it is no longer embedded in current firmware. New theme screenshots use synthetic palettes and no personal badge data.

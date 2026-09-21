@@ -318,7 +318,7 @@ int main(void) {
 
     // Actual start failure and an error swallowed by set_fs are both rejected.
     const int failing_regs[] = { 0x0d, 0x02, 0x16, 0x32 };
-    const int failing_values[] = { 0x01, 0x12, 0x0a, 0x00 };
+    const int failing_values[] = { 0x01, 0x12, 0x0a, 43 };
     for (size_t i = 0; i < sizeof(failing_regs) / sizeof(failing_regs[0]); ++i) {
         fresh();
         fault(failing_regs[i], failing_values[i], 1);
@@ -345,7 +345,9 @@ int main(void) {
     assert(bsp_audio_sleep() != ESP_OK);
     assert_rollback();
     assert(registers[0x0d] == 0xfc && registers[0x45] == 0x01);
-    assert(bsp_audio_sleep() != ESP_OK); // Repeated call must not hide the failure.
+    assert(bsp_audio_needs_wake() && !bsp_audio_is_sleeping());
+    assert(bsp_audio_sleep() == ESP_OK); // Explicit retry verifies the hardware again.
+    assert(bsp_audio_is_sleeping());
     starts = codec_starts;
     assert(bsp_audio_wake() == ESP_OK);
     assert(codec_starts == starts + 1);
@@ -366,6 +368,17 @@ int main(void) {
     assert(bsp_audio_init() == ESP_OK);
     assert(bsp_audio_set_format(16000, 16, 1) == ESP_OK);
     assert_active();
+    /* Product contract: init wakes a previously suspended codec and restores
+     * the saved volume; no new shared I2C interface is allocated per cycle. */
+    bsp_audio_set_volume(71);
+    for(unsigned cycle=0;cycle<64;cycle++){
+        assert(bsp_audio_set_format(cycle%2?8000:16000,16,1)==ESP_OK);
+        assert(bsp_audio_sleep()==ESP_OK&&bsp_audio_is_sleeping());
+        assert(bsp_audio_needs_wake());
+        assert(bsp_audio_init()==ESP_OK&&!bsp_audio_is_sleeping());
+        assert(!bsp_audio_needs_wake()&&bsp_audio_get_volume()==71);
+        assert(registers[0x32]==71);assert_active();
+    }
     // Failure to release a dependency reference is distinct from an I2C fault:
     // public delete has freed the object, so fail closed until reboot instead of
     // constructing against an uncertain reference count and reporting success.
@@ -379,3 +392,4 @@ int main(void) {
     puts("BSP audio failure/retry/sleep/wake tests: PASS");
     return 0;
 }
+

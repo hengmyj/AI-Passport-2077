@@ -1,0 +1,65 @@
+Curated public MP3 station endpoints
+Checked: 2026-09-15 19:27:58 (local host time)
+Sources: https://github.com/gaotianliuyun/gao/blob/master/radio.txt
+Original six presets: https://github.com/leo0183/leo-radio
+Selected 57 of 80 candidates after HTTP download and FFmpeg MP3-to-PCM checks.
+Checks establish short-sample availability, not continuous uptime or programme identity.
+No tokens, private signing keys or HLS transcoding are used.
+Local discoveries are combined with these immutable entries and duplicate stream IDs are removed.
+15318317 | 中国之声 | http://lhttp.qingting.fm/live/15318317/64k.mp3
+4804 | 怀集音乐之声 | http://lhttp.qingting.fm/live/4804/64k.mp3
+20500149 | 两广之声 | http://lhttp.qingting.fm/live/20500149/64k.mp3
+1262 | 羊城交通 | http://lhttp.qingting.fm/live/1262/64k.mp3
+276 | 第一财经 | http://lhttp.qingting.fm/live/276/64k.mp3
+5022038 | CRI 怀旧金曲频道 | http://lhttp.qingting.fm/live/5022038/64k.mp3
+5021912 | 亚洲经典台 | http://lhttp.qingting.fm/live/5021912/64k.mp3
+4915 | 清晨音乐台 | http://lhttp.qingting.fm/live/4915/64k.mp3
+5021381 | 北京好音乐广播 | http://lhttp.qingting.fm/live/5021381/64k.mp3
+275 | 上海东广新闻台 | http://lhttp.qingting.fm/live/275/64k.mp3
+267 | 上海经典947音乐广播 | http://lhttp.qingting.fm/live/267/64k.mp3
+274 | 上海动感101音乐广播 | http://lhttp.qingting.fm/live/274/64k.mp3
+1654 | 石家庄音乐广播 | http://lhttp.qingting.fm/live/1654/64k.mp3
+839 | 哈尔滨音乐广播 | http://lhttp.qingting.fm/live/839/64k.mp3
+2803 | 苏州音乐广播 | http://lhttp.qingting.fm/live/2803/64k.mp3
+4866 | 杭州动听968音乐调频 | http://lhttp.qingting.fm/live/4866/64k.mp3
+1297 | 武汉音乐广播 | http://lhttp.qingting.fm/live/1297/64k.mp3
+4581 | 亚洲音乐台 | http://lhttp.qingting.fm/live/4581/64k.mp3
+270 | 上海新闻广播 | http://lhttp.qingting.fm/live/270/64k.mp3
+20021 | 辽宁经典流行音乐广播 | http://lhttp.qingting.fm/live/20021/64k.mp3
+5022096 | 张掖新闻综合广播 | http://lhttp.qingting.fm/live/5022096/64k.mp3
+5021902 | 沧州长书文艺广播 | http://lhttp.qingting.fm/live/5021902/64k.mp3
+1155 | 温州之声 | http://lhttp.qingting.fm/live/1155/64k.mp3
+20212423 | 新昌天姥之声 | http://lhttp.qingting.fm/live/20212423/64k.mp3
+1674 | 青岛经济广播 | http://lhttp.qingting.fm/live/1674/64k.mp3
+20211563 | 玉溪交通旅游广播 | http://lhttp.qingting.fm/live/20211563/64k.mp3
+1677 | 青岛音乐•体育广播 | http://lhttp.qingting.fm/live/1677/64k.mp3
+20500058 | 邵阳经济广播 | http://lhttp.qingting.fm/live/20500058/64k.mp3
+20194 | MYFM全国音乐频道·广州 | http://lhttp.qingting.fm/live/20194/64k.mp3
+1144 | 台州音乐广播 | http://lhttp.qingting.fm/live/1144/64k.mp3
+20211701 | 太原老年之声 | http://lhttp.qingting.fm/live/20211701/64k.mp3
+15318165 | 阳泉交通广播 | http://lhttp.qingting.fm/live/15318165/64k.mp3
+266 | 上海交通广播 | http://lhttp.qingting.fm/live/266/64k.mp3
+2806 | 苏州交通经济广播 | http://lhttp.qingting.fm/live/2806/64k.mp3
+20671 | 威海交通广播 | http://lhttp.qingting.fm/live/20671/64k.mp3
+1961 | 合肥故事广播 | http://lhttp.qingting.fm/live/1961/64k.mp3
+20212380 | 合肥新闻广播 | http://lhttp.qingting.fm/live/20212380/64k.mp3
+1960 | 合肥交通广播 | http://lhttp.qingting.fm/live/1960/64k.mp3
+1975 | 合肥汽车音乐 | http://lhttp.qingting.fm/live/1975/64k.mp3
+20212414 | 普兰店区新闻综合广播 | http://lhttp.qingting.fm/live/20212414/64k.mp3
+1744 | 海峡之声新闻广播 | http://lhttp.qingting.fm/live/1744/64k.mp3
+5022360 | 泉州刺桐之声 | http://lhttp.qingting.fm/live/5022360/64k.mp3
+15318346 | 泉州新闻综合广播 | http://lhttp.qingting.fm/live/15318346/64k.mp3
+20709 | 龙岩新闻综合广播 | http://lhttp.qingting.fm/live/20709/64k.mp3
+5026 | 福州交通之声 | http://lhttp.qingting.fm/live/5026/64k.mp3
+1743 | 漳州交通广播 | http://lhttp.qingting.fm/live/1743/64k.mp3
+1738 | 厦门经济交通广播 | http://lhttp.qingting.fm/live/1738/64k.mp3
+3937 | 福州左海之声 | http://lhttp.qingting.fm/live/3937/64k.mp3
+3939 | 甘肃交通广播 | http://lhttp.qingting.fm/live/3939/64k.mp3
+5022622 | 甘肃新闻综合广播 | http://lhttp.qingting.fm/live/5022622/64k.mp3
+5022107 | 动听音乐网络电台 | http://lhttp.qingting.fm/live/5022107/64k.mp3
+1275 | 珠海交通875·环保经济广播 | http://lhttp.qingting.fm/live/1275/64k.mp3
+1270 | 深圳新闻广播 | http://lhttp.qingting.fm/live/1270/64k.mp3
+1283 | 江门电台旅游之声 | http://lhttp.qingting.fm/live/1283/64k.mp3
+1257 | 梅州电台新闻广播 | http://lhttp.qingting.fm/live/1257/64k.mp3
+5021523 | 惠州音乐广播 | http://lhttp.qingting.fm/live/5021523/64k.mp3
+1272 | 深圳交通广播 | http://lhttp.qingting.fm/live/1272/64k.mp3
