@@ -145,7 +145,7 @@ static void render_shell(void) {
     const badge_game_t *g=BADGE_GAME_COUNT?&BADGE_GAMES_REGISTRY[navigation.game_selected]:NULL;
     navigation.ai_enabled=xz_wake_enabled();navigation.ai_volume=demo_xiaozhi_saved_volume();navigation.ai_style=xiaozhi_style_get();
     badge_ui_ai_status(navigation.ai_selected==4?"按 OK 切换并保存":navigation.ai_selected==3?xz_wake_phrase():xz_wake_status());
-    badge_ui_render(&navigation,g?g->lifecycle.name:"暂无小程序",g?g->description:"",g?g->category:"");
+    badge_ui_render(&navigation,g?g->lifecycle.name:"暂无小程序",g?g->description:"",g?g->category:"",g?g->artwork:BADGE_GAME_ART_NONE);
     update_status();
 }
 static badge_input_t translate(const input_event_t *input) {

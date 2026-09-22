@@ -25,7 +25,7 @@ pins = (repo/'components/bsp/include/bsp_pins.h').read_text()
 #include "voice_catalog.h"
 static badge_navigation_t nav;
 static void show(void) {
-    badge_ui_render(&nav,"敲木鱼","轻敲一下，放空片刻","ZEN / RELAX");
+    badge_ui_render(&nav,"敲木鱼","轻敲一下，放空片刻","ZEN / RELAX",BADGE_GAME_ART_MUYU);
     badge_ui_status("30BDA8",86,3661,true,true);
 }
 void render_main_menu(void) {
@@ -38,7 +38,8 @@ void render_cards(const uint8_t *p) {
 }
 void render_terminal(void) {nav.page=BADGE_TERMINAL;show();}
 void render_library(void) {nav.page=BADGE_GAMES;show();}
-void render_voice_entry(void) {nav.game_selected=1;badge_ui_render(&nav,"音效钥匙扣",VOICE_SUMMARY,"VOICE / SOUNDBOARD");nav.game_selected=0;}
+void render_game_art(badge_game_art_t art) {nav.page=BADGE_GAMES;badge_ui_render(&nav,"示例小程序","说明文字不应被图案遮挡","CATEGORY",art);}
+void render_voice_entry(void) {nav.game_selected=1;badge_ui_render(&nav,"音效钥匙扣",VOICE_SUMMARY,"VOICE / SOUNDBOARD",BADGE_GAME_ART_VOICE);nav.game_selected=0;}
 void render_settings(void) {nav.page=BADGE_SETTINGS;show();}
 void render_qr(void) {nav.page=BADGE_QR;show();}
 void render_wifi(void) {nav.page=BADGE_WIFI;show();badge_ui_network(true,false,"Badge-DEMO","123456ABCDEF","","Setup hotspot ready");}
@@ -64,6 +65,7 @@ static uint16_t buffer[BSP_LCD_W*20];
 void render_main_menu(void);
 void destroy_main_menu(void);
 void render_library(void);
+void render_game_art(badge_game_art_t art);
 void render_voice_entry(void);
 void render_terminal(void);
 void render_cards(const uint8_t *p);
@@ -120,6 +122,17 @@ int main(int argc,char **argv) {
     FILE *return_view=fopen("build/ui-render/return-menu.rgb565","wb");assert(return_view);fwrite(frame,sizeof(frame),1,return_view);fclose(return_view);badge_ui_return_menu(NULL);tick(2);
     render_library(); tick(20);
     FILE *games=fopen(argv[3],"wb");assert(games);fwrite(frame,sizeof(frame),1,games);fclose(games);
+    const badge_game_art_t game_art[]={BADGE_GAME_ART_NONE,BADGE_GAME_ART_MUYU,BADGE_GAME_ART_VOICE,BADGE_GAME_ART_RADIO,BADGE_GAME_ART_YAO,BADGE_GAME_ART_CUPS};
+    const char *game_art_name[]={"none","muyu","voice","radio","yao","cups"};uint16_t plain[240*320];
+    for(unsigned art=0;art<sizeof(game_art)/sizeof(*game_art);art++){
+        render_game_art(game_art[art]);tick(20);char path[80];snprintf(path,sizeof(path),"build/ui-render/game-%s.rgb565",game_art_name[art]);
+        FILE *view=fopen(path,"wb");assert(view);fwrite(frame,sizeof(frame),1,view);fclose(view);
+        if(!art)memcpy(plain,frame,sizeof(plain));else{
+            unsigned changed=0;for(int y=0;y<320;y++)for(int x=0;x<240;x++)if(frame[y*240+x]!=plain[y*240+x]){
+                assert(y>=166&&y<=202);changed++;
+            }assert(changed>20);
+        }
+    }
     render_voice_entry();tick(20);FILE *ve=fopen("build/ui-render/voice-entry.rgb565","wb");assert(ve);fwrite(frame,sizeof(frame),1,ve);fclose(ve);
     render_settings(); tick(20);
     FILE *settings=fopen(argv[4],"wb");assert(settings);fwrite(frame,sizeof(frame),1,settings);fclose(settings);

@@ -1,5 +1,6 @@
 #pragma once
 #include "badge_navigation.h"
+#include "badge_game_art.h"
 #include <stdbool.h>
 #include <stdint.h>
 /* LVGL lock required. This screen is retained only while in the badge shell. */
@@ -7,7 +8,8 @@ void badge_ui_create(void);
 void badge_ui_destroy(void);
 void badge_ui_set_profile(const uint8_t *pixels);
 void badge_ui_render(const badge_navigation_t *state, const char *game_name,
-                     const char *description, const char *category);
+                     const char *description, const char *category,
+                     badge_game_art_t game_art);
 void badge_ui_status(const char *unit, int battery, uint32_t uptime_seconds, bool storage, bool input);
 
 void badge_ui_set_custom(const uint8_t *brand,const uint8_t *logo,const uint8_t *qr,const uint32_t colors[5]);

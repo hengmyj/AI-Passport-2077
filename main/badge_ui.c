@@ -67,6 +67,7 @@ void badge_ui_set_custom(const uint8_t *brand,const uint8_t *logo,const uint8_t 
 static lv_obj_t *screen,*uptime_label,*health_label,*unit_label;
 static lv_obj_t *return_overlay;
 static badge_navigation_t navigation;
+static badge_game_art_t selected_game_art;
 static char ai_status[96]="你好小智";
 void badge_ui_ai_status(const char *text){snprintf(ai_status,sizeof(ai_status),"%s",text);}
 static int scan_progress=255;
@@ -201,6 +202,41 @@ static void cut_panel(lv_layer_t *l,int x,int y,int w,int h,uint32_t fill,uint32
     line(l,x,y+h-1,x+w-11,y+h-1,1,edge);
     line(l,x+w-11,y+h-1,x+w-1,y+h-11,1,edge);
 }
+/* App marks use the reserved gap below the title and above the description. */
+static void game_artwork(lv_layer_t *l,badge_game_art_t art) {
+    if(art==BADGE_GAME_ART_MUYU) {
+        line(l,89,185,102,176,2,DARK_RED);line(l,102,176,138,176,2,DARK_RED);
+        line(l,138,176,151,185,2,DARK_RED);line(l,151,185,139,197,2,RED);
+        line(l,139,197,102,197,2,RED);line(l,102,197,89,185,2,RED);
+        circle(l,105,183,2,RED);line(l,154,174,167,195,2,RED);circle(l,152,171,3,DARK_RED);
+    } else if(art==BADGE_GAME_ART_VOICE) {
+        for(int i=0;i<34;i++) {
+            int wave=i<5?3:((i*19)%31)*(34-i)/29+2;
+            rect(l,36+i*4,185-wave/2,2,wave,i<12?RED:DARK_RED);
+        }
+    } else if(art==BADGE_GAME_ART_RADIO) {
+        line(l,90,177,150,177,2,RED);line(l,90,177,90,200,2,RED);
+        line(l,90,200,150,200,2,DARK_RED);line(l,150,177,150,200,2,DARK_RED);
+        line(l,95,176,108,168,2,DARK_RED);circle(l,104,188,7,DARK_RED);
+        circle(l,104,188,2,RED);line(l,119,185,141,185,2,RED);
+        line(l,119,191,136,191,2,DARK_RED);line(l,154,181,159,176,2,DARK_RED);
+        line(l,158,187,166,179,2,RED);
+    } else if(art==BADGE_GAME_ART_YAO) {
+        static const uint8_t broken=0x2a;
+        for(unsigned i=0;i<6;i++) {
+            int y=169+(int)i*6;
+            if(broken&(1u<<i)){line(l,84,y,112,y,2,i<3?RED:DARK_RED);line(l,128,y,156,y,2,i<3?RED:DARK_RED);}
+            else line(l,84,y,156,y,2,i<3?RED:DARK_RED);
+        }
+    } else if(art==BADGE_GAME_ART_CUPS) {
+        line(l,76,174,82,192,2,DARK_RED);line(l,82,192,94,199,2,RED);
+        line(l,94,199,106,192,2,RED);line(l,106,192,112,174,2,DARK_RED);
+        line(l,128,174,134,192,2,DARK_RED);line(l,134,192,146,199,2,RED);
+        line(l,146,199,158,192,2,RED);line(l,158,192,164,174,2,DARK_RED);
+        line(l,84,174,104,174,2,RED);line(l,136,174,156,174,2,RED);
+        circle(l,120,186,3,DARK_RED);
+    }
+}
 static void artwork(lv_event_t *e) {
     lv_layer_t *l=lv_event_get_layer(e);
     if(!((navigation.page==BADGE_HOME||navigation.page==BADGE_QR)&&navigation.badge_mask&&(tactical_layout||!identity.data)))rect(l,14,291,212,1,DARK_RED);
@@ -259,11 +295,7 @@ static void artwork(lv_event_t *e) {
     } else if(navigation.page==BADGE_GAMES) {
         cut_panel(l,14,110,212,131,PANEL,RED);
         rect(l,14,110,4,131,RED);
-        /* Percussion waveform: an application mark within the personnel terminal. */
-        for(int i=0;i<34;i++) {
-            int wave=i<5?3:((i*19)%31)*(34-i)/29+2;
-            rect(l,26+i*5,187-wave/2,2,wave,i<12?RED:DARK_RED);
-        }
+        game_artwork(l,selected_game_art);
         cut_panel(l,14,253,212,34,RED,RED);
     } else if(navigation.page==BADGE_WIFI||navigation.page==BADGE_PROFILE) {
         cut_panel(l,14,101,212,170,PANEL,DARK_RED);
@@ -355,11 +387,11 @@ static unsigned probe_homes,probe_home_badge;
 unsigned badge_ui_probe_home_count(void){return probe_homes;}
 unsigned badge_ui_probe_home_badge(void){return probe_home_badge;}
 #endif
-void badge_ui_render(const badge_navigation_t *s,const char *name,const char *description,const char *category) {
+void badge_ui_render(const badge_navigation_t *s,const char *name,const char *description,const char *category,badge_game_art_t game_art) {
 #ifdef BADGE_CONTROL_DEVICE_PROBE
     if(s->page==BADGE_HOME){probe_homes++;probe_home_badge=s->active_badge;}
 #endif
-    navigation=*s;lv_obj_set_style_bg_color(screen,lv_color_hex(BLACK),0);lv_anim_delete(screen,scan);lv_obj_clean(screen);
+    navigation=*s;selected_game_art=game_art;lv_obj_set_style_bg_color(screen,lv_color_hex(BLACK),0);lv_anim_delete(screen,scan);lv_obj_clean(screen);
     clear_list_names();
     uptime_label=health_label=unit_label=NULL;
     wifi_ssid=wifi_password=wifi_ip=wifi_message=wifi_action=NULL;

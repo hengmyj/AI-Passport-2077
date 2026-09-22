@@ -1,0 +1,10 @@
+#pragma once
+
+typedef enum {
+    BADGE_GAME_ART_NONE,
+    BADGE_GAME_ART_MUYU,
+    BADGE_GAME_ART_VOICE,
+    BADGE_GAME_ART_RADIO,
+    BADGE_GAME_ART_YAO,
+    BADGE_GAME_ART_CUPS,
+} badge_game_art_t;

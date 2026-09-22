@@ -46,7 +46,7 @@ int main(){lv_init();auto *d=lv_display_create(240,320);lv_display_set_color_for
     for(unsigned theme=0;theme<4;theme++)for(int bat: {-1,0,9,10,99,100})for(bool net: {false,true}){
         badge_ui_set_custom(nullptr,nullptr,nullptr,themes[theme]);badge_header_network(net);
         badge_navigation_t nav;badge_navigation_init(&nav,4);badge_navigation_badges(&nav,5,0,1);
-        badge_ui_create();badge_ui_render(&nav,"敲木鱼","","");badge_ui_status("DEMO",bat,0,true,true);tick();
+        badge_ui_create();badge_ui_render(&nav,"敲木鱼","","",BADGE_GAME_ART_MUYU);badge_ui_status("DEMO",bat,0,true,true);tick();
         auto *badge_number=find_text(lv_screen_active(),"1/5"),*switch_hint=find_text(lv_screen_active(),"长按 OK 切换");
         assert(badge_number&&lv_obj_get_y(badge_number)==12&&lv_obj_get_x(badge_number)+lv_obj_get_width(badge_number)<=172);
         assert(switch_hint&&lv_obj_get_y(switch_hint)==300&&lv_obj_get_y(switch_hint)+lv_obj_get_height(switch_hint)<=320);
@@ -87,7 +87,7 @@ int main(){lv_init();auto *d=lv_display_create(240,320);lv_display_set_color_for
     }
     {
         badge_navigation_t nav;badge_navigation_init(&nav,4);nav.page=BADGE_PROFILE;
-        badge_ui_create();badge_ui_render(&nav,"","","");badge_ui_network(false,false,"","","","");tick();
+        badge_ui_create();badge_ui_render(&nav,"","","",BADGE_GAME_ART_NONE);badge_ui_network(false,false,"","","","");tick();
         assert(find_text(lv_screen_active(),"热点未开启")&&find_text(lv_screen_active(),"OK 开启热点 / 长按OK 返回"));
         badge_ui_network(true,false,"Badge-DEMO","123456ABCDEF","","");tick();
         assert(find_text(lv_screen_active(),"Badge-DEMO")&&find_text(lv_screen_active(),"http://192.168.4.1")&&find_text(lv_screen_active(),"OK 关闭热点 / 长按OK 返回"));
