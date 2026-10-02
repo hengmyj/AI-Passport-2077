@@ -5,7 +5,7 @@ int main(void) {
     badge_navigation_t s;
     badge_navigation_init(&s,1);
     assert(s.screen_timeout==2);
-    s.page=BADGE_SETTINGS;s.settings_selected=3;
+    s.page=BADGE_SETTINGS;s.settings_selected=2;
     assert(badge_navigation_handle(&s,BADGE_OK)==BADGE_REDRAW&&s.page==BADGE_SLEEP_SETTINGS);
     assert(s.timeout_selected==2);
     badge_navigation_handle(&s,BADGE_UP);
@@ -18,12 +18,12 @@ int main(void) {
     for(int i=0;i<2;i++)badge_navigation_handle(&s,BADGE_DOWN);
     assert(s.timeout_selected==0);
     assert(badge_navigation_handle(&s,BADGE_OK)==BADGE_SLEEP_SAVE&&s.screen_timeout==0);
-    badge_navigation_handle(&s,BADGE_DOWN);assert(s.settings_selected==4);
+    badge_navigation_handle(&s,BADGE_DOWN);assert(s.settings_selected==3);
     assert(badge_navigation_handle(&s,BADGE_OK)==BADGE_REDRAW&&s.page==BADGE_ABOUT_SETTINGS);
     badge_navigation_handle(&s,BADGE_OK);assert(s.page==BADGE_SETTINGS);
     badge_navigation_handle(&s,BADGE_DOWN);assert(s.settings_selected==0);
-    badge_navigation_handle(&s,BADGE_UP);assert(s.settings_selected==4);
     badge_navigation_handle(&s,BADGE_UP);assert(s.settings_selected==3);
+    badge_navigation_handle(&s,BADGE_UP);assert(s.settings_selected==2);
     badge_navigation_init(&s,1);
     assert(s.page==BADGE_HOME);
     assert(badge_ok_gesture(BADGE_HOME,false,false)==BADGE_NONE); // Press/release do not open Menu.
@@ -45,7 +45,7 @@ int main(void) {
         assert(badge_navigation_handle(&s,exits[i])==BADGE_REDRAW);
         assert(s.page==BADGE_HOME && s.home_selected==selected);
     }
-    badge_navigation_handle(&s,BADGE_OK);s.home_selected=0;
+    badge_navigation_handle(&s,BADGE_OK);s.home_selected=1;
     badge_navigation_handle(&s,BADGE_OK);assert(s.page==BADGE_GAMES);
     badge_navigation_handle(&s,BADGE_DOWN);assert(s.game_selected==0);
     assert(badge_navigation_handle(&s,BADGE_OK)==BADGE_LAUNCH);
@@ -76,18 +76,15 @@ int main(void) {
     badge_navigation_handle(&s,BADGE_DOWN);assert(s.home_selected==4);
     badge_navigation_handle(&s,BADGE_DOWN);assert(s.home_selected==0);
     badge_navigation_handle(&s,BADGE_DOWN);assert(s.home_selected==1);
+    badge_navigation_handle(&s,BADGE_DOWN);assert(s.home_selected==2);
     badge_navigation_handle(&s,BADGE_OK);assert(s.page==BADGE_QR && s.qr_return==BADGE_TERMINAL);
-    badge_navigation_handle(&s,BADGE_DOWN);assert(s.page==BADGE_TERMINAL && s.home_selected==1);
+    badge_navigation_handle(&s,BADGE_DOWN);assert(s.page==BADGE_TERMINAL && s.home_selected==2);
     badge_navigation_handle(&s,BADGE_OK);badge_navigation_handle(&s,BADGE_BACK);assert(s.page==BADGE_TERMINAL);
     badge_navigation_handle(&s,BADGE_OK);badge_navigation_handle(&s,BADGE_OK);assert(s.page==BADGE_TERMINAL);
-    badge_navigation_handle(&s,BADGE_DOWN);assert(s.home_selected==2);
-    badge_navigation_handle(&s,BADGE_OK);assert(s.page==BADGE_PROFILE);
-    assert(badge_navigation_handle(&s,BADGE_DOWN)==BADGE_IDLE);
-    badge_navigation_handle(&s,BADGE_BACK);assert(s.page==BADGE_TERMINAL);
-    badge_navigation_handle(&s,BADGE_DOWN);
+    badge_navigation_handle(&s,BADGE_DOWN);assert(s.home_selected==3);
     badge_navigation_handle(&s,BADGE_OK);assert(s.page==BADGE_SETTINGS);
     badge_navigation_handle(&s,BADGE_BACK);assert(s.page==BADGE_TERMINAL);
-    badge_navigation_init(&s,7);badge_navigation_handle(&s,BADGE_OK);badge_navigation_handle(&s,BADGE_OK);
+    badge_navigation_init(&s,7);badge_navigation_handle(&s,BADGE_OK);s.home_selected=1;badge_navigation_handle(&s,BADGE_OK);
     badge_navigation_handle(&s,BADGE_UP);assert(s.game_selected==6);
     badge_navigation_handle(&s,BADGE_DOWN);assert(s.game_selected==0);
     for(int i=0;i<3;i++) badge_navigation_handle(&s,BADGE_DOWN);
@@ -196,5 +193,10 @@ int main(void) {
     badge_navigation_handle(&s,BADGE_AI_OPEN_SETTINGS);badge_navigation_handle(&s,BADGE_GO_HOME);
     s.page=BADGE_SETTINGS;s.settings_selected=2;badge_navigation_handle(&s,BADGE_OK);
     assert(badge_navigation_handle(&s,BADGE_BACK)==BADGE_REDRAW&&s.page==BADGE_SETTINGS);
+    badge_navigation_init(&s,1);badge_navigation_badges(&s,5,0,0x1f);
+    badge_navigation_handle(&s,BADGE_OK);s.home_selected=0;
+    assert(badge_navigation_handle(&s,BADGE_OK)==BADGE_REDRAW&&s.page==BADGE_AI_SETTINGS);
+    assert(s.ai_settings_return==BADGE_TERMINAL);
+    assert(badge_navigation_handle(&s,BADGE_BACK)==BADGE_REDRAW&&s.page==BADGE_TERMINAL);
     puts("Badge navigation: PASS (first setup, actual parents, return chooser, safe game stop, conversation shortcuts and return paths)");
 }

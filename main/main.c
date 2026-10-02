@@ -263,7 +263,10 @@ static void process_input(const input_event_t *input) {
         }
     }
     if(!bsp_lvgl_lock(1000)) {navigation=previous; return;}
-    if(action==BADGE_AI_START){badge_ui_destroy();demo_xiaozhi_enter();bsp_lvgl_unlock();esp_err_t e=demo_xiaozhi_start();ESP_LOGI(TAG,"AI start: %s",esp_err_to_name(e));return;}
+    if(action==BADGE_AI_START){
+        badge_network_close_ap();
+        badge_ui_destroy();demo_xiaozhi_enter();bsp_lvgl_unlock();esp_err_t e=demo_xiaozhi_start();ESP_LOGI(TAG,"AI start: %s",esp_err_to_name(e));return;
+    }
     if(action==BADGE_AI_STOP){demo_xiaozhi_exit();badge_ui_create();}
     if(action==BADGE_LAUNCH) {
         const demo_entry_t *g=&BADGE_GAMES_REGISTRY[navigation.game_selected].lifecycle;

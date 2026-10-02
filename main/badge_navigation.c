@@ -59,11 +59,11 @@ badge_action_t badge_navigation_handle(badge_navigation_t *s,badge_input_t input
         return BADGE_IDLE;
     }
     if(s->page==BADGE_AI_SETTINGS){
-        if(input==BADGE_BACK){if(s->ai_settings_return==BADGE_AI_CHAT){s->page=BADGE_AI_CHAT;s->ai_settings_return=BADGE_SETTINGS;return BADGE_AI_START;}s->page=BADGE_SETTINGS;return BADGE_REDRAW;}
+        if(input==BADGE_BACK){if(s->ai_settings_return==BADGE_AI_CHAT){s->page=BADGE_AI_CHAT;s->ai_settings_return=BADGE_TERMINAL;return BADGE_AI_START;}s->page=s->ai_settings_return;return BADGE_REDRAW;}
         if(input==BADGE_UP)s->ai_selected=(s->ai_selected+4)%5;
         if(input==BADGE_DOWN)s->ai_selected=(s->ai_selected+1)%5;
         if(input==BADGE_OK){
-            if(s->ai_selected==0){if(s->ai_settings_return!=BADGE_AI_CHAT)s->ai_return=BADGE_AI_SETTINGS;s->ai_settings_return=BADGE_SETTINGS;s->page=BADGE_AI_CHAT;return BADGE_AI_START;}
+            if(s->ai_selected==0){if(s->ai_settings_return!=BADGE_AI_CHAT)s->ai_return=BADGE_AI_SETTINGS;s->ai_settings_return=s->page==BADGE_AI_SETTINGS?BADGE_TERMINAL:s->ai_settings_return;s->page=BADGE_AI_CHAT;return BADGE_AI_START;}
             if(s->ai_selected==1)return BADGE_AI_TOGGLE;
             if(s->ai_selected==2){s->page=BADGE_AI_VOLUME_PAGE;return BADGE_REDRAW;}
             if(s->ai_selected==4){s->ai_style=(s->ai_style+1)%XZ_STYLE_COUNT;return BADGE_AI_STYLE;}
@@ -125,8 +125,9 @@ badge_action_t badge_navigation_handle(badge_navigation_t *s,badge_input_t input
         if(input==BADGE_UP) s->home_selected=(s->home_selected+4)%5;
         if(input==BADGE_DOWN) s->home_selected=(s->home_selected+1)%5;
         if(input==BADGE_OK) {
-            static const badge_page_t destinations[]={BADGE_GAMES,BADGE_QR,BADGE_PROFILE,BADGE_SETTINGS,BADGE_HOME};
+            static const badge_page_t destinations[]={BADGE_AI_SETTINGS,BADGE_GAMES,BADGE_QR,BADGE_SETTINGS,BADGE_HOME};
             s->page=destinations[s->home_selected];
+            if(s->page==BADGE_AI_SETTINGS){s->ai_settings_return=BADGE_TERMINAL;s->ai_selected=0;}
             if(s->page==BADGE_GAMES)s->games_return=BADGE_TERMINAL;
             if(s->page==BADGE_SETTINGS)s->settings_return=BADGE_TERMINAL;
             if(s->page==BADGE_QR)s->qr_return=BADGE_TERMINAL;
@@ -146,10 +147,10 @@ badge_action_t badge_navigation_handle(badge_navigation_t *s,badge_input_t input
         return BADGE_IDLE;
     }
     if(s->page==BADGE_SETTINGS){
-        if(input==BADGE_UP)s->settings_selected=(s->settings_selected+4)%5;
-        if(input==BADGE_DOWN)s->settings_selected=(s->settings_selected+1)%5;
+        if(input==BADGE_UP)s->settings_selected=(s->settings_selected+3)%4;
+        if(input==BADGE_DOWN)s->settings_selected=(s->settings_selected+1)%4;
         if(input==BADGE_OK){
-            static const badge_page_t pages[]={BADGE_DISPLAY_SETTINGS,BADGE_WIFI,BADGE_AI_SETTINGS,BADGE_SLEEP_SETTINGS,BADGE_ABOUT_SETTINGS};
+            static const badge_page_t pages[]={BADGE_DISPLAY_SETTINGS,BADGE_WIFI,BADGE_SLEEP_SETTINGS,BADGE_ABOUT_SETTINGS};
             s->page=pages[s->settings_selected];s->wifi_return=BADGE_SETTINGS;s->ai_settings_return=BADGE_SETTINGS;
             if(s->page==BADGE_SLEEP_SETTINGS)s->timeout_selected=s->screen_timeout;
         }

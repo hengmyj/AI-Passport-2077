@@ -288,9 +288,9 @@ static void artwork(lv_event_t *e) {
             }
         }
     } else if(navigation.page==BADGE_SETTINGS||navigation.page==BADGE_AI_SETTINGS||navigation.page==BADGE_SLEEP_SETTINGS) {
-        unsigned count=navigation.page==BADGE_SETTINGS?5:5;
+        unsigned count=navigation.page==BADGE_SETTINGS?4:5;
         unsigned selected=navigation.page==BADGE_SETTINGS?navigation.settings_selected:navigation.page==BADGE_SLEEP_SETTINGS?navigation.timeout_selected:navigation.ai_selected;
-        unsigned step=navigation.page==BADGE_SETTINGS?30:32,height=navigation.page==BADGE_SETTINGS?27:28;
+        unsigned step=navigation.page==BADGE_SETTINGS?34:32,height=navigation.page==BADGE_SETTINGS?28:28;
         for(unsigned i=0;i<count;i++){cut_panel(l,14,108+i*step,212,height,BLACK,i==selected?RED:DARK_RED);if(i==selected)rect(l,18,114+i*step,2,16,RED);}
     } else if(navigation.page==BADGE_GAMES) {
         cut_panel(l,14,110,212,131,PANEL,RED);
@@ -467,8 +467,8 @@ void badge_ui_render(const badge_navigation_t *s,const char *name,const char *de
         label(s->page==BADGE_TERMINAL?"TERMINAL":s->page==BADGE_GAMES?"SOFTWARE":s->page==BADGE_PROFILE?"PERSONNEL":s->page==BADGE_WIFI?"NETWORK":(s->page==BADGE_AI_SETTINGS||s->page==BADGE_AI_VOLUME_PAGE)?"XIAOZHI AI":s->page==BADGE_ABOUT_SETTINGS?"ABOUT":"SYSTEM",14,40,212,WHITE,28);
         label(s->page==BADGE_TERMINAL?"员工终端":s->page==BADGE_GAMES?"小程序":s->page==BADGE_PROFILE?"工牌资料":s->page==BADGE_WIFI?"手机配置":s->page==BADGE_SLEEP_SETTINGS?"自动息屏":(s->page==BADGE_AI_SETTINGS||s->page==BADGE_AI_VOLUME_PAGE)?"小智 AI":s->page==BADGE_ABOUT_SETTINGS?"设备信息":"设备设置",14,81,212,RED,14);
         if(s->page==BADGE_TERMINAL) {
-            static const char *names[]={"小程序","我的二维码","工牌资料","系统设置","返回工牌"};
-            static const char *codes[]={"01  MINI APPS","02  MY QR CODE","03  EDIT PROFILE","04  CONFIGURATION","05  PERSONNEL ID"};
+            static const char *names[]={"小智 AI","小程序","我的二维码","系统设置","返回工牌"};
+            static const char *codes[]={"01  XIAOZHI AI","02  MINI APPS","03  MY QR CODE","04  CONFIGURATION","05  PERSONNEL ID"};
             for(unsigned i=0;i<5;i++) {
                 label(codes[i],30,104+i*36,177,s->home_selected==i?on_accent:MUTED,10);
                 label(names[i],30,118+i*36,174,s->home_selected==i?on_accent:WHITE,14);
@@ -489,8 +489,8 @@ void badge_ui_render(const badge_navigation_t *s,const char *name,const char *de
         } else if(s->page==BADGE_PROFILE) {
             setup_steps();
         } else if(s->page==BADGE_SETTINGS){
-            static const char *items[]={"屏幕亮度","网络设置","小智 AI","自动息屏","关于设备"};
-            for(unsigned i=0;i<5;i++)label(items[i],29,113+i*30,187,s->settings_selected==i?RED:WHITE,14);
+            static const char *items[]={"屏幕亮度","网络设置","自动息屏","关于设备"};
+            for(unsigned i=0;i<4;i++)label(items[i],29,114+i*34,187,s->settings_selected==i?RED:WHITE,14);
             label("AI PASSPORT / SYSTEM",14,274,212,MUTED,10);
             badge_footer_create(screen,BADGE_HINT_SETTINGS);
         } else if(s->page==BADGE_SLEEP_SETTINGS){

@@ -11,6 +11,8 @@ typedef struct {bool active,connected;char ssid[33],ap_ssid[24],ap_password[13],
 esp_err_t badge_network_init(void);
 esp_err_t badge_network_toggle(void);
 esp_err_t badge_network_start_setup(void);
+/* Explicitly close the SoftAP and configuration web server if active. */
+esp_err_t badge_network_close_ap(void);
 /* Atomic request; safe under LVGL lock. Worker owns AP and idle timeout. */
 void badge_network_onboarding(bool enabled);
 esp_err_t badge_network_save(const char *ssid,const char *password,bool open,bool keep);

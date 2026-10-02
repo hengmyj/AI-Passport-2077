@@ -40,7 +40,7 @@ static char web_token[33];
 static char setup_password[13];
 static unsigned retries;
 static int64_t retry_at;
-enum {CMD_CONNECT=1,CMD_TOGGLE,CMD_SCAN,CMD_START_SETUP,CMD_POWER,CMD_ENTROPY};
+enum {CMD_CONNECT=1,CMD_TOGGLE,CMD_SCAN,CMD_START_SETUP,CMD_POWER,CMD_ENTROPY,CMD_CLOSE_AP};
 static atomic_bool onboarding;
 static atomic_int desired_ps;
 static atomic_bool standby_ps;
@@ -171,10 +171,12 @@ static esp_err_t open_server(void){
     return ESP_OK;
 }
 static void close_ap(void){
-    lock();state.active=false;state.ap_password[0]=0;unlock();
+    bool was_active=false;
+    lock();was_active=state.active;state.active=false;state.ap_password[0]=0;unlock();
     if(server){httpd_stop(server);server=NULL;}
     if(ready)esp_wifi_set_mode(WIFI_MODE_STA);
     message("Hotspot off");
+    if(was_active)ESP_LOGI("badge_network","SoftAP closed (automatic/user action)");
 }
 static void toggle_ap(void){
     badge_network_status_t s;badge_network_status(&s);if(s.active){close_ap();return;}
@@ -260,6 +262,7 @@ static void worker(void *arg){
             if(atomic_load(&shutdown_requested))break;
             if(command==CMD_CONNECT)connect_saved();else if(command==CMD_SCAN)scan_nearby();
             else if(command==CMD_START_SETUP){badge_network_status_t current;badge_network_status(&current);if(!current.active)toggle_ap();}
+            else if(command==CMD_CLOSE_AP)close_ap();
             else if(command==CMD_TOGGLE)toggle_ap();
             else if(command==CMD_ENTROPY)(void)start();
         }
@@ -296,6 +299,7 @@ esp_err_t badge_network_toggle(void){int cmd=CMD_TOGGLE;return commands&&!atomic
 bool badge_network_entropy_ready(void){return atomic_load(&rf_started)&&(unsigned)((unsigned)(esp_timer_get_time()/1000)-atomic_load(&rf_started_ms))>=100;}
 esp_err_t badge_network_prepare_entropy(void){if(badge_network_entropy_ready())return ESP_OK;int cmd=CMD_ENTROPY;return commands&&xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;}
 esp_err_t badge_network_start_setup(void){int cmd=CMD_START_SETUP;return commands&&xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;}
+esp_err_t badge_network_close_ap(void){int cmd=CMD_CLOSE_AP;return commands&&!atomic_load(&shutdown_requested)&&xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;}
 void badge_network_xiaozhi_power(bool active,bool busy){
     int desired=active?(busy?2:1):0;
     if(atomic_exchange(&desired_ps,desired)!=desired&&commands){int cmd=CMD_POWER;(void)xQueueSend(commands,&cmd,0);}

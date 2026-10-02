@@ -222,6 +222,9 @@ public:
         return fail(XZ_FAULT_MEMORY);
     }
     const char *failure_text(){
+        badge_network_status_t net{};badge_network_status(&net);
+        if(net.active)return "热点未关闭影响通信，按 OK 重试";
+        if(!net.connected)return "Wi-Fi 未连接，请在设置中配置";
         switch(fault.load()){
         case XZ_FAULT_MEMORY:return "语音内存不足，按 OK 重试";
         case XZ_FAULT_QUEUE:return "消息过于密集，按 OK 重试";
@@ -319,7 +322,15 @@ public:
         auto board=cJSON_AddObjectToObject(root.p,"board");cJSON_AddStringToObject(board,"type","folo-ai-passport-c3");cJSON_AddStringToObject(board,"name","folo-ai-passport-c3");cJSON_AddStringToObject(board,"manufacturer","folo");cJSON_AddStringToObject(board,"mac",mac.c_str());
         auto app=cJSON_AddObjectToObject(root.p,"application");cJSON_AddStringToObject(app,"name","folo-ai-passport-xiaozhi");cJSON_AddStringToObject(app,"version","2.4.2");
         std::string response;std::string discovery=backend_url();int status=http(discovery.c_str(),json_text(root.p),response);
-        if(status!=200){ESP_LOGW(TAG,"Discovery HTTP status=%d",status);error("小智服务暂时无法连接\n请检查网络连接");return false;}
+        if(status!=200){
+            ESP_LOGW(TAG,"Discovery HTTP status=%d",status);
+            badge_network_status_t net{};badge_network_status(&net);
+            if(net.active)error("配网热点开启中\n影响服务发现，按 OK 重试");
+            else if(!net.connected)error("Wi-Fi 已断开\n请在设置中重新连接");
+            else if(status>0)error("小智服务响应异常\n请稍后重试");
+            else error("小智服务连接超时\n请检查网络连接");
+            return false;
+        }
         Json reply(cJSON_ParseWithLength(response.data(),response.size()));if(!reply.p){error("小智服务返回数据异常");return false;}
         auto activation=cJSON_GetObjectItemCaseSensitive(reply.p,"activation");
         if(*str(activation,"code")){
@@ -380,7 +391,14 @@ public:
             ++probe_connections;
 #endif
             if(esp_mqtt_client_register_event(mqtt,MQTT_EVENT_ANY,mqtt_event,this)!=ESP_OK||esp_mqtt_client_start(mqtt)!=ESP_OK)return false;
-            int64_t end=esp_timer_get_time()+8000000;while(!stopping&&!failed&&!connected&&esp_timer_get_time()<end)vTaskDelay(pdMS_TO_TICKS(25));if(!connected)return false;
+            int64_t end=esp_timer_get_time()+8000000;while(!stopping&&!failed&&!connected&&esp_timer_get_time()<end)vTaskDelay(pdMS_TO_TICKS(25));
+            if(!connected){
+                badge_network_status_t net{};badge_network_status(&net);
+                if(net.active)error("配网热点开启中\n影响连接握手，按 OK 重试");
+                else if(!net.connected)error("Wi-Fi 已断开\n请在设置中重新连接");
+                else error("语音服务连接超时\n请按 OK 重试");
+                return false;
+            }
         }else if(!mqtt){
             incoming=static_cast<Message *>(malloc(sizeof(Message)));if(!incoming)return memory_failure("websocket_buffer",sizeof(Message));
             xz_endpoint_t parsed{};if(!xz_endpoint(url.c_str(),&parsed))return false;
@@ -979,7 +997,17 @@ void worker(void *arg){
 #ifdef BADGE_XIAOZHI_CONNECT_PROBE
 extern "C" unsigned demo_xiaozhi_connect_probe(unsigned f){return f==0?connect_probe_state.load():f==1?connect_probe_fault.load():f==2?connect_probe_catalog.load():connect_probe_frames.load();}
 #endif
-extern "C" void demo_xiaozhi_enter(){xiaozhi_ui_create();xz_snapshot_t s{};s.volume=wanted_volume.load();xz_text_copy(s.detail,sizeof(s.detail),"说完自动发送");xiaozhi_ui_render(&s);}
+extern "C" void demo_xiaozhi_enter(){
+    badge_network_status_t net{};badge_network_status(&net);
+    if(net.active){
+        badge_network_close_ap();
+        ESP_LOGI(TAG,"Entering XiaoZhi: automatically closed setup hotspot");
+    }
+    xiaozhi_ui_create();xz_snapshot_t s{};s.volume=wanted_volume.load();
+    if(net.active)xz_text_copy(s.detail,sizeof(s.detail),"已自动关闭配网热点\n说完自动发送");
+    else xz_text_copy(s.detail,sizeof(s.detail),"说完自动发送");
+    xiaozhi_ui_render(&s);
+}
 extern "C" void demo_xiaozhi_exit(){xiaozhi_ui_destroy();}
 #ifdef BADGE_YAO_DEVICE_PROBE
 extern "C" unsigned demo_xiaozhi_yao_probe(unsigned field){return field?yao_probe_tts_stop.load():yao_probe_samples.load();}
@@ -1001,12 +1029,20 @@ extern "C" esp_err_t demo_xiaozhi_start(){
 probe_ready=false;
 #endif
 if(started)return ESP_ERR_INVALID_STATE;
+badge_network_status_t net_check{};badge_network_status(&net_check);
+bool ap_was_active=net_check.active;
+if(ap_was_active){
+    badge_network_close_ap();
+    ESP_LOGI(TAG,"Starting XiaoZhi: closed active setup hotspot");
+}
 demo_xiaozhi_connection_tick();
 reclaim_idle_connection("startup",false);
 yao_location_voice_active(true);
 if(yao_location_worker_running()){
     xz_snapshot_t waiting{};waiting.state=XZ_CONNECTING;waiting.volume=wanted_volume.load();
-    xz_text_copy(waiting.detail,sizeof(waiting.detail),"正在准备语音连接");xiaozhi_ui_post(&waiting);
+    if(ap_was_active)xz_text_copy(waiting.detail,sizeof(waiting.detail),"已关闭热点，准备语音连接");
+    else xz_text_copy(waiting.detail,sizeof(waiting.detail),"正在准备语音连接");
+    xiaozhi_ui_post(&waiting);
     ESP_LOGI(TAG,"Waiting for location HTTP cleanup before voice allocation");
     int64_t deadline=esp_timer_get_time()+10000000;
     while(yao_location_worker_running()&&esp_timer_get_time()<deadline)vTaskDelay(pdMS_TO_TICKS(20));
