@@ -213,6 +213,9 @@ char *profile_protocol_request(const char *line,bool usb) {
         cJSON *ssid=cJSON_GetObjectItemCaseSensitive(q,"ssid"),*password=cJSON_GetObjectItemCaseSensitive(q,"password");
         if(cJSON_IsString(ssid)&&cJSON_IsString(password))e=badge_network_save(ssid->valuestring,password->valuestring,
             cJSON_IsTrue(cJSON_GetObjectItemCaseSensitive(q,"open")),cJSON_IsTrue(cJSON_GetObjectItemCaseSensitive(q,"keepPassword")));
+    } else if(!strcmp(op->valuestring,"wifi_delete")) {
+        cJSON *ssid=cJSON_GetObjectItemCaseSensitive(q,"ssid");
+        if(cJSON_IsString(ssid))e=badge_network_delete(ssid->valuestring);
     } else if(!strcmp(op->valuestring,"hotspot")) {
         if(usb)e=badge_network_toggle();
     } else if(!strcmp(op->valuestring,"read")) {

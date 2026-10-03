@@ -310,7 +310,7 @@ static void artwork(lv_event_t *e) {
 }
 static lv_obj_t *label(const char *text,int x,int y,int width,uint32_t color,int size) {
     lv_obj_t *o=lv_label_create(screen);
-    const lv_font_t *font=size==28?&font_badge_28:size==10?&font_badge_10:((navigation.page==BADGE_AI_SETTINGS||navigation.page==BADGE_AI_VOLUME_PAGE||navigation.page==BADGE_SETTINGS||navigation.page==BADGE_SLEEP_SETTINGS||navigation.page==BADGE_ABOUT_SETTINGS)?&font_xiaozhi_14:&font_muyu_14);
+    const lv_font_t *font=size==28?&font_badge_28:size==10?&font_badge_10:((navigation.page==BADGE_AI_SETTINGS||navigation.page==BADGE_AI_VOLUME_PAGE||navigation.page==BADGE_SETTINGS||navigation.page==BADGE_SLEEP_SETTINGS||navigation.page==BADGE_ABOUT_SETTINGS||navigation.page==BADGE_WIFI)?&font_xiaozhi_14:&font_muyu_14);
     lv_obj_set_style_text_font(o,font,0);lv_obj_set_style_text_color(o,lv_color_hex(color),0);
     lv_label_set_long_mode(o,LV_LABEL_LONG_CLIP);lv_obj_set_width(o,width);
     lv_obj_set_pos(o,x,y);lv_label_set_text(o,text);return o;
@@ -555,7 +555,15 @@ void badge_ui_network(bool active,bool connected,const char *sta_ssid,const char
     if(active)lv_label_set_text_fmt(wifi_password,"密码：%s",password);else lv_label_set_text(wifi_password,"热点已关闭");
     lv_label_set_text(wifi_ip,"http://192.168.4.1");
     if(navigation.page==BADGE_WIFI) {
-        if(sta_ssid&&sta_ssid[0]) lv_label_set_text_fmt(wifi_message,"%s：%s",connected?"已连接":"等待连接",sta_ssid);
+        if(sta_ssid&&sta_ssid[0]) {
+            if(connected) {
+                lv_label_set_text_fmt(wifi_message,"已连接：%s",sta_ssid);
+            } else if(message&&message[0]&&strcmp(message,"已连接")!=0&&strcmp(message,"Connected")!=0) {
+                lv_label_set_text_fmt(wifi_message,"%s",message);
+            } else {
+                lv_label_set_text_fmt(wifi_message,"正在连接：%s",sta_ssid);
+            }
+        }
         else lv_label_set_text(wifi_message,"未保存 Wi-Fi");
     } else {
         lv_label_set_text(wifi_message,(message&&message[0])?message:"再点 显示这张工牌");

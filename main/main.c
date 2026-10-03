@@ -187,6 +187,10 @@ static void process_input(const input_event_t *input) {
     static badge_wake_filter_t wake_filter;
     bool asleep=badge_power_screen_off();
     badge_power_activity();
+    /* Whenever user presses any button while Wi-Fi is disconnected, immediately probe network! */
+    if(input->event==BSP_BTN_CLICK||input->event==BSP_BTN_PRESS){
+        badge_network_wake_probe();
+    }
     bool consumed=badge_wake_consumed(&wake_filter,(uint32_t)(esp_timer_get_time()/1000),asleep,
                           input->event==BSP_BTN_PRESS,input->event==BSP_BTN_RELEASE);
 #ifdef BADGE_XIAOZHI_POWER_PROBE
@@ -239,7 +243,8 @@ static void process_input(const input_event_t *input) {
     if(action==BADGE_AI_STOP){if(demo_xiaozhi_stop()!=ESP_OK){navigation=previous;return;}}
     if(action==BADGE_LAUNCH||action==BADGE_WIFI_START||action==BADGE_WIFI_TOGGLE)demo_xiaozhi_release_connection();
     if(action==BADGE_WIFI_START){badge_network_start_setup();return;}
-    if(navigation.page==BADGE_WIFI&&previous.page!=BADGE_WIFI)badge_network_start_setup();
+    if(navigation.page==BADGE_WIFI&&previous.page!=BADGE_WIFI){badge_network_start_setup();}
+    if(navigation.page!=BADGE_WIFI&&previous.page==BADGE_WIFI){badge_network_close_ap();}
     if(action==BADGE_SELECT) {
         esp_err_t e=profile_protocol_select(navigation.badge_selected);
         if(e!=ESP_OK){navigation=previous;ESP_LOGW(TAG,"Badge switch busy or failed: %s",esp_err_to_name(e));}

@@ -151,6 +151,7 @@ void badge_power_display_tick(bool keep_awake,bool keep_cpu){
     if(busy)atomic_store(&last_activity,now);
     if(badge_power_screen_off()&&(requested||busy||delay==0)){
         if(!wake_display())atomic_store(&wake_requested,true);
+        else badge_network_wake_probe();
     }
     if(!badge_power_screen_off()&&badge_idle_due(now,atomic_load(&last_activity),delay,busy)&&now-display_retry>=1000){
         display_retry=now;

@@ -1,4 +1,5 @@
 #include "badge_navigation.h"
+#include "badge_network.h"
 #include "xiaozhi_style.h"
 #include "badge_power_logic.h"
 badge_input_t badge_ai_long_gesture(badge_page_t page,bool up,bool down,bool long_press){
@@ -127,7 +128,7 @@ badge_action_t badge_navigation_handle(badge_navigation_t *s,badge_input_t input
         if(input==BADGE_OK) {
             static const badge_page_t destinations[]={BADGE_AI_SETTINGS,BADGE_GAMES,BADGE_QR,BADGE_SETTINGS,BADGE_HOME};
             s->page=destinations[s->home_selected];
-            if(s->page==BADGE_AI_SETTINGS){s->ai_settings_return=BADGE_TERMINAL;s->ai_selected=0;}
+            if(s->page==BADGE_AI_SETTINGS){s->ai_settings_return=BADGE_TERMINAL;s->ai_selected=0;badge_network_wake_probe();}
             if(s->page==BADGE_GAMES)s->games_return=BADGE_TERMINAL;
             if(s->page==BADGE_SETTINGS)s->settings_return=BADGE_TERMINAL;
             if(s->page==BADGE_QR)s->qr_return=BADGE_TERMINAL;
@@ -141,7 +142,7 @@ badge_action_t badge_navigation_handle(badge_navigation_t *s,badge_input_t input
         if(input==BADGE_OK) {s->playing_return=BADGE_GAMES;s->page=BADGE_PLAYING;return BADGE_LAUNCH;}
         return BADGE_REDRAW;
     }
-    if(s->page==BADGE_WIFI)return input==BADGE_OK?BADGE_WIFI_TOGGLE:BADGE_IDLE;
+    if(s->page==BADGE_WIFI)return BADGE_IDLE;
     if(s->page==BADGE_PROFILE) {
         if(input==BADGE_OK)return BADGE_WIFI_TOGGLE;
         return BADGE_IDLE;

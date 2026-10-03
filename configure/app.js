@@ -224,7 +224,52 @@ $('qrFile').onchange=async()=>{if(!$('qrFile').files[0])return;busy=true;control
 $('removeQr').onclick=()=>{qrReady=false;loadedQrBytes=null;qrDirty=true;$('qrFile').value='';qrPlaceholder();$('qrStatus').textContent='尚未上传二维码。';changed()};
 async function readAsset(asset,size,badge=editingBadge){const bytes=new Uint8Array(size);for(let offset=0;offset<size;offset+=FORMAT.chunk){const r=await device.rpc('read',{badge,asset,offset,count:Math.min(FORMAT.chunk,size-offset)}),raw=atob(r.data);if(raw.length!==Math.min(FORMAT.chunk,size-offset))throw Error('设备返回的图像数据不完整');bytes.set(Uint8Array.from(raw,c=>c.charCodeAt(0)),offset)}return bytes}
 function from565(bytes,w,h){const c=canvas(w,h);c.getContext('2d').putImageData(new ImageData(rgba565(bytes,w,h),w,h),0,0);return c}
-function showWifi(w,loadFields=false){wifi=w||{};if(loadFields&&!wifiDirty){$('ssid').value=wifi.ssid||'';$('wifiPassword').value='';$('openWifi').checked=!!wifi.ssid&&!wifi.passwordSet;$('wifiPassword').placeholder=wifi.passwordSet?'已保存密码，留空保留':'输入 Wi-Fi 密码'}let info=wifi.connected?'已连接 '+wifi.ssid+' · '+wifi.ip:(wifi.ssid?'已保存 '+wifi.ssid+' · '+(wifi.message||'未连接'):'尚未设置 Wi-Fi');if(wifi.apActive)info+='\n热点：'+wifi.apSsid+'\n热点密码：'+wifi.apPassword+'\n手机打开：http://192.168.4.1';$('wifiStatus').textContent=info;controls()}
+function renderKnownWifis(){
+ const list=$('knownWifiList');if(!list)return;list.replaceChildren();
+ const known=wifi.knownWifis||[];
+ if(!known.length){$('knownWifiSection').hidden=true;return}
+ $('knownWifiSection').hidden=false;
+ $('knownCount').textContent=`(${known.length}/8)`;
+ for(const item of known){
+  const row=document.createElement('div');row.className='network-row';
+  const name=document.createElement('span');name.className='network-name';
+  name.textContent=item.ssid+(item.ssid===wifi.ssid?' · (当前)':item.hasPassword?' · (已存密)':'');
+  const btnGroup=document.createElement('div');btnGroup.style.display='flex';btnGroup.style.gap='8px';
+  const useBtn=document.createElement('button');useBtn.type='button';useBtn.textContent='选用';useBtn.style.padding='4px 8px';useBtn.style.fontSize='12px';
+  useBtn.onclick=()=>{
+   $('ssid').value=item.ssid;$('wifiPassword').value='';$('openWifi').checked=!item.hasPassword;
+   wifiDirty=true;
+   $('wifiPassword').placeholder=item.hasPassword?'已保存密码，留空可直接使用原密码连接':'此网络无需密码';
+   controls();message(`已选用网络「${item.ssid}」，已保存密码，点击「保存并连接」即可！`);
+  };
+  const delBtn=document.createElement('button');delBtn.type='button';delBtn.textContent='删除';delBtn.style.padding='4px 8px';delBtn.style.fontSize='12px';delBtn.style.color='var(--red)';
+  delBtn.onclick=async()=>{
+   if(!confirm(`确认从工牌中删除已知网络「${item.ssid}」吗？`))return;
+   busy=true;controls();
+   try{
+    await device.rpc('wifi_delete',{ssid:item.ssid});
+    message(`已删除网络：${item.ssid}`);
+    await new Promise(r=>setTimeout(r,500));
+    showWifi((await device.rpc('wifi_info')).wifi,false);
+   }catch(e){message('删除失败：'+e.message,true)}finally{busy=false;controls()}
+  };
+  btnGroup.append(useBtn,delBtn);row.append(name,btnGroup);list.append(row);
+ }
+}
+
+function showWifi(w,loadFields=false){
+ wifi=w||{};
+ if(loadFields&&!wifiDirty){
+  $('ssid').value=wifi.ssid||'';$('wifiPassword').value='';
+  $('openWifi').checked=!!wifi.ssid&&!wifi.passwordSet;
+  $('wifiPassword').placeholder=wifi.passwordSet?'已保存密码，留空保留':'输入 Wi-Fi 密码'
+ }
+ let info=wifi.connected?'已连接 '+wifi.ssid+' · '+wifi.ip:(wifi.ssid?'已保存 '+wifi.ssid+' · '+(wifi.message||'未连接'):'尚未设置 Wi-Fi');
+ if(wifi.apActive)info+='\n热点：'+wifi.apSsid+'\n热点密码：'+wifi.apPassword+'\n手机打开：http://192.168.4.1';
+ $('wifiStatus').textContent=info;
+ renderKnownWifis();
+ controls()
+}
 function showXiaozhiBackend(xz,loadFields=false){xiaozhiBackend=xz||{};const url=xiaozhiBackend.backendUrl||'https://api.tenclass.net/xiaozhi/ota/';if(loadFields&&!xiaozhiBackendDirty)$('xiaozhiBackend').value=xiaozhiBackend.backendCustom?url:'';$('xiaozhiBackendStatus').textContent=(xiaozhiBackend.backendCustom?'当前使用自定义后端：':'当前使用官方默认后端：')+url;controls()}
 function xiaozhiBackendPayload(){const url=$('xiaozhiBackend').value.trim();if(!url)return {url:''};if(url.length>255||(!url.startsWith('https://')&&!url.startsWith('http://'))||/[\s\x00-\x20\x7f]/.test(url))throw Error('小智后端地址必须以 http:// 或 https:// 开头，且不能包含空格。');return {url}}
 function showCatalog(info){
@@ -274,7 +319,8 @@ $('save').onclick=async()=>{if(busy)return;let committed=false,begun=false;try{i
 for(const id of ['ssid','wifiPassword','openWifi'])$(id).oninput=()=>{wifiDirty=true};
 function wifiFormPayload(allowKeep=true){
  const ssid=$('ssid').value.trim(),password=$('wifiPassword').value,open=$('openWifi').checked;
- const keepPassword=allowKeep&&!open&&!password&&wifi.passwordSet&&ssid===wifi.ssid;
+ const isKnown=wifi.knownWifis?.some(k=>k.ssid===ssid);
+ const keepPassword=allowKeep&&!open&&!password&&(isKnown||(wifi.passwordSet&&ssid===wifi.ssid));
  const enc=new TextEncoder();
  if(!ssid||enc.encode(ssid).length>32||enc.encode(password).length>63||(!open&&!keepPassword&&enc.encode(password).length<8))throw Error('网络名称最多 32 字节；Wi-Fi 密码为 8–63 字节。');
  return {ssid,password,open,keepPassword};

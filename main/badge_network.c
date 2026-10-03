@@ -27,6 +27,7 @@ static SemaphoreHandle_t mutex;
 static QueueHandle_t commands;
 static badge_network_status_t state;
 static struct {char ssid[33],password[65];} saved;
+static badge_wifi_store_t wifi_store;
 static bool ready,started,attempted;
 static atomic_uint rf_started_ms;
 static atomic_bool rf_started;
@@ -40,7 +41,7 @@ static char web_token[33];
 static char setup_password[13];
 static unsigned retries;
 static int64_t retry_at;
-enum {CMD_CONNECT=1,CMD_TOGGLE,CMD_SCAN,CMD_START_SETUP,CMD_POWER,CMD_ENTROPY,CMD_CLOSE_AP};
+enum {CMD_CONNECT=1,CMD_TOGGLE,CMD_SCAN,CMD_START_SETUP,CMD_POWER,CMD_ENTROPY,CMD_CLOSE_AP,CMD_WAKE_PROBE};
 static atomic_bool onboarding;
 static atomic_int desired_ps;
 static atomic_bool standby_ps;
@@ -50,6 +51,7 @@ static unsigned scan_revision;
 static esp_err_t scan_error;
 static size_t scan_count;
 static badge_scan_entry_t scan_results[BADGE_SCAN_LIMIT];
+static void scan_nearby(void);
 static void lock(void){xSemaphoreTake(mutex,portMAX_DELAY);}
 static void unlock(void){xSemaphoreGive(mutex);}
 static bool valid_setup_password(const char *password){
@@ -69,7 +71,23 @@ void badge_network_json(cJSON *reply){
     cJSON_AddStringToObject(w,"apSsid",s.ap_ssid);cJSON_AddStringToObject(w,"apPassword",s.active?s.ap_password:"");
     cJSON_AddStringToObject(w,"message",s.message);
     bool password=false;if(mutex){lock();password=saved.password[0]!=0;unlock();}
-    cJSON_AddBoolToObject(w,"passwordSet",password);cJSON_AddItemToObject(reply,"wifi",w);
+    cJSON_AddBoolToObject(w,"passwordSet",password);
+    cJSON *known_list=cJSON_CreateArray();
+    if(known_list){
+        lock();
+        for(uint8_t i=0;i<wifi_store.count;i++){
+            cJSON *item=cJSON_CreateObject();
+            if(item){
+                cJSON_AddStringToObject(item,"ssid",wifi_store.items[i].ssid);
+                cJSON_AddBoolToObject(item,"hasPassword",wifi_store.items[i].password[0]!=0);
+                cJSON_AddNumberToObject(item,"lastUsed",wifi_store.items[i].last_used);
+                cJSON_AddItemToArray(known_list,item);
+            }
+        }
+        unlock();
+        cJSON_AddItemToObject(w,"knownWifis",known_list);
+    }
+    cJSON_AddItemToObject(reply,"wifi",w);
 }
 static void event(void *arg,esp_event_base_t base,int32_t id,void *data){
     if(atomic_load(&shutdown_requested))return;
@@ -78,7 +96,14 @@ static void event(void *arg,esp_event_base_t base,int32_t id,void *data){
         yao_location_network(true);
         ip_event_got_ip_t *e=data;lock();state.connected=true;
         snprintf(state.ip,sizeof(state.ip),IPSTR,IP2STR(&e->ip_info.ip));
-        snprintf(state.message,sizeof(state.message),"Connected");unlock();atomic_store(&disconnected,false);
+        snprintf(state.message,sizeof(state.message),"已连接");unlock();atomic_store(&disconnected,false);
+        uint32_t now_sec = (uint32_t)(esp_timer_get_time() / 1000000);
+        lock();
+        if(badge_wifi_store_touch(&wifi_store, saved.ssid, now_sec) && nvs_ready) {
+            nvs_set_blob(nvs, "known_wifis", &wifi_store, sizeof(wifi_store));
+            nvs_commit(nvs);
+        }
+        unlock();
         if(!esp_sntp_enabled()){
             esp_sntp_setoperatingmode(ESP_SNTP_OPMODE_POLL);
             esp_sntp_setservername(0,"ntp.aliyun.com");
@@ -86,7 +111,22 @@ static void event(void *arg,esp_event_base_t base,int32_t id,void *data){
         }else esp_sntp_restart();
     }else if(base==WIFI_EVENT&&id==WIFI_EVENT_STA_DISCONNECTED){
         yao_location_network(false);
-        lock();state.connected=false;state.ip[0]=0;unlock();atomic_store(&disconnected,true);
+        wifi_event_sta_disconnected_t *dis=(wifi_event_sta_disconnected_t *)data;
+        const char *reason_str="连接断开";
+        if(dis){
+            switch(dis->reason){
+                case WIFI_REASON_AUTH_EXPIRE:
+                case WIFI_REASON_4WAY_HANDSHAKE_TIMEOUT:
+                case WIFI_REASON_AUTH_FAIL:
+                case WIFI_REASON_HANDSHAKE_TIMEOUT:reason_str="密码错误或认证失败";break;
+                case WIFI_REASON_NO_AP_FOUND:reason_str="未找到该Wi-Fi信号";break;
+                case WIFI_REASON_ASSOC_FAIL:
+                case WIFI_REASON_ASSOC_EXPIRE:reason_str="路由器拒绝关联";break;
+                default:reason_str="Wi-Fi连接断开";break;
+            }
+        }
+        lock();state.connected=false;state.ip[0]=0;snprintf(state.message,sizeof(state.message),"%s",reason_str);unlock();
+        atomic_store(&disconnected,true);
     }
 }
 static esp_err_t prepare(void){
@@ -114,13 +154,70 @@ static void connect_saved(void){
     c.sta.sae_pwe_h2e=WPA3_SAE_PWE_BOTH;
     c.sta.listen_interval=20;
     lock();memcpy(c.sta.ssid,saved.ssid,strlen(saved.ssid));
-    memcpy(c.sta.password,saved.password,strlen(saved.password));unlock();
+    memcpy(c.sta.password,saved.password,strlen(saved.password));
+    strcpy(state.ssid,saved.ssid);unlock();
     retries=0;atomic_store(&disconnected,false);
     if(!c.sta.ssid[0])return;
     esp_err_t e=start();
-    if(e==ESP_OK){esp_wifi_disconnect();e=esp_wifi_set_config(WIFI_IF_STA,&c);}
+    if(e==ESP_OK){
+        /* Ensure operating mode allows STA connection */
+        wifi_mode_t current_mode;
+        if(esp_wifi_get_mode(&current_mode)==ESP_OK && current_mode==WIFI_MODE_AP){
+            esp_wifi_set_mode(WIFI_MODE_APSTA);
+        }
+        esp_wifi_disconnect();
+        e=esp_wifi_set_config(WIFI_IF_STA,&c);
+    }
     if(e==ESP_OK)e=esp_wifi_connect();
-    message(e==ESP_OK?"Connecting...":"Connection setup failed");retry_at=esp_timer_get_time()+5000000;
+    message(e==ESP_OK?"正在连接...":"连接设置失败");retry_at=esp_timer_get_time()+5000000;
+}
+static void auto_roam_and_connect(void){
+    if(wifi_store.count==0)return;
+    ESP_LOGI("badge_network","Auto-roam check triggered (known count=%u)...", (unsigned)wifi_store.count);
+    message("正在搜寻已知 Wi-Fi...");
+    
+    /* 1. First try: Scan the surrounding air */
+    esp_wifi_disconnect();
+    vTaskDelay(pdMS_TO_TICKS(50));
+    scan_nearby();
+    lock();
+    int best = badge_wifi_match_best(&wifi_store, scan_results, scan_count);
+    if(best >= 0 && best < (int)wifi_store.count) {
+        ESP_LOGI("badge_network","Auto-roam selected known Wi-Fi: %s (matched from %u scanned APs)",
+                 wifi_store.items[best].ssid, (unsigned)scan_count);
+        memset(&saved, 0, sizeof(saved));
+        strncpy(saved.ssid, wifi_store.items[best].ssid, sizeof(saved.ssid) - 1);
+        strncpy(saved.password, wifi_store.items[best].password, sizeof(saved.password) - 1);
+        if(nvs_ready) {
+            nvs_set_blob(nvs, "station", &saved, sizeof(saved));
+            nvs_commit(nvs);
+        }
+        unlock();
+        connect_saved();
+        return;
+    }
+    
+    /* 2. Second try (Blind fallback): If scan didn't see the SSID (e.g. hidden SSID, router beacon slow,
+          or active SoftAP interfering with channel scan), cycle directly to the NEXT known Wi-Fi! */
+    ESP_LOGW("badge_network","No scanned match; cycling sequentially to next saved AP");
+    uint8_t cur_idx = 0;
+    for(uint8_t i = 0; i < wifi_store.count; i++) {
+        if(strcmp(wifi_store.items[i].ssid, saved.ssid) == 0) {
+            cur_idx = i;
+            break;
+        }
+    }
+    uint8_t next_idx = (cur_idx + 1) % wifi_store.count;
+    ESP_LOGI("badge_network","Roaming fallback -> trying next saved AP: %s", wifi_store.items[next_idx].ssid);
+    memset(&saved, 0, sizeof(saved));
+    strncpy(saved.ssid, wifi_store.items[next_idx].ssid, sizeof(saved.ssid) - 1);
+    strncpy(saved.password, wifi_store.items[next_idx].password, sizeof(saved.password) - 1);
+    if(nvs_ready) {
+        nvs_set_blob(nvs, "station", &saved, sizeof(saved));
+        nvs_commit(nvs);
+    }
+    unlock();
+    connect_saved();
 }
 /* The setup server is reachable only on the AP interface, never the joined LAN. */
 static bool allowed(httpd_req_t *r){
@@ -175,12 +272,12 @@ static void close_ap(void){
     lock();was_active=state.active;state.active=false;state.ap_password[0]=0;unlock();
     if(server){httpd_stop(server);server=NULL;}
     if(ready)esp_wifi_set_mode(WIFI_MODE_STA);
-    message("Hotspot off");
+    message("热点已关闭");
     if(was_active)ESP_LOGI("badge_network","SoftAP closed (automatic/user action)");
 }
 static void toggle_ap(void){
     badge_network_status_t s;badge_network_status(&s);if(s.active){close_ap();return;}
-    esp_err_t e=start();if(e!=ESP_OK){message("Wi-Fi unavailable");return;}
+    esp_err_t e=start();if(e!=ESP_OK){message("Wi-Fi不可用");return;}
     uint32_t random[4];esp_fill_random(random,sizeof(random));
     if(!valid_setup_password(setup_password)){
         snprintf(setup_password,sizeof(setup_password),"%08lX%04lX",(unsigned long)random[0],(unsigned long)(random[1]&65535));
@@ -191,7 +288,7 @@ static void toggle_ap(void){
     memcpy(config.ap.password,setup_password,12);config.ap.channel=1;config.ap.max_connection=2;config.ap.authmode=WIFI_AUTH_WPA2_PSK;
     e=esp_wifi_set_mode(WIFI_MODE_APSTA);if(e==ESP_OK)e=esp_wifi_set_config(WIFI_IF_AP,&config);
     if(e==ESP_OK){lock();state.active=true;strcpy(state.ap_password,setup_password);unlock();atomic_store(&last_http,(unsigned)(esp_timer_get_time()/1000000));e=open_server();}
-    if(e!=ESP_OK){close_ap();message("Hotspot failed");}else message("Setup hotspot ready");
+    if(e!=ESP_OK){close_ap();message("热点开启失败");}else message("热点已就绪");
 }
 static void scan_nearby(void){
     badge_scan_entry_t results[BADGE_SCAN_LIMIT];size_t count=0;
@@ -250,7 +347,10 @@ void badge_network_scan_json(cJSON *reply){
         cJSON *item=cJSON_CreateObject();if(!item)continue;
         cJSON_AddStringToObject(item,"ssid",ap->ssid);cJSON_AddNumberToObject(item,"rssi",ap->rssi);
         cJSON_AddStringToObject(item,"security",security);cJSON_AddBoolToObject(item,"open",ap->auth==WIFI_AUTH_OPEN);
-        cJSON_AddBoolToObject(item,"supported",supported);cJSON_AddItemToArray(list,item);
+        cJSON_AddBoolToObject(item,"supported",supported);
+        bool is_known = badge_wifi_store_find(&wifi_store, ap->ssid) != NULL;
+        cJSON_AddBoolToObject(item,"saved",is_known);
+        cJSON_AddItemToArray(list,item);
     }
     unlock();cJSON_AddItemToObject(reply,"networks",list);
 }
@@ -265,6 +365,14 @@ static void worker(void *arg){
             else if(command==CMD_CLOSE_AP)close_ap();
             else if(command==CMD_TOGGLE)toggle_ap();
             else if(command==CMD_ENTROPY)(void)start();
+            else if(command==CMD_WAKE_PROBE){
+                badge_network_status_t cur;badge_network_status(&cur);
+                if(!cur.connected && !cur.active && wifi_store.count > 0 && atomic_load(&desired_ps) == 0){
+                    retries = 0; /* Reset retry counter so new attempts begin immediately */
+                    auto_roam_and_connect();
+                    retry_at = esp_timer_get_time() + 15000000LL;
+                }
+            }
         }
         int policy=badge_network_power_policy(atomic_load(&desired_ps),atomic_load(&standby_ps));
         if(started&&policy!=applied_ps){
@@ -280,9 +388,32 @@ static void worker(void *arg){
         if(setup==BADGE_SETUP_CLOSE)close_ap();
         if(atomic_load(&disconnected)&&s.ssid[0]&&!s.connected&&esp_timer_get_time()>retry_at){
             retries++;
-            esp_wifi_connect();
-            if(retries<=3){retry_at=esp_timer_get_time()+5000000;message("Connecting...");}
-            else{retry_at=esp_timer_get_time()+30000000;message("Waiting for Wi-Fi");}
+            /* If we have multiple saved Wi-Fis:
+               Retry the current network 3 times with progressive delays:
+               - Attempt 1: 15 seconds
+               - Attempt 2: 35 seconds
+               - Attempt 3: 60 seconds
+               Only on attempt 4 and beyond, switch/roam to other known Wi-Fis! */
+            if(wifi_store.count > 1 && retries > 3){
+                /* After rotating through all known networks (e.g. 3 attempts on saved AP + 1 roam round per other known AP),
+                   if still not connected, enter full silent sleep (stop periodic background scans to save battery).
+                   Pressing any key or waking display will instantly wake and probe! */
+                uint32_t max_commute_attempts = 3 + (uint32_t)wifi_store.count;
+                if(retries > max_commute_attempts) {
+                    message("离线（按键重连）");
+                    /* Set retry_at far into future so it doesn't spin; wake_probe will reset it on keypress */
+                    retry_at = esp_timer_get_time() + 86400000000LL; /* 24 hours */
+                } else {
+                    auto_roam_and_connect();
+                    retry_at = esp_timer_get_time() + 15000000LL;
+                }
+            } else {
+                esp_wifi_connect();
+                message("正在重新连接...");
+                int64_t delay_us = (retries == 1) ? 15000000LL :
+                                   (retries == 2) ? 35000000LL : 60000000LL;
+                retry_at = esp_timer_get_time() + delay_us;
+            }
         }
     }
     yao_location_network(false);
@@ -300,6 +431,11 @@ bool badge_network_entropy_ready(void){return atomic_load(&rf_started)&&(unsigne
 esp_err_t badge_network_prepare_entropy(void){if(badge_network_entropy_ready())return ESP_OK;int cmd=CMD_ENTROPY;return commands&&xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;}
 esp_err_t badge_network_start_setup(void){int cmd=CMD_START_SETUP;return commands&&xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;}
 esp_err_t badge_network_close_ap(void){int cmd=CMD_CLOSE_AP;return commands&&!atomic_load(&shutdown_requested)&&xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;}
+esp_err_t badge_network_wake_probe(void){
+    if(!commands||atomic_load(&shutdown_requested))return ESP_ERR_INVALID_STATE;
+    int cmd=CMD_WAKE_PROBE;
+    return xQueueSend(commands,&cmd,0)==pdTRUE?ESP_OK:ESP_ERR_INVALID_STATE;
+}
 void badge_network_xiaozhi_power(bool active,bool busy){
     int desired=active?(busy?2:1):0;
     if(atomic_exchange(&desired_ps,desired)!=desired&&commands){int cmd=CMD_POWER;(void)xQueueSend(commands,&cmd,0);}
@@ -313,23 +449,76 @@ esp_err_t badge_network_save(const char *ssid,const char *password,bool open,boo
     if(!sn||sn>32||pn>63||(!open&&!keep&&pn<8))return ESP_ERR_INVALID_ARG;
     if(!mutex||!commands||!nvs_ready)return ESP_ERR_INVALID_STATE;
     lock();
-    if(keep&&(strcmp(ssid,saved.ssid)||!saved.password[0])){unlock();return ESP_ERR_INVALID_ARG;}
+    const char *pwd_to_use = password;
+    if(keep){
+        if(!strcmp(ssid,saved.ssid) && saved.password[0]){
+            pwd_to_use = saved.password;
+        } else {
+            const badge_known_wifi_t *k = badge_wifi_store_find(&wifi_store, ssid);
+            if(k && k->password[0]) {
+                pwd_to_use = k->password;
+            } else {
+                unlock(); return ESP_ERR_INVALID_ARG;
+            }
+        }
+    }
     typeof(saved) next={0};strcpy(next.ssid,ssid);
-    if(!open)strcpy(next.password,keep?saved.password:password);
-    esp_err_t e=nvs_set_blob(nvs,"station",&next,sizeof(next));if(e==ESP_OK)e=nvs_commit(nvs);
-    if(e==ESP_OK){saved=next;strcpy(state.ssid,ssid);state.connected=false;state.ip[0]=0;strcpy(state.message,"Saved; connecting...");}
+    if(!open)strcpy(next.password,pwd_to_use);
+    esp_err_t e=nvs_set_blob(nvs,"station",&next,sizeof(next));
+    if(e==ESP_OK){
+        uint32_t now_sec = (uint32_t)(esp_timer_get_time() / 1000000);
+        badge_wifi_store_upsert(&wifi_store, ssid, open?"":pwd_to_use, now_sec);
+        nvs_set_blob(nvs, "known_wifis", &wifi_store, sizeof(wifi_store));
+        e=nvs_commit(nvs);
+    }
+    if(e==ESP_OK){saved=next;strcpy(state.ssid,ssid);state.connected=false;state.ip[0]=0;strcpy(state.message,"已保存，正在连接...");}
     memset(&next,0,sizeof(next));unlock();
-    if(e==ESP_OK){int cmd=CMD_CONNECT;if(xQueueSend(commands,&cmd,0)!=pdTRUE)e=ESP_ERR_INVALID_STATE;}return e;
+    if(e==ESP_OK){
+        /* Upon saving a new Wi-Fi, immediately reset retries and signal worker to connect */
+        retries=0;atomic_store(&disconnected,false);
+        int cmd=CMD_CONNECT;if(xQueueSend(commands,&cmd,0)!=pdTRUE)e=ESP_ERR_INVALID_STATE;
+    }return e;
+}
+esp_err_t badge_network_delete(const char *ssid){
+    if(!ssid||!ssid[0]||!mutex||!nvs_ready)return ESP_ERR_INVALID_ARG;
+    lock();
+    bool changed=badge_wifi_store_delete(&wifi_store,ssid);
+    if(changed){
+        nvs_set_blob(nvs,"known_wifis",&wifi_store,sizeof(wifi_store));
+        nvs_commit(nvs);
+        /* If deleted current saved AP, clear it */
+        if(strcmp(saved.ssid,ssid)==0){
+            memset(&saved,0,sizeof(saved));
+            if(wifi_store.count>0){
+                strncpy(saved.ssid,wifi_store.items[0].ssid,sizeof(saved.ssid)-1);
+                strncpy(saved.password,wifi_store.items[0].password,sizeof(saved.password)-1);
+            }
+            nvs_set_blob(nvs,"station",&saved,sizeof(saved));
+            nvs_commit(nvs);
+            strncpy(state.ssid,saved.ssid,sizeof(state.ssid)-1);
+        }
+    }
+    unlock();
+    return changed?ESP_OK:ESP_ERR_NOT_FOUND;
 }
 esp_err_t badge_network_init(void){
     mutex=xSemaphoreCreateMutex();commands=xQueueCreate(4,sizeof(int));if(!mutex||!commands)return ESP_ERR_NO_MEM;
     uint8_t mac[6]={0};esp_read_mac(mac,ESP_MAC_WIFI_STA);
     snprintf(state.ap_ssid,sizeof(state.ap_ssid),"Badge-%02X%02X%02X",mac[3],mac[4],mac[5]);
-    strcpy(state.message,"Wi-Fi not configured");
+    strcpy(state.message,"未保存 Wi-Fi");
     nvs_ready=nvs_open("badge_network",NVS_READWRITE,&nvs)==ESP_OK;
     if(nvs_ready){
         size_t len=sizeof(saved);if(nvs_get_blob(nvs,"station",&saved,&len)!=ESP_OK||len!=sizeof(saved)||saved.ssid[32]||saved.password[64])memset(&saved,0,sizeof(saved));
         len=sizeof(setup_password);if(nvs_get_str(nvs,"ap_password",setup_password,&len)!=ESP_OK||len!=sizeof(setup_password)||!valid_setup_password(setup_password))setup_password[0]=0;
+        size_t wlen=sizeof(wifi_store);
+        if(nvs_get_blob(nvs,"known_wifis",&wifi_store,&wlen)!=ESP_OK||wlen!=sizeof(wifi_store)||wifi_store.count>BADGE_KNOWN_WIFI_MAX){
+            memset(&wifi_store,0,sizeof(wifi_store));
+            if(saved.ssid[0]){
+                badge_wifi_store_upsert(&wifi_store,saved.ssid,saved.password,1);
+                nvs_set_blob(nvs,"known_wifis",&wifi_store,sizeof(wifi_store));
+                nvs_commit(nvs);
+            }
+        }
     }
     strcpy(state.ssid,saved.ssid);
     if(xTaskCreate(worker,"badge_network",6144,NULL,3,NULL)!=pdPASS)return ESP_ERR_NO_MEM;

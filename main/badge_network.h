@@ -16,11 +16,14 @@ esp_err_t badge_network_close_ap(void);
 /* Atomic request; safe under LVGL lock. Worker owns AP and idle timeout. */
 void badge_network_onboarding(bool enabled);
 esp_err_t badge_network_save(const char *ssid,const char *password,bool open,bool keep);
+esp_err_t badge_network_delete(const char *ssid);
 void badge_network_status(badge_network_status_t *status);
 void badge_network_json(cJSON *reply);
 
 esp_err_t badge_network_scan(void);
 void badge_network_scan_json(cJSON *reply);
+/* Trigger an immediate background probe/scan for known networks (e.g. on screen wake or user action) */
+esp_err_t badge_network_wake_probe(void);
 /* Start shared RF if necessary, without scanning, reconnecting or opening AP. */
 esp_err_t badge_network_prepare_entropy(void);
 bool badge_network_entropy_ready(void);
