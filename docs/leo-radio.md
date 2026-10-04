@@ -10,7 +10,8 @@ Open badge home → OK → Mini Apps → City Radio. With saved Wi-Fi connected,
 
 | Control | Action |
 | --- | --- |
-| Up / Down | Previous / next station |
+| Up / Down (click) | Volume up / down |
+| Up / Down (double-click) | Previous / next station |
 | OK | Pause / resume |
 | Long Up | Open radio settings |
 | Long Down | Stop playback |

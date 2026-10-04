@@ -10,6 +10,12 @@ static unsigned radio_probe_release(bsp_btn_t key,unsigned expected_station,unsi
     for(unsigned i=0;i<200;i++){radio_probe_state_t s=radio_probe_state();if(s.station==expected_station&&s.selected==expected_selected){unsigned ms=(esp_timer_get_time()-begin)/1000;ESP_LOGI("radio_probe","RELEASE response=%u ms",ms);return ms;}vTaskDelay(pdMS_TO_TICKS(5));}
     configASSERT(false);return 1000;
 }
+static unsigned radio_probe_channel(bsp_btn_t key,unsigned expected_station){
+    radio_probe_send(key,BSP_BTN_PRESS);vTaskDelay(pdMS_TO_TICKS(30));radio_probe_send(key,BSP_BTN_RELEASE);vTaskDelay(pdMS_TO_TICKS(40));
+    int64_t begin=esp_timer_get_time();radio_probe_send(key,BSP_BTN_PRESS);vTaskDelay(pdMS_TO_TICKS(30));radio_probe_send(key,BSP_BTN_RELEASE);radio_probe_send(key,BSP_BTN_DOUBLE);
+    for(unsigned i=0;i<200;i++){radio_probe_state_t s=radio_probe_state();if(s.station==expected_station){unsigned ms=(esp_timer_get_time()-begin)/1000;ESP_LOGI("radio_probe","CHANNEL response=%u ms",ms);return ms;}vTaskDelay(pdMS_TO_TICKS(5));}
+    configASSERT(false);return 1000;
+}
 static void radio_probe_task(void *arg){
     (void)arg;vTaskDelay(pdMS_TO_TICKS(12000));
     if(!navigation.badge_mask){ESP_LOGW("radio_probe","SKIP: setup incomplete");vTaskDelete(NULL);return;}
@@ -33,8 +39,7 @@ static void radio_probe_task(void *arg){
     for(unsigned i=0;i<8;i++){
         bsp_btn_t key=i%2?BSP_BTN_UP:BSP_BTN_DOWN;
         unsigned target=(s.station+s.count+(key==BSP_BTN_UP?-1:1))%s.count;
-        unsigned ms=radio_probe_release(key,target,s.selected);if(ms>maximum)maximum=ms;
-        radio_probe_send(key,i%2?BSP_BTN_DOUBLE:BSP_BTN_CLICK);vTaskDelay(pdMS_TO_TICKS(100));
+        unsigned ms=radio_probe_channel(key,target);if(ms>maximum)maximum=ms;
         s=radio_probe_state();configASSERT(s.station==target);
     }
     radio_probe_send(BSP_BTN_UP,BSP_BTN_PRESS);radio_probe_key(BSP_BTN_UP,BSP_BTN_LONG);radio_probe_key(BSP_BTN_UP,BSP_BTN_RELEASE);
