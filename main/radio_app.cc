@@ -31,19 +31,25 @@ extern "C" void demo_radio_exit(){radio_ui_destroy();}
 extern "C" bool demo_radio_back(){if(!bsp_lvgl_lock(1000))return true;bool consumed=radio_controls_back(&controls);if(consumed)refresh(nullptr);bsp_lvgl_unlock();return consumed;}
 extern "C" void demo_radio_key(bsp_btn_t button,bsp_btn_ev_t event){
     if(!started)return;
+    if(button==BSP_BTN_DOWN&&event==BSP_BTN_LONG){radio_player_set_playing(false);return;}
     bool direction_click=false;
+    const bool main=controls.page==RADIO_MAIN;
     if(button!=BSP_BTN_OK){
         radio_input_event_t mapped=event==BSP_BTN_PRESS?RADIO_PRESS:event==BSP_BTN_RELEASE?RADIO_RELEASE:event==BSP_BTN_LONG?RADIO_LONG:event==BSP_BTN_DOUBLE?RADIO_DOUBLE:RADIO_CLICK;
         direction_click=radio_direction_click(&quick_input,button==BSP_BTN_UP?0:1,mapped);
-        if(!direction_click&&event!=BSP_BTN_LONG)return;
+        if(main){
+            if(event==BSP_BTN_LONG&&button==BSP_BTN_UP){/* handled below */}
+            else if(event!=BSP_BTN_CLICK&&event!=BSP_BTN_DOUBLE)return;
+        }else if(!direction_click&&event!=BSP_BTN_LONG)return;
     }else if(event!=BSP_BTN_CLICK&&event!=BSP_BTN_DOUBLE)return;
-    if(button==BSP_BTN_DOWN&&event==BSP_BTN_LONG){radio_player_set_playing(false);return;}
     if(!bsp_lvgl_lock(100))return;
     radio_action_t action=RADIO_NOTHING;
+    const int direction=button==BSP_BTN_UP?-1:1;
     if(button==BSP_BTN_UP&&event==BSP_BTN_LONG)radio_controls_settings(&controls);
-    else if(direction_click||event==BSP_BTN_CLICK||event==BSP_BTN_DOUBLE){
-        if(button==BSP_BTN_OK)action=radio_controls_ok(&controls);
-        else action=radio_controls_move(&controls,button==BSP_BTN_UP?-1:1);
+    else if(button==BSP_BTN_OK&&(event==BSP_BTN_CLICK||event==BSP_BTN_DOUBLE))action=radio_controls_ok(&controls);
+    else if(button!=BSP_BTN_OK){
+        if(main)action=radio_controls_main_tap(&controls,direction,event==BSP_BTN_DOUBLE);
+        else if(direction_click||event==BSP_BTN_CLICK||event==BSP_BTN_DOUBLE)action=radio_controls_move(&controls,direction);
     }
     const auto next=controls;bsp_lvgl_unlock();
     switch(action){

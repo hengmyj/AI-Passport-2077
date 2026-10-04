@@ -12,8 +12,12 @@ const unsigned RADIO_TIMER_MINUTES[5]={0,15,30,60,90};
 static unsigned cycle(unsigned value,int delta,unsigned count){return (value+count+(delta>0?1:-1))%count;}
 void radio_controls_init(radio_controls_t *c,int volume,unsigned city){*c=(radio_controls_t){.page=RADIO_MAIN,.volume=volume,.city=city<8?city:0};}
 void radio_controls_settings(radio_controls_t *c){c->page=RADIO_SETTINGS;c->selected=0;}
+radio_action_t radio_controls_main_tap(radio_controls_t *c,int direction,bool channel){
+    if(channel)return direction<0?RADIO_CHANNEL_UP:RADIO_CHANNEL_DOWN;
+    c->volume+=direction<0?5:-5;if(c->volume<0)c->volume=0;if(c->volume>100)c->volume=100;return RADIO_VOLUME_CHANGED;
+}
 radio_action_t radio_controls_move(radio_controls_t *c,int direction){
-    if(c->page==RADIO_MAIN)return direction<0?RADIO_CHANNEL_UP:RADIO_CHANNEL_DOWN;
+    if(c->page==RADIO_MAIN)return RADIO_NOTHING;
     if(c->page==RADIO_VOLUME){c->volume+=direction<0?5:-5;if(c->volume<0)c->volume=0;if(c->volume>100)c->volume=100;return RADIO_VOLUME_CHANGED;}
     if(c->page==RADIO_SETTINGS)c->selected=cycle(c->selected,direction,3);
     if(c->page==RADIO_CITY)c->selected=cycle(c->selected,direction,8);

@@ -30,7 +30,11 @@ int main(){
     RadioJsonObjects truncated;for(char ch:std::string("[{"))truncated.feed(ch);assert(!truncated.done);
     RadioJsonObjects malformed;for(char ch:std::string("[{},]"))malformed.feed(ch);assert(malformed.failed);
     radio_controls_t c;radio_controls_init(&c,40,0);assert(!radio_controls_back(&c));
-    assert(radio_controls_move(&c,-1)==RADIO_CHANNEL_UP);assert(radio_controls_move(&c,1)==RADIO_CHANNEL_DOWN);assert(radio_controls_ok(&c)==RADIO_TOGGLE);
+    assert(radio_controls_move(&c,-1)==RADIO_NOTHING);
+    assert(radio_controls_main_tap(&c,-1,false)==RADIO_VOLUME_CHANGED&&c.volume==45);
+    assert(radio_controls_main_tap(&c,1,false)==RADIO_VOLUME_CHANGED&&c.volume==40);
+    assert(radio_controls_main_tap(&c,-1,true)==RADIO_CHANNEL_UP);assert(radio_controls_main_tap(&c,1,true)==RADIO_CHANNEL_DOWN);
+    assert(radio_controls_ok(&c)==RADIO_TOGGLE);
     radio_controls_settings(&c);radio_controls_ok(&c);assert(c.page==RADIO_VOLUME);
     for(int i=0;i<30;i++){radio_controls_move(&c,-1);}assert(c.volume==100);
     for(int i=0;i<30;i++){radio_controls_move(&c,1);}assert(c.volume==0);
@@ -50,6 +54,6 @@ int main(){
         assert(!radio_direction_click(&input,key,RADIO_DOUBLE));
         assert(!radio_direction_click(&input,key,RADIO_PRESS));assert(!radio_direction_click(&input,key,RADIO_LONG));assert(!radio_direction_click(&input,key,RADIO_RELEASE));
     }
-    puts("Release input, rapid taps, long-press suppression and three settings: PASS");
+    puts("Main tap, release input, rapid taps, long-press suppression and three settings: PASS");
     puts("Radio frequency/dial, PCM downmix, timer and nested controls: PASS");
 }

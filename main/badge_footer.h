@@ -12,7 +12,7 @@ LV_FONT_DECLARE(font_badge_10);
 #define BADGE_HINT_VOICE_PACKS "上下选 OK进入 长上音量 长下停止 长OK返回"
 #define BADGE_HINT_VOICE_CLIPS "上下选 OK播放 长上音量 长下停止 长OK返回"
 #define BADGE_HINT_VOLUME "上下音量 OK返回 长OK返回"
-#define BADGE_HINT_RADIO "上下换台 OK播放/暂停 长上设置 长OK返回"
+#define BADGE_HINT_RADIO "单击音量 双击换台 OK播放/暂停 长上设置 长OK返回"
 #define BADGE_HINT_SELECT "上下选择 OK确认 长OK返回"
 #define BADGE_HINT_CARDS "上下选择 OK切换 长OK返回"
 #define BADGE_HINT_MENU "上下选择 OK进入 长OK返回"
